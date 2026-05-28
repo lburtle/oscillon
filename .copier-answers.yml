@@ -1,0 +1,13 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: 2026.04.04
+_src_path: gh:scientific-python/cookie
+backend: hatch
+docs: sphinx
+email: landonburtle10@gmail.com
+full_name: Landon Burtle
+license: BSD
+org: lburtle
+project_name: oscillon
+project_short_description: A Python machine learning implementation for gCTLN models.
+url: https://github.com/lburtle/oscillon
+vcs: true
