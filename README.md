@@ -19,8 +19,6 @@
 [actions-link]:             https://github.com/lburtle/oscillon/actions
 [conda-badge]:              https://img.shields.io/conda/vn/conda-forge/oscillon
 [conda-link]:               https://github.com/conda-forge/oscillon-feedstock
-[github-discussions-badge]: https://img.shields.io/static/v1?label=Discussions&message=Ask&color=blue&logo=github
-[github-discussions-link]:  https://github.com/lburtle/oscillon/discussions
 [pypi-link]:                https://pypi.org/project/oscillon/
 [pypi-platforms]:           https://img.shields.io/pypi/pyversions/oscillon
 [pypi-version]:             https://img.shields.io/pypi/v/oscillon?include_prereleases
