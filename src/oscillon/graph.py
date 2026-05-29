@@ -3,26 +3,33 @@
 
 # Used for deliberately constructing discrete graph structures
 
+import logging
+from dataclasses import dataclass
+
 import numpy as np
 import torch
-from dataclasses import dataclass, field
-from typing import List, Optional
+from numpy.typing import NDArray
+
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
+
 
 @dataclass
 class MotifSpec:
     """Specification for a single motif subgraph"""
-    n: int # number of neurons
-    adjacency: np.ndarray # (n,n) bool; A[i,j]=True means j->i
-    label: str = ""
-    eps_init: float
-    delta_init: float
 
-    def __post_init__(self):
+    n: int  # number of neurons
+    adjacency: np.ndarray  # (n,n) bool; A[i,j]=True means j->i
+    label: str = ""
+    eps_init: float = 0.1
+    delta_init: float = 0.5
+
+    def __post_init__(self) -> None:
         if not self.label:
             self.label = f"Motif({self.n})"
 
     @classmethod
-    def cyclic(cls, n: int, label: str="", **kwargs) -> "MotifSpec":
+    def cyclic(cls, n: int, label: str = "", **kwargs: float) -> "MotifSpec":
         """Create a cycle on n nodes"""
         A = np.zeros((n, n), dtype=bool)
         for j in range(n):
@@ -30,7 +37,9 @@ class MotifSpec:
         return cls(n=n, adjacency=A, label=label or f"Cycle({n})", **kwargs)
 
     @classmethod
-    def from_edge_list(cls, n: int, edges: List[tuple], label: str="", **kwargs) -> "MotifSpec":
+    def from_edge_list(
+        cls, n: int, edges: list[tuple[int, int]], label: str = "", **kwargs: float
+    ) -> "MotifSpec":
         """
         Create from explicit edge list
         edges: list of (source, target) tuples; source -> target
@@ -41,23 +50,30 @@ class MotifSpec:
             A[tgt, src] = True
         return cls(n=n, adjacency=A, label=label or f"Custom({n})", **kwargs)
 
+
 @dataclass
 class NetworkSpec:
     """
     Full network specification: list of motifs plus inter-motif coupling
     """
-    motifs: List[MotifSpec]
+
+    motifs: list[MotifSpec]
     delta_cross: float = 0.05
     # Per-pair cross coupling
-    cross_deltas: Optionall[np.ndarray] = None
+    cross_deltas: np.ndarray | None = None
     # cross-deltas[i][j] = uniform coupling from motif j to motif i
 
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         k = len(self.motifs)
-        if self.cross_deltas is none:
+        if self.cross_deltas is None:
             self.cross_deltas = np.full((k, k), self.delta_cross)
             # Ensure diagonal is zero (no self-cross coupling)
             np.fill_diagonal(self.cross_deltas, 0.0)
+
+    @property
+    def _cross_deltas(self) -> NDArray[np.float64]:
+        assert self.cross_deltas is not None, "cross_deltas not initialized"
+        return self.cross_deltas
 
     @property
     def n_total(self) -> int:
@@ -69,13 +85,17 @@ class NetworkSpec:
 
     @property
     # Define which nodes belong to which motif (slices of entire node list)
-    def slices(self) -> List[slice]:
+    def slices(self) -> list[slice]:
         starts = np.concatenate(
-            ([0], np.cumsum([motif.n for motif in self.motifs])[:-1])).astype(int)
-        return [slice(start, start + motif.n) for start, motif in zip(starts, self.motifs)]
-    
+            ([0], np.cumsum([motif.n for motif in self.motifs])[:-1])
+        ).astype(int)
+        return [
+            slice(start, start + motif.n)
+            for start, motif in zip(starts, self.motifs, strict=True)
+        ]
+
     @property
-    def labels(self) -> List[str]:
+    def labels(self) -> list[str]:
         return [motif.label for motif in self.motifs]
 
     def to_numpy_W(self) -> np.ndarray:
@@ -87,21 +107,25 @@ class NetworkSpec:
         W = np.zeros((N, N))
         slices = self.slices
 
-        for i, (slice_i, motif_i) in enumerate(zip, slices, self.motifs):
-            for j, (slice_j, motif_j) in enumerate(zip, slices, self.motifs):
+        for i, (slice_i, motif_i) in enumerate(zip(slices, self.motifs, strict=True)):
+            for j, (slice_j, motif_j) in enumerate(
+                zip(slices, self.motifs, strict=True)
+            ):
                 if i == j:
                     # Within-motif block
                     A = motif_i.adjacency.astype(float)
-                    block = (np.where(A,
-                                    -1.0 + motif_i.eps_init,
-                                    -1.0 - motif_i.delta_init)
-                                * (1 - np.eye(motif_i.n)))
+                    block = np.where(
+                        A, -1.0 + motif_i.eps_init, -1.0 - motif_i.delta_init
+                    ) * (1 - np.eye(motif_i.n))
                     W[slice_i, slice_j] = block
                 else:
-                        # Cross-motif block
-                        d_cross = self.cross_deltas[i, j]
-                        W[slice_i, slice_j] = np.full((motif_i.n, motif_j.n), -1.0 - d_cross)
-                return W
+                    # Cross-motif block
+                    assert self.cross_deltas is not None
+                    d_cross = self.cross_deltas[i, j]
+                    W[slice_i, slice_j] = np.full(
+                        (motif_i.n, motif_j.n), -1.0 - d_cross
+                    )
+        return W
 
     def to_torch_adjacency(self) -> torch.Tensor:
         """
@@ -110,15 +134,23 @@ class NetworkSpec:
         """
         N = self.n_total
         A = torch.zeros(N, N, dtype=torch.bool)
-        for slice, motif in zip(self.slices, self.motifs):
-            A[slice, slice] = torch.from_nump(motif.adjacency)
+        for slice, motif in zip(self.slices, self.motifs, strict=True):
+            A[slice, slice] = torch.from_numpy(motif.adjacency)
         return A
 
-    def summary(self):
-        print(f"NetworkSpec: {self.k} motifs, {self.n_total} neurons total")
+    def summary(self) -> None:
+        logger.info(
+            "NetworkSpec: %d motifs, %d n_total neurons total", self.k, self.n_total
+        )
         for i, motif in enumerate(self.motifs):
             n_edges = motif.adjacency.sum()
-            print(f"[{i}] {motif.label}: {motif.n} neurons, "
-            f"{n_edges} edges, "
-            f"eps={motif.eps_init}, delta={motif.delta_init}")
-        print(f"delta_cross matrix:\n{np.round(self.cross_deltas, 3)}")
+            logger.info(
+                "[%d] %s: %d neurons, %d edges, eps=%g, delta=%g",
+                i,
+                motif.label,
+                motif.n,
+                n_edges,
+                motif.eps_init,
+                motif.delta_init,
+            )
+        logger.info("delta_cross matrix:\n%s ", np.round(self._cross_deltas, 3))

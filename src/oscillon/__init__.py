@@ -5,8 +5,9 @@ oscillon: A Python machine learning implementation for gCTLN models.
 
 from __future__ import annotations
 
+from importlib.metadata import PackageNotFoundError, version
+
 from ._version import version as __version__
-from importlib.metadata import version, PackageNotFoundError
 
 try:
     __version__ = version("oscillon")
@@ -17,23 +18,21 @@ from oscillon.dynamics import simulate
 from oscillon.topology import (
     SoftNetworkSpec,
     build_W,
-    make_param_to_model,
-    init_params,
-    gate_matrix,
     extract_adjacency,
+    gate_matrix,
+    init_params,
+    make_param_to_model,
 )
 from oscillon.train import openai_es
-import jax
 
 __all__ = [
-    "__version__",
-    "simulate",
     "SoftNetworkSpec",
+    "__version__",
     "build_W",
-    "make_param_to_model",
-    "init_params",
-    "gate_matrix",
     "extract_adjacency",
+    "gate_matrix",
+    "init_params",
+    "make_param_to_model",
     "openai_es",
-    "jax",
+    "simulate",
 ]

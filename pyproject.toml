@@ -30,7 +30,20 @@ classifiers = [
   "Typing :: Typed",
 ]
 dynamic = ["version"]
-dependencies = []
+dependencies = [
+    "jax",
+    "jaxlib",
+    "numpy",
+    "networkx",
+    "matplotlib",
+    "torch",
+]
+
+[project.optional-dependencies]
+cuda12 = ["jax[cuda12]"]             # bundled CUDA 12 — simple, heavier download
+cuda12-local = ["jax[cuda12-local]"] # uses system CUDA 12
+cuda13-local = ["jax[cuda13-local]"] # uses system CUDA 13
+
 
 [project.urls]
 Homepage = "https://github.com/lburtle/oscillon"
@@ -67,11 +80,12 @@ dependency-groups = ["dev"]
 dependency-groups = ["test"]
 env-vars.PYTHONWARNDEFAULTENCODING = "1"
 
+[tool.hatch.build.targets.wheel]
+packages = ["src/oscillon"]
 
-[tool.pytest]
+[tool.pytest.ini_options]
 minversion = "9.0"
 addopts = ["-ra", "--showlocals"]
-strict = true
 filterwarnings = [
   "error",
 ]
@@ -97,12 +111,30 @@ enable_error_code = ["ignore-without-code", "redundant-expr", "truthy-bool"]
 warn_unreachable = true
 disallow_untyped_defs = false
 disallow_incomplete_defs = false
+disable_error_code = ["untyped-decorator"]
+
 
 [[tool.mypy.overrides]]
 module = "oscillon.*"
 disallow_untyped_defs = true
 disallow_incomplete_defs = true
 
+[[tool.mypy.overrides]]
+module = [
+    "jax",
+    "jax.*",
+    "jaxlib",
+    "jaxlib.*",
+    "networkx",
+    "networkx.*",
+    "matplotlib",
+    "matplotlib.*",
+    "numpy",
+    "numpy.*",
+    "torch",
+    "torch.*",
+]
+ignore_missing_imports = true
 
 [tool.ruff]
 show-fixes = true
@@ -156,6 +188,7 @@ ignore = [
 [tool.ruff.lint.per-file-ignores]
 "tests/**" = ["T20"]
 "noxfile.py" = ["T20"]
+"examples/**" = ["T20"]
 
 
 [tool.pylint]

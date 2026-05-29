@@ -5,13 +5,16 @@
 # Foward-Euler rollout of the threshold-linear ODE
 
 from __future__ import annotations
+
 from functools import partial
 
 import jax
-import jax.numpy as jnp
+
 
 @partial(jax.jit, static_argnames=("n_steps",))
-def simulate(W, theta, x0, dt=0.1, n_steps=2000):
+def simulate(
+    W: jax.Array, theta: jax.Array, x0: jax.Array, dt: float = 0.1, n_steps: int = 2000
+) -> jax.Array:
     """
     Params:
     W - (n, n) weight matrix
@@ -23,8 +26,10 @@ def simulate(W, theta, x0, dt=0.1, n_steps=2000):
     Returns:
     xs - (n_steps, n) trajectory of states
     """
-    def step(x, _):
+
+    def step(x: jax.Array, _: None) -> tuple[jax.Array, jax.Array]:
         x = x + dt * (-x + jax.nn.relu(W @ x + theta))
         return x, x
+
     _, xs = jax.lax.scan(step, x0, xs=None, length=n_steps)
     return xs
