@@ -1,5 +1,5 @@
 # Oscillon
-<img width="400" height="309" alt="Image" src="https://github.com/user-attachments/assets/2e054a26-214b-4d45-809c-478627386d51" />
+<img width="50%" alt="Image" src="https://github.com/user-attachments/assets/2e054a26-214b-4d45-809c-478627386d51" />
 
 [![Actions Status][actions-badge]][actions-link]
 [![Documentation Status][rtd-badge]][rtd-link]
@@ -30,3 +30,5 @@
 [coverage-link]:            https://codecov.io/github/lburtle/oscillon
 
 <!-- prettier-ignore-end -->
+
+This package is intended to be a machine learning implementation and tool for general Combinatorial Threshold Linear Networks (gCTLNs). The name is inspired by the oscillating and dynamic behavior of oscillons, similar to the type of behavior exhibity in CTLNs. This package/repository is currently under development. Thank you for your patience.
