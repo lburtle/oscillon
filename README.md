@@ -1,4 +1,5 @@
 # Oscillon
+<img width="400" height="309" alt="Image" src="https://github.com/user-attachments/assets/2e054a26-214b-4d45-809c-478627386d51" />
 
 [![Actions Status][actions-badge]][actions-link]
 [![Documentation Status][rtd-badge]][rtd-link]
