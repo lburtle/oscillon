@@ -23,7 +23,7 @@
 [github-discussions-link]:  https://github.com/lburtle/oscillon/discussions
 [pypi-link]:                https://pypi.org/project/oscillon/
 [pypi-platforms]:           https://img.shields.io/pypi/pyversions/oscillon
-[pypi-version]:             https://img.shields.io/pypi/v/oscillon
+[pypi-version]:             https://img.shields.io/pypi/v/oscillon?include_prereleases
 [rtd-badge]:                https://readthedocs.org/projects/oscillon/badge/?version=latest
 [rtd-link]:                 https://oscillon.readthedocs.io/en/latest/?badge=latest
 [coverage-badge]:           https://codecov.io/github/lburtle/oscillon/branch/main/graph/badge.svg
