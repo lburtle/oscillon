@@ -9,10 +9,6 @@
 [![Conda-Forge][conda-badge]][conda-link]
 [![PyPI platforms][pypi-platforms]][pypi-link]
 
-[![GitHub Discussion][github-discussions-badge]][github-discussions-link]
-
-[![Coverage][coverage-badge]][coverage-link]
-
 <!-- SPHINX-START -->
 
 <!-- prettier-ignore-start -->
