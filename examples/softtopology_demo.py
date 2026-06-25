@@ -45,7 +45,7 @@ def main():
     print(f"init reward: {float(fitness(params0)):+.5f}")
 
     params, _ = openai_es(
-        fitness, params0, key, n_iters=60, pop=64, sigma=0.15, lr=0.05, verbose_every=15
+        fitness, params0, key, n_iters=1000, pop=64, sigma=0.15, lr=0.05, verbose_every=100
     )
 
     print(f"Final reward: {float(fitness(params)):+.5f}")
