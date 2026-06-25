@@ -184,3 +184,5 @@ Thumbs.db
 # Common editor files
 *~
 *.swp
+
+.python-version
