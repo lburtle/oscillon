@@ -41,7 +41,7 @@ class TrainResult:
 
 
 def train(spec: BlockSoftSpec, params0, x0, targets, key, *,
-          dt=0.1, n_steps=2000, burn_in=200, ridge=1e-4, sat_weight=0.05,
+          dt=0.1, n_steps=2000, burn_in=200, ridge=1e-6, sat_weight=0.05,
           warm=None, cryst=None) -> TrainResult:
     p2m = make_block_param_to_model(spec)
     warm = warm or dict(n_iters=300, pop=128, sigma=0.1, lr=0.05)

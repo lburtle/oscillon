@@ -265,11 +265,11 @@ def run_sweep(n_seeds=20, z_std=2.0):
                 f"hamiltonian={hamiltonian!s:5} "
                 f"amp={amp:.3f} period={per} eig={fp['max_real_eig']:+.3f}")
 
-    n = len(results)
-    n_emerged = sum(r["emerged"] for r in results)
-    n_topo = sum(r["cycle_topology"] for r in results)
-    n_both = sum(r["emerged"] and r["cycle_topology"] for r in results)
-    n_hamiltonian = sum(r["hamiltonian_cycle"] for r in results)
+            n = len(results)
+            n_emerged = sum(r["emerged"] for r in results)
+            n_topo = sum(r["cycle_topology"] for r in results)
+            n_both = sum(r["emerged"] and r["cycle_topology"] for r in results)
+            n_hamiltonian = sum(r["hamiltonian_cycle"] for r in results)
 
     print("\n" + "=" * 60)
     print(f"DISCOVERY SWEEP  (N={N}, {n_seeds} seeds, z_std={z_std})")
@@ -280,6 +280,20 @@ def run_sweep(n_seeds=20, z_std=2.0):
     print("=" * 60)
     return results
 
+
+    from collections import defaultdict
+
+    by_zstd = defaultdict(list)
+    for r in all_results:          # your existing flat list of per-run dicts
+        by_zstd[r["z_std"]].append(r)
+
+    for z_std in sorted(by_zstd):
+        rows = by_zstd[z_std]
+        n = len(rows)
+        osc = sum(r["emerged"] for r in rows)
+        ham = sum(r["hamiltonian"] for r in rows)
+        print(f"z_std={z_std:.1f}: oscillation {osc}/{n} ({100*osc/n:.0f}%), "
+            f"hamiltonian {ham}/{n} ({100*ham/n:.0f}%)")
 
 if __name__ == "__main__" or True:   # set False to skip when running main script
     sweep_results = run_sweep(n_seeds=20, z_std=2.0)

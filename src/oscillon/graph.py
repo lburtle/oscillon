@@ -37,6 +37,18 @@ class MotifSpec:
         return cls(n=n, adjacency=A, label=label or f"Cycle({n})", **kwargs)
 
     @classmethod
+    def dense(cls, n: int, label: str = "", **kwargs: float) -> "MotifSpec":
+        """Create a dense graph on n nodes"""
+        A = ~np.eye(n, dtype=bool)
+        return cls(n=n, adjacency=A, label=label or f"Dense({n})", **kwargs)
+
+    @classmethod
+    def sparse(cls, n: int, label: str = "", **kwargs: float) -> "MotifSpec":
+        """Create a sparse graph on n nodes"""
+        A = np.zeros((n, n), dtype=bool)
+        return cls(n=n, adjacency=A, label=label or f"Custom({n})", **kwargs)
+
+    @classmethod
     def from_edge_list(
         cls, n: int, edges: list[tuple[int, int]], label: str = "", **kwargs: float
     ) -> "MotifSpec":
@@ -154,3 +166,64 @@ class NetworkSpec:
                 motif.delta_init,
             )
         logger.info("delta_cross matrix:\n%s ", np.round(self._cross_deltas, 3))
+
+
+def plot_network_graph(
+    G_gate,                       # (N,N) gate matrix from block_gate_matrix, OR bool adjacency
+    theta=None,                   # (N,) per-node drive, optional
+    thresh=0.5,
+    labels=None,
+    save_path=None,
+):
+    """Draw learned topology. Edges present where gate > thresh, labeled with gate value.
+    G_gate[i, j] is the gate for edge j->i (graph.py convention)."""
+    import matplotlib.pyplot as plt
+    import networkx as nx
+
+    G_gate = np.asarray(G_gate, dtype=float)
+    n = G_gate.shape[0]
+    A = G_gate > thresh
+
+    graph = nx.DiGraph()
+    graph.add_nodes_from(range(n))
+    edge_labels = {}
+    for i in range(n):
+        for j in range(n):
+            if A[i, j]:                       # edge j -> i
+                graph.add_edge(j, i)
+                edge_labels[(j, i)] = f"{G_gate[i, j]:.2f}"
+
+    pos = nx.circular_layout(graph)
+
+    # node labels: index + theta if provided
+    if theta is not None:
+        theta = np.asarray(theta)
+        node_labels = {k: f"{k}\nθ={theta[k]:.2f}" for k in range(n)}
+    elif labels is not None:
+        node_labels = {k: labels[k] for k in range(n)}
+    else:
+        node_labels = {k: str(k) for k in range(n)}
+
+    fig, ax = plt.subplots(figsize=(5.5, 5.5))
+    nx.draw_networkx_nodes(graph, pos, node_color="#cbd5e1", node_size=1200, ax=ax)
+    nx.draw_networkx_labels(graph, pos, labels=node_labels, font_size=9, ax=ax)
+    nx.draw_networkx_edges(
+        graph, pos, 
+        arrowstyle="-|>", 
+        arrowsize=22,
+        min_target_margin=18,
+        min_source_margin=10,
+        connectionstyle="arc3,rad=0.12", 
+        ax=ax,
+    )
+    nx.draw_networkx_edge_labels(
+        graph, pos, edge_labels=edge_labels,
+        label_pos=0.5, font_size=8,
+        connectionstyle="arc3,rad=0.10",     # must match the edge curve
+        ax=ax,
+    )
+    ax.set_title("learned topology (edge = gate value)")
+    ax.axis("off")
+    if save_path:
+        plt.savefig(save_path, bbox_inches="tight", dpi=150)
+    return fig

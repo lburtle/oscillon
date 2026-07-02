@@ -84,7 +84,7 @@ class BlockSoftSpec:
         for n_block in self.sizes:
             out.append(s); s += n_block
         return out
-    
+
     def compile_indices(
         self,
     ) -> tuple[NDArray[np.intp], NDArray[np.intp],
@@ -140,6 +140,15 @@ def init_block_params_from_adjacency(
     z = z + noise_std * jax.random.normal(key, (spec.n_edges,))
     if spec.learn_theta:
         return jnp.concatenate([z, jnp.full((spec.n_total,), spec.theta_init)])
+    return z
+
+def init_params_asymmetric(spec, key, z_mean=0.0, z_std=2.0):
+    """Random asymmetric gate logits; no cyclic prior, but broken symmetry."""
+    key_z, _ = jax.random.split(key)
+    z = z_mean + z_std * jax.random.normal(key_z, (spec.n_edges,))
+    if spec.learn_theta:
+        theta = jnp.full((spec.n_total,), spec.theta_init)
+        return jnp.concatenate([z, theta])
     return z
 
 def gate_saturation_penalty(z_flat: jax.Array) -> jax.Array:
@@ -256,3 +265,20 @@ def extract_adjacency(
     Feed into graph.MotifSpec(n=spec.n, adjacency=A) to visualize topology (plot_network_graph)
     """
     return gate_matrix(spec, z_flat) > thresh
+
+def block_gate_matrix(spec: BlockSoftSpec, params: jax.Array) -> NDArray[np.float64]:
+    """(N, N) matrix of within-block sigmoid gate values (0 elsewhere)."""
+    rows, cols, *_ = spec.compile_indices()
+    z = np.asarray(params[: spec.n_edges])
+    G = np.zeros((spec.n_total, spec.n_total))
+    G[rows, cols] = 1.0 / (1.0 + np.exp(-z))    # sigmoid
+    return G
+
+def extract_block_adjacency(
+    spec: BlockSoftSpec, params: jax.Array, thresh: float = 0.5
+) -> NDArray[np.bool_]:
+    """
+    Round trained block-soft params to a discrete (N, N) adjacency.
+    A[i, j] = True means edge j->i, matching graph.py's convention.
+    """
+    return block_gate_matrix(spec, params) > thresh
