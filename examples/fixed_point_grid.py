@@ -115,14 +115,14 @@ x0s = [rng.uniform(0, 1.2, size=N) for _ in range(6)] + [np.asarray(x0)]
 
 # BEFORE: warm-start dynamics
 W0, th0 = p2m(params0)
-plot_phase_portrait(W0, th0, dims=(2, 3), x0s=x0s,
+plot_phase_grid(W0, th0, x0s=x0s,
                     dt=dt, n_steps=n_steps,
                     title="phase space BEFORE training (warm start)",
-                    save_path=str(out / "fp_phase_before.png"))
+                    save_path=str(out / "fp_grid_before.png"))
 
 # AFTER: trained dynamics converging to x*
-fig_after = plot_phase_portrait(W_star, theta_star, dims=(2, 3), x0s=x0s,
+fig_after = plot_phase_grid(W_star, theta_star, x0s=x0s,
                                 dt=dt, n_steps=n_steps,
                                 title="phase space AFTER training (fixed point)",
-                                save_path=str(out / "fp_phase_after.png"))
+                                save_path=str(out / "fp_grid_after.png"))
 print("saved phase portraits")

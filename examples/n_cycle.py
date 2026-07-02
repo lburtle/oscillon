@@ -7,6 +7,7 @@ from pathlib import Path
 from oscillon.topology import (
     BlockSoftSpec, init_block_params_from_adjacency,
     make_block_param_to_model, extract_block_adjacency, block_gate_matrix,
+    init_params_asymmetric
 )
 from oscillon.graph import MotifSpec, NetworkSpec, plot_network_graph
 from oscillon.model import train
@@ -14,7 +15,7 @@ from oscillon.dynamics import simulate
 from oscillon.readout import apply_readout
 
 # ----------------------------------------------------------------------
-N = 6                      # <-- number of nodes; change this to scale
+N = 5                      # <-- number of nodes; change this to scale
 dt, n_steps, burn_in = 0.1, 2000, 200
 theta_init = 0.5           # livelier warm start than the 3-cycle default (see notes)
 # ----------------------------------------------------------------------
@@ -56,10 +57,13 @@ spec = BlockSoftSpec(
 )
 
 # --- warm start from the discrete N-cycle ---
-cycle = NetworkSpec([MotifSpec.cyclic(N)])
+cycle = NetworkSpec([MotifSpec.sparse(N)])
 A_seed = cycle.to_torch_adjacency().numpy()
 key, sub = jax.random.split(key)
-params0 = init_block_params_from_adjacency(spec, sub, A_seed)
+
+# params0 = init_block_params_from_adjacency(spec, sub, A_seed)
+params0 = init_params_asymmetric(spec, sub, z_std=2.0)
+
 x0 = jnp.full((N,), 0.1)
 
 # --- measure the warm-start cycle period, build target to match ---
@@ -97,8 +101,8 @@ targets = make_targets(N, t, period)
 result = train(
     spec, params0, x0, targets, key,
     dt=dt, n_steps=n_steps, burn_in=burn_in,
-    warm=dict(n_iters=900, pop=128, sigma=0.1, lr=0.05),
-    cryst=dict(n_iters=500, pop=128, sigma=0.05, lr=0.03),
+    warm=dict(n_iters=9000, pop=512, sigma=2, lr=0.05),
+    cryst=dict(n_iters=5000, pop=512, sigma=1, lr=0.03),
 )
 print("final reward:", result.history[-1])
 
@@ -141,16 +145,141 @@ G = block_gate_matrix(spec, result.params)
 plot_network_graph(G, theta=np.asarray(result.theta),
                    save_path=str(output_dir / f"learned_graph_N{N}.png"))
 
+from phase_grid import plot_phase_grid
 from phase_portrait import plot_phase_portrait
+
+W0, th0 = p2m(params0)
 
 if N == 3:
     # 3-cycle, view neurons 0 and 1 directly, several initial conditions
     x0s = [np.array([0.1, 0.0, 0.0]), np.array([0.5, 0.5, 0.0]), np.array([1.0, 0.2, 0.6])]
-    plot_phase_portrait(result.W, result.theta, dims=(0, 1), x0s=x0s,
-                        title="3-cycle phase portrait", save_path="images/phase_portraits/3-cycle_phase.png")
+
+    before_3 = plot_phase_portrait(W0, th0, dims=("pca", np.asarray(xs)), x0s=x0s,
+                        title="3-cycle phase portrait (before)", save_path="images/phase_portraits/3-cycle_phase_before.png")
+
+    after_3 = plot_phase_portrait(result.W, result.theta, dims=("pca", np.asarray(xs)), x0s=x0s,
+                        title="3-cycle phase portrait (after)", save_path="images/phase_portraits/3-cycle_phase_after.png")
+
+
+
+    before_3_grid = plot_phase_grid(W0, th0, x0s=x0s,
+                        title="3-cycle phase portrait (before)", save_path="images/phase_portraits/3-cycle_grid_before.png")
+
+    after_3_grid = plot_phase_grid(result.W, result.theta, x0s=x0s,
+                        title="3-cycle phase portrait (after)", save_path="images/phase_portraits/3-cycle_grid_after.png")
 
 else:
     # any N: project onto the PCA plane of the learned limit cycle
     xs = simulate(result.W, result.theta, x0, dt=dt, n_steps=n_steps)[burn_in:]
-    plot_phase_portrait(result.W, result.theta, dims=("pca", np.asarray(xs)), x0s=[x0],
-                        title=f"N={N} limit cycle (PCA projection)", save_path=f"images/phase_portraits/{N}-cycle_phase.png")
+
+    before_n = plot_phase_portrait(W0, th0, dims=("pca", np.asarray(xs)), x0s=[x0],
+                        title=f"N={N} limit cycle (PCA projection)", save_path=f"images/phase_portraits/{N}-cycle_phase_before.png")
+
+    after_n = plot_phase_portrait(result.W, result.theta, dims=("pca", np.asarray(xs)), x0s=[x0],
+                        title=f"N={N} limit cycle (PCA projection)", save_path=f"images/phase_portraits/{N}-cycle_phase_after.png")
+                        
+    before_n_grid = plot_phase_grid(W0, th0, x0s=[x0],
+                        title=f"N={N} limit cycle (PCA projection)", save_path=f"images/phase_portraits/{N}-cycle_grid_before.png")
+
+    after_n_grid = plot_phase_grid(result.W, result.theta, x0s=[x0],
+                        title=f"N={N} limit cycle (PCA projection)", save_path=f"images/phase_portraits/{N}-cycle_grid_after.png")
+
+
+# ======================================================================
+#  DISCOVERY SWEEP: can ES find a limit cycle from empty asymmetric init?
+# ======================================================================
+from oscillon.topology import init_params_asymmetric, extract_block_adjacency
+from topology_analysis import analyze_interior_fixed_point
+
+def cycle_emerged(W_t, theta_t, x0, dt, n_steps, burn_in, min_amp=0.05):
+    """Judge whether the TRAINED network oscillates. Independent of target period.
+    Criteria: sustained activity (tail variance) AND a detectable period."""
+    xs = np.asarray(simulate(W_t, theta_t, x0, dt=dt, n_steps=n_steps))[burn_in:]
+    tail = xs[-int(0.4 * len(xs)):]
+    amp = float(tail.std(0).max())          # is anything still moving?
+    per = measure_period(xs, dt)            # is it periodic?
+    return (amp > min_amp and per is not None), amp, per
+
+
+def discovered_cycle_graph(A_learned, N):
+    """Does the learned adjacency contain a directed N-cycle (0->1->...->0
+    or any rotation)? Checks each node has exactly the cyclic in/out structure."""
+    canonical = MotifSpec.cyclic(N).adjacency
+    # accept any rotation of the canonical cycle
+    for shift in range(N):
+        rolled = np.roll(np.roll(canonical, shift, axis=0), shift, axis=1)
+        if np.array_equal(A_learned, rolled):
+            return True
+    return False
+
+def contains_directed_cycle(A, N):
+    """Does the adjacency contain a Hamiltonian directed cycle (visits all N,
+    returns to start)? Looser than exact-match: allows extra edges."""
+    import itertools
+    # A[i,j] = edge j->i. Check if some cyclic permutation of nodes is all-connected.
+    for perm in itertools.permutations(range(1, N)):
+        order = (0,) + perm
+        if all(A[order[(k+1) % N], order[k]] for k in range(N)):
+            return True
+    return False
+
+def run_sweep(n_seeds=20, z_std=2.0):
+    # fixed target: build once at a reference period so every seed faces
+    # the SAME problem (success = did a cycle emerge, not did it hit a period)
+    ref_period = 2.0 * np.pi
+    n_steps_sweep = int(burn_in + 8 * (ref_period / dt))
+    t_sweep = jnp.arange(n_steps_sweep) * dt
+    targets_sweep = make_targets(N, t_sweep, ref_period)
+
+    results = []
+    for seed in range(n_seeds):
+        for z_std in [1.0, 2.0, 3.0]:
+            key_s = jax.random.PRNGKey(1000 + seed)
+            key_s, sub_s = jax.random.split(key_s)
+            params0_s = init_params_asymmetric(spec, sub_s, z_std=z_std)
+
+            res = train(
+                spec, params0_s, x0, targets_sweep, key_s,
+                dt=dt, n_steps=n_steps_sweep, burn_in=burn_in,
+                warm=dict(n_iters=4500, pop=256, sigma=2, lr=0.05),
+                cryst=dict(n_iters=2500, pop=256, sigma=1, lr=0.03),
+            )
+
+            emerged, amp, per = cycle_emerged(
+                res.W, res.theta, x0, dt, n_steps_sweep, burn_in)
+            A_l = extract_block_adjacency(spec, res.params)
+            is_cycle_graph = discovered_cycle_graph(A_l, N)
+            hamiltonian = contains_directed_cycle(A_l, N)
+            fp = analyze_interior_fixed_point(res.W, res.theta)
+
+            results.append({
+                "seed": seed, "z_std": z_std, "emerged": emerged, "amp": amp, "period": per,
+                "cycle_topology": is_cycle_graph,
+                "hamiltonian_cycle": hamiltonian,
+                "fp_unstable": not fp["stable"],          # want True for a real cycle
+                "max_real_eig": fp["max_real_eig"],
+                "final_reward": res.history[-1],
+            })
+            print(f"seed {seed:2d}: z_std={z_std:.2f} cycle={emerged!s:5} "
+                f"topo={is_cycle_graph!s:5} fp_unstable={not fp['stable']!s:5} "
+                f"hamiltonian={hamiltonian!s:5} "
+                f"amp={amp:.3f} period={per} eig={fp['max_real_eig']:+.3f}")
+
+    n = len(results)
+    n_emerged = sum(r["emerged"] for r in results)
+    n_topo = sum(r["cycle_topology"] for r in results)
+    n_both = sum(r["emerged"] and r["cycle_topology"] for r in results)
+    n_hamiltonian = sum(r["hamiltonian_cycle"] for r in results)
+
+    print("\n" + "=" * 60)
+    print(f"DISCOVERY SWEEP  (N={N}, {n_seeds} seeds, z_std={z_std})")
+    print(f"  oscillation emerged:      {n_emerged}/{n}  ({100*n_emerged/n:.0f}%)")
+    print(f"  recovered cycle topology: {n_topo}/{n}  ({100*n_topo/n:.0f}%)")
+    print(f"  both (full discovery):    {n_both}/{n}  ({100*n_both/n:.0f}%)")
+    print(f"  hamiltonian cycle:        {n_hamiltonian}/{n}  ({100*n_hamiltonian/n:.0f}%)")
+    print("=" * 60)
+    return results
+
+
+if __name__ == "__main__" or True:   # set False to skip when running main script
+    sweep_results = run_sweep(n_seeds=20, z_std=2.0)
