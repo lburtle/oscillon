@@ -1,6 +1,7 @@
 # Oscillon
-<img width="50%" alt="Image" src="https://github.com/user-attachments/assets/2e054a26-214b-4d45-809c-478627386d51" />
-
+<p align="center">
+  <img width=75% alt="Image" src="https://github.com/user-attachments/assets/5ae86e94-d9ac-471b-a097-8bdf046c613b" />
+</p>
 [![Actions Status][actions-badge]][actions-link]
 [![Documentation Status][rtd-badge]][rtd-link]
 
