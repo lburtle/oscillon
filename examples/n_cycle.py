@@ -57,12 +57,14 @@ spec = BlockSoftSpec(
 )
 
 # --- warm start from the discrete N-cycle ---
-cycle = NetworkSpec([MotifSpec.sparse(N)])
+cycle = NetworkSpec([MotifSpec.cyclic(N)])
 A_seed = cycle.to_torch_adjacency().numpy()
 key, sub = jax.random.split(key)
 
-# params0 = init_block_params_from_adjacency(spec, sub, A_seed)
-params0 = init_params_asymmetric(spec, sub, z_std=2.0)
+## Swap between these two for either seeded init (cyclic) or random asymm
+
+params0 = init_block_params_from_adjacency(spec, sub, A_seed)
+#params0 = init_params_asymmetric(spec, sub, z_std=2.0)
 
 x0 = jnp.full((N,), 0.1)
 
@@ -223,6 +225,53 @@ def contains_directed_cycle(A, N):
             return True
     return False
 
+from collections import defaultdict
+
+def summarize_by_zstd(results):
+    by_zstd = defaultdict(list)
+    for r in results:
+        by_zstd[r["z_std"]].append(r)
+
+    print("\n" + "=" * 80)
+    print(f"{'z_std':>6} | {'n':>3} | {'emerged':>8} | {'topology':>9} | "
+          f"{'both':>6} | {'hamilton':>9} | {'fp_unstab':>9} | {'mean_eig':>9}")
+    print("-" * 80)
+
+    summary = {}
+    for z_std in sorted(by_zstd):
+        rows = by_zstd[z_std]
+        n = len(rows)
+        n_emerged = sum(r["emerged"] for r in rows)
+        n_topo = sum(r["cycle_topology"] for r in rows)
+        n_both = sum(r["emerged"] and r["cycle_topology"] for r in rows)
+        n_ham = sum(r["hamiltonian_cycle"] for r in rows)
+        n_fp_unstable = sum(r["fp_unstable"] for r in rows)
+        eigs = [r["max_real_eig"] for r in rows if not np.isnan(r["max_real_eig"])]
+        mean_eig = float(np.mean(eigs)) if eigs else float("nan")
+
+        summary[z_std] = {
+            "n": n, "emerged_pct": 100 * n_emerged / n,
+            "topology_pct": 100 * n_topo / n,
+            "both_pct": 100 * n_both / n,
+            "hamiltonian_pct": 100 * n_ham / n,
+            "fp_unstable_pct": 100 * n_fp_unstable / n,
+            "mean_max_real_eig": mean_eig,
+        }
+        print(f"{z_std:>6.1f} | {n:>3} | {n_emerged:>3}/{n:<3} {100*n_emerged/n:>4.0f}%| "
+              f"{n_topo:>3}/{n:<3} {100*n_topo/n:>4.0f}%| "
+              f"{100*n_both/n:>5.0f}% | {n_ham:>3}/{n:<3} {100*n_ham/n:>4.0f}%| "
+              f"{n_fp_unstable:>3}/{n:<3} {100*n_fp_unstable/n:>4.0f}%| "
+              f"{mean_eig:>+9.3f}")
+
+    print("=" * 80)
+
+    emerged_spread = max(s["emerged_pct"] for s in summary.values()) - \
+                      min(s["emerged_pct"] for s in summary.values())
+    print(f"spread across z_std -> emerged: {emerged_spread:.0f}pp "
+          f"(small spread supports invariance to init scale)")
+
+    return summary
+
 def run_sweep(n_seeds=20, z_std=2.0):
     # fixed target: build once at a reference period so every seed faces
     # the SAME problem (success = did a cycle emerge, not did it hit a period)
@@ -271,6 +320,8 @@ def run_sweep(n_seeds=20, z_std=2.0):
             n_both = sum(r["emerged"] and r["cycle_topology"] for r in results)
             n_hamiltonian = sum(r["hamiltonian_cycle"] for r in results)
 
+    summarize_by_zstd(results)
+
     print("\n" + "=" * 60)
     print(f"DISCOVERY SWEEP  (N={N}, {n_seeds} seeds, z_std={z_std})")
     print(f"  oscillation emerged:      {n_emerged}/{n}  ({100*n_emerged/n:.0f}%)")
@@ -278,8 +329,9 @@ def run_sweep(n_seeds=20, z_std=2.0):
     print(f"  both (full discovery):    {n_both}/{n}  ({100*n_both/n:.0f}%)")
     print(f"  hamiltonian cycle:        {n_hamiltonian}/{n}  ({100*n_hamiltonian/n:.0f}%)")
     print("=" * 60)
-    return results
+    return results, summarize_by_zstd(results)
 
+    
 
     from collections import defaultdict
 
@@ -295,5 +347,5 @@ def run_sweep(n_seeds=20, z_std=2.0):
         print(f"z_std={z_std:.1f}: oscillation {osc}/{n} ({100*osc/n:.0f}%), "
             f"hamiltonian {ham}/{n} ({100*ham/n:.0f}%)")
 
-if __name__ == "__main__" or True:   # set False to skip when running main script
-    sweep_results = run_sweep(n_seeds=20, z_std=2.0)
+# if __name__ == "__main__" or False:   # set False to skip when running main script
+#    sweep_results = run_sweep(n_seeds=50, z_std=2.0)
