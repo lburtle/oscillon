@@ -1,0 +1,12 @@
+[
+  {
+    "warm_iters": 4500,
+    "warm_pop": 256,
+    "warm_sigma": 2,
+    "warm_lr": 0.05,
+    "cryst_iters": 2500,
+    "cryst_pop": 256,
+    "cryst_sigma": 1,
+    "cryst_lr": 0.03
+  }
+]

@@ -13,9 +13,9 @@ from oscillon.readout import apply_readout
 from oscillon.topology import (
     BlockSoftSpec,
     block_gate_matrix,
+    clipped_block_param_to_model,
     extract_block_adjacency,
-    init_params_asymmetric,
-    make_block_param_to_model,
+    init_params_asymmetric_direct,
 )
 
 # ----------------------------------------------------------------------
@@ -90,13 +90,15 @@ key, sub = jax.random.split(key)
 ## Swap between these two for either seeded init (cyclic) or random asymm
 
 # params0 = init_block_params_from_adjacency(spec, sub, A_seed)
-params0 = init_params_asymmetric(spec, sub, z_std=2.0)
-
+# params0 = init_params_asymmetric(spec, sub, z_std=2.0)
+params0 = init_params_asymmetric_direct(
+    spec, sub, z_std=2.0
+)  # a third, more devious option
 x0 = jnp.full((N,), 0.1)
 
 # --- measure the warm-start cycle period, build target to match ---
 t = jnp.arange(n_steps) * dt
-p2m = make_block_param_to_model(spec)
+p2m = clipped_block_param_to_model(spec)
 W0, th0 = p2m(params0)
 xs0 = simulate(W0, th0, x0, dt=dt, n_steps=n_steps)[burn_in:]
 period = measure_period(xs0, dt)
@@ -116,6 +118,7 @@ print(f"N={N}  period={period / dt:.0f} steps  ->  n_steps={n_steps}")
 
 # probe: rough period estimate with a generous fixed rollout
 probe_steps = 4000
+print(f"probe_steps={probe_steps}")
 xs_probe = simulate(W0, th0, x0, dt=dt, n_steps=probe_steps)[burn_in:]
 period = measure_period(xs_probe, dt)
 if period is None:
@@ -133,11 +136,13 @@ result = train(
     x0,
     targets,
     key,
+    p2m=p2m,
     dt=dt,
     n_steps=n_steps,
     burn_in=burn_in,
     warm=dict(n_iters=4500, pop=256, sigma=2, lr=0.05),
     cryst=dict(n_iters=2500, pop=256, sigma=1, lr=0.03),
+    ablation=True,
 )
 print("final reward:", result.history[-1])
 
@@ -274,7 +279,7 @@ else:
 # ======================================================================
 from topology_analysis import analyze_interior_fixed_point
 
-from oscillon.topology import extract_block_adjacency, init_params_asymmetric
+from oscillon.topology import extract_block_adjacency, init_params_asymmetric_direct
 
 
 def cycle_emerged(W_t, theta_t, x0, dt, n_steps, burn_in, min_amp=0.05):
@@ -355,7 +360,6 @@ def summarize_by_zstd(results):
         n = len(rows)
         n_emerged = sum(r["emerged"] for r in rows)
         n_topo = sum(r["cycle_topology"] for r in rows)
-        n_committed
         n_both = sum(r["emerged"] and r["cycle_topology"] for r in rows)
         n_ham = sum(r["hamiltonian_cycle"] for r in rows)
         n_fp_unstable = sum(r["fp_unstable"] for r in rows)
@@ -392,7 +396,7 @@ def summarize_by_zstd(results):
     return summary
 
 
-def run_sweep(n_seeds=20, z_std=2.0):
+def run_sweep(n_seeds, z_std=2.0):
     # fixed target: build once at a reference period so every seed faces
     # the SAME problem (success = did a cycle emerge, not did it hit a period)
     ref_period = 2.0 * np.pi
@@ -435,7 +439,7 @@ def run_sweep(n_seeds=20, z_std=2.0):
         for z_std in [1.0, 2.0, 3.0]:
             key_s = jax.random.PRNGKey(1000 + seed)
             key_s, sub_s = jax.random.split(key_s)
-            params0_s = init_params_asymmetric(spec, sub_s, z_std=z_std)
+            params0_s = init_params_asymmetric_direct(spec, sub_s, z_std=z_std)
 
             res = train(
                 spec,
@@ -448,6 +452,7 @@ def run_sweep(n_seeds=20, z_std=2.0):
                 burn_in=burn_in,
                 warm=dict(n_iters=4500, pop=256, sigma=2, lr=0.05),
                 cryst=dict(n_iters=2500, pop=256, sigma=1, lr=0.03),
+                ablation=True,
             )
 
             emerged, amp, per = cycle_emerged(
@@ -458,10 +463,8 @@ def run_sweep(n_seeds=20, z_std=2.0):
             hamiltonian = contains_directed_cycle(A_l, N)
             fp = analyze_interior_fixed_point(res.W, res.theta)
 
-            u, stats = edge_commitment(res.params, spec, mode="soft")
+            u, stats = edge_commitment(res.params, spec, mode="direct")
             all_u.append(u)
-
-            results = []
 
             record = {
                 "seed": seed,
@@ -479,7 +482,7 @@ def run_sweep(n_seeds=20, z_std=2.0):
 
             results.append(record)
 
-            with open(out / "ablation_soft.jsonl", "a") as f:
+            with open(out / "ablation_direct.jsonl", "a") as f:
                 f.write(json.dumps(record, default=float) + "\n")
 
             print(
@@ -495,11 +498,11 @@ def run_sweep(n_seeds=20, z_std=2.0):
             n_both = sum(r["emerged"] and r["cycle_topology"] for r in results)
             n_hamiltonian = sum(r["hamiltonian_cycle"] for r in results)
 
-    np.savez(out / "ablation_soft_u.npz", u=np.concatenate(all_u))
+    np.savez(out / "ablation_direct_u.npz", u=np.concatenate(all_u))
 
     out = Path(__file__).parent / "results"
     out.mkdir(exist_ok=True)
-    with open(out / "ablation_soft.json", "w") as f:
+    with open(out / "ablation_direct.json", "w") as f:
         json.dump(results, f, indent=2, default=float)
 
     print("\n" + "=" * 60)
