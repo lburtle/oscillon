@@ -30,4 +30,4 @@
 
 <!-- prettier-ignore-end -->
 
-This package is intended to be a machine learning implementation and tool for general Combinatorial Threshold Linear Networks (gCTLNs). The name is inspired by the oscillating and dynamic behavior of oscillons, similar to the type of behavior exhibity in CTLNs. This package/repository is currently under development. Thank you for your patience.
+This package is intended to be a machine learning implementation and tool for Combinatorial Threshold Linear Networks (CTLNs). The name is inspired by the oscillating and dynamic behavior of oscillons, similar to the type of behavior exhibity in CTLNs. This package/repository is currently under development. Thank you for your patience.
