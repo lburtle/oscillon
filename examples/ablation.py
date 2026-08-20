@@ -9,7 +9,7 @@ import numpy as np
 from oscillon.dynamics import simulate
 from oscillon.graph import MotifSpec, NetworkSpec, plot_network_graph
 from oscillon.model import train
-from oscillon.readout import apply_readout
+from oscillon.readout import apply_readout, fit_readout
 from oscillon.topology import (
     BlockSoftSpec,
     block_gate_matrix,
@@ -140,8 +140,8 @@ result = train(
     dt=dt,
     n_steps=n_steps,
     burn_in=burn_in,
-    warm=dict(n_iters=4500, pop=256, sigma=2, lr=0.05),
-    cryst=dict(n_iters=2500, pop=256, sigma=1, lr=0.03),
+    warm=dict(n_iters=9000, pop=512, sigma=2, lr=0.05),
+    cryst=dict(n_iters=5000, pop=512, sigma=1, lr=0.03),
     ablation=True,
 )
 print("final reward:", result.history[-1])
@@ -164,7 +164,7 @@ for i in range(N):
 ax1.axvline(burn_in, ls="--", c="gray", lw=0.8)
 ax1.set_yticks([i * spacing_a for i in range(N)])
 ax1.set_yticklabels([f"n{i}" for i in range(N)])
-ax1.set_title(f"trained gCTLN activations (N={N})")
+ax1.set_title(f"trained CTLN activations (N={N})")
 
 spacing_t = 1.2 * float(jnp.max(jnp.abs(targets)))
 for i in range(N):
@@ -175,17 +175,21 @@ ax2.set_yticklabels([f"ch{i}" for i in range(N)])
 ax2.set_title("readout (color) vs target (dotted)")
 
 plt.tight_layout()
-plt.savefig(output_dir / f"scale_N{N}.png", dpi=130)
+plt.savefig(output_dir / f"direct_scale_N{N}.png", dpi=130)
 print(f"saved scale_N{N}.png")
 
 # --- learned topology ---
-A_learned = extract_block_adjacency(spec, result.params)
+print(type(spec.eps), spec.eps, type(spec.delta), spec.delta)
+_, _, eps_e, delta_e, _ = spec.compile_indices()
+eps, delta = float(np.asarray(eps_e)[0]), float(np.asarray(delta_e)[0])
+A_learned = np.asarray(result.W) > (-1.0 - delta + (eps + delta) / 2)
+np.fill_diagonal(A_learned, False)
 print("kept seed cycle:", np.array_equal(A_learned, A_seed))
 G = block_gate_matrix(spec, result.params)
 plot_network_graph(
     G,
     theta=np.asarray(result.theta),
-    save_path=str(output_dir / f"learned_graph_N{N}.png"),
+    save_path=str(output_dir / f"direct_learned_graph_N{N}.png"),
 )
 
 from phase_grid import plot_phase_grid
@@ -207,7 +211,7 @@ if N == 3:
         dims=("pca", np.asarray(xs)),
         x0s=x0s,
         title="3-cycle phase portrait (before)",
-        save_path="images/phase_portraits/3-cycle_phase_before.png",
+        save_path="images/phase_portraits/3-cycle_ablation_phase_before.png",
     )
 
     after_3 = plot_phase_portrait(
@@ -216,7 +220,7 @@ if N == 3:
         dims=("pca", np.asarray(xs)),
         x0s=x0s,
         title="3-cycle phase portrait (after)",
-        save_path="images/phase_portraits/3-cycle_phase_after.png",
+        save_path="images/phase_portraits/3-cycle_ablation_phase_after.png",
     )
 
     before_3_grid = plot_phase_grid(
@@ -224,7 +228,7 @@ if N == 3:
         th0,
         x0s=x0s,
         title="3-cycle phase portrait (before)",
-        save_path="images/phase_portraits/3-cycle_grid_before.png",
+        save_path="images/phase_portraits/3-cycle_ablation_grid_before.png",
     )
 
     after_3_grid = plot_phase_grid(
@@ -232,7 +236,7 @@ if N == 3:
         result.theta,
         x0s=x0s,
         title="3-cycle phase portrait (after)",
-        save_path="images/phase_portraits/3-cycle_grid_after.png",
+        save_path="images/phase_portraits/3-cycle_ablation_grid_after.png",
     )
 
 else:
@@ -245,7 +249,7 @@ else:
         dims=("pca", np.asarray(xs)),
         x0s=[x0],
         title=f"N={N} limit cycle (PCA projection)",
-        save_path=f"images/phase_portraits/{N}-cycle_phase_before.png",
+        save_path=f"images/phase_portraits/{N}-cycle_ablation_phase_before.png",
     )
 
     after_n = plot_phase_portrait(
@@ -254,7 +258,7 @@ else:
         dims=("pca", np.asarray(xs)),
         x0s=[x0],
         title=f"N={N} limit cycle (PCA projection)",
-        save_path=f"images/phase_portraits/{N}-cycle_phase_after.png",
+        save_path=f"images/phase_portraits/{N}-cycle_ablation_phase_after.png",
     )
 
     before_n_grid = plot_phase_grid(
@@ -262,7 +266,7 @@ else:
         th0,
         x0s=[x0],
         title=f"N={N} limit cycle (slices)",
-        save_path=f"images/phase_portraits/{N}-cycle_grid_before.png",
+        save_path=f"images/phase_portraits/{N}-cycle_ablation_grid_before.png",
     )
 
     after_n_grid = plot_phase_grid(
@@ -270,7 +274,7 @@ else:
         result.theta,
         x0s=[x0],
         title=f"N={N} limit cycle (slices)",
-        save_path=f"images/phase_portraits/{N}-cycle_grid_after.png",
+        save_path=f"images/phase_portraits/{N}-cycle_ablation_grid_after.png",
     )
 
 
@@ -328,13 +332,13 @@ def edge_commitment(params, spec, mode="soft"):
     if mode == "soft":
         u = 1.0 / (1.0 + np.exp(-p))
     else:  # direct
-        w = np.clip(p, -1.0 - delta_e, -1.0 + eps_e)
-        u = (w + 1.0 + delta_e) / (eps_e + delta_e)
+        u = (p + 1.0 + delta_e) / (eps_e + delta_e)
 
     stats = {
         "frac_ambiguous": float(np.mean((u > 0.4) & (u < 0.6))),
         "frac_committed": float(np.mean((u < 0.1) | (u > 0.9))),
         "mean_dist_mid": float(np.mean(np.abs(u - 0.5))),
+        "frac_outside_band": float(np.mean((p < -1.0 - delta_e) | (p > -1.0 + eps_e)))
     }
     return u, stats
 
@@ -395,6 +399,47 @@ def summarize_by_zstd(results):
 
     return summary
 
+def hardened_ctln_check(spec, params, p2m, x0, targets, *, dt, n_steps, burn_in, ridge):
+    """
+    Compare soft-network dynamics to the hardened uniform-CTLN dynamics.
+    Returns (soft_mse, hard_mse, dyn_divergence) - the last is how much
+    the hardened dynamics differ from the soft ones.
+    """
+
+    print("RUNNING HARDENED CTLN CHECK...")
+
+    n = spec.n_total
+    rows, cols, eps_e, delta_e, W_cross = spec.compile_indices()
+    eps_j, delta_j = jnp.asarray(eps_e), jnp.asarray(delta_e)
+
+    n_edges = spec.n_edges
+
+    # soft network
+    z = params[:n_edges]
+    W_soft, theta = p2m(params)
+    xs_soft = simulate(W_soft, theta, x0, dt=dt, n_steps=n_steps)[burn_in:]
+
+    # hardened uniform CTLN: snap each edge to the band endpoints
+    gate = jax.nn.sigmoid(z)
+    edge_present = gate > 0.5
+    w_hard_off = jnp.where(edge_present, -1.0 + eps_j, -1.0 - delta_j)
+    # edge -> -1+eps, non_edge -> -1-delta, zero diag
+    W_hard = jnp.array(W_cross).at[jnp.asarray(rows), jnp.asarray(cols)].set(w_hard_off)
+    xs_hard = simulate(W_hard, theta, x0, dt=dt, n_steps=n_steps)[burn_in:]
+
+    # fit the same readout style to each, compare the target
+    tgt = targets[burn_in:]
+    R_s, b_s = fit_readout(xs_soft, tgt, ridge)
+    R_h, b_h = fit_readout(xs_hard, tgt, ridge)
+    soft_mse = float(jnp.mean((apply_readout(xs_soft, R_s, b_s) - tgt) ** 2))
+    hard_mse = float(jnp.mean((apply_readout(xs_hard, R_h, b_h) - tgt) ** 2))
+
+    # direct dynamics divergence (aligned length)
+    m = min(xs_soft.shape[0], xs_hard.shape[0])
+    dyn_divergence = float(jnp.mean((xs_soft[:m] - xs_hard[:m]) ** 2))
+
+    return soft_mse, hard_mse, dyn_divergence
+
 
 def run_sweep(n_seeds, z_std=2.0):
     # fixed target: build once at a reference period so every seed faces
@@ -404,13 +449,13 @@ def run_sweep(n_seeds, z_std=2.0):
     t_sweep = jnp.arange(n_steps_sweep) * dt
     targets_sweep = make_targets(N, t_sweep, ref_period)
 
-    warm_iters = 4500
-    warm_pop = 256
+    warm_iters = 9000
+    warm_pop = 512
     warm_sigma = 2
     warm_lr = 0.05
 
-    cryst_iters = 2500
-    cryst_pop = 256
+    cryst_iters = 5000
+    cryst_pop = 512
     cryst_sigma = 1
     cryst_lr = 0.03
 
@@ -447,18 +492,20 @@ def run_sweep(n_seeds, z_std=2.0):
                 x0,
                 targets_sweep,
                 key_s,
+                p2m=p2m,
                 dt=dt,
                 n_steps=n_steps_sweep,
                 burn_in=burn_in,
-                warm=dict(n_iters=4500, pop=256, sigma=2, lr=0.05),
-                cryst=dict(n_iters=2500, pop=256, sigma=1, lr=0.03),
+                warm=dict(n_iters=warm_iters, pop=warm_pop, sigma=2, lr=0.05),
+                cryst=dict(n_iters=cryst_iters, pop=cryst_pop, sigma=1, lr=0.03),
                 ablation=True,
             )
 
             emerged, amp, per = cycle_emerged(
                 res.W, res.theta, x0, dt, n_steps_sweep, burn_in
             )
-            A_l = extract_block_adjacency(spec, res.params)
+            A_l = np.asarray(res.W) > (-1.0 - delta + (eps + delta) / 2)
+            np.fill_diagonal(A_l, False)
             is_cycle_graph = discovered_cycle_graph(A_l, N)
             hamiltonian = contains_directed_cycle(A_l, N)
             fp = analyze_interior_fixed_point(res.W, res.theta)
@@ -466,7 +513,12 @@ def run_sweep(n_seeds, z_std=2.0):
             u, stats = edge_commitment(res.params, spec, mode="direct")
             all_u.append(u)
 
+            soft_mse, hard_mse, div = hardened_ctln_check(spec, res.params, p2m, x0, targets,
+                                                          dt=dt, n_steps=n_steps,
+                                                          burn_in=burn_in, ridge=1e-6)
+
             record = {
+                "condition": "direct",
                 "seed": seed,
                 "z_std": z_std,
                 "emerged": emerged,
@@ -477,10 +529,15 @@ def run_sweep(n_seeds, z_std=2.0):
                 "fp_unstable": not fp["stable"],  # want True for a real cycle
                 "max_real_eig": fp["max_real_eig"],
                 "final_reward": res.history[-1],
+                "hard_dyn_divergence": div,
+                "hard_mse": hard_mse,
+                "soft_mse": soft_mse,
                 **stats,
             }
 
             results.append(record)
+
+            out = Path(__file__).parent / "results"
 
             with open(out / "ablation_direct.jsonl", "a") as f:
                 f.write(json.dumps(record, default=float) + "\n")
@@ -515,16 +572,6 @@ def run_sweep(n_seeds, z_std=2.0):
     )
     print("=" * 60)
     return results, summarize_by_zstd(results), hyperparameters
-
-    for z_std in sorted(by_zstd):
-        rows = by_zstd[z_std]
-        n = len(rows)
-        osc = sum(r["emerged"] for r in rows)
-        ham = sum(r["hamiltonian"] for r in rows)
-        print(
-            f"z_std={z_std:.1f}: oscillation {osc}/{n} ({100 * osc / n:.0f}%), "
-            f"hamiltonian {ham}/{n} ({100 * ham / n:.0f}%)"
-        )
 
 
 if __name__ == "__main__" or True:  # set False to skip when running main script

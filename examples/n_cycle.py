@@ -9,7 +9,7 @@ import numpy as np
 from oscillon.dynamics import simulate
 from oscillon.graph import MotifSpec, NetworkSpec, plot_network_graph
 from oscillon.model import train
-from oscillon.readout import apply_readout
+from oscillon.readout import apply_readout, fit_readout
 from oscillon.topology import (
     BlockSoftSpec,
     block_gate_matrix,
@@ -133,44 +133,63 @@ result = train(
     x0,
     targets,
     key,
+    p2m=p2m,
     dt=dt,
     n_steps=n_steps,
     burn_in=burn_in,
-    warm=dict(n_iters=4500, pop=256, sigma=2, lr=0.05),
-    cryst=dict(n_iters=2500, pop=256, sigma=1, lr=0.03),
+    warm=dict(n_iters=9000, pop=512, sigma=2, lr=0.05),
+    cryst=dict(n_iters=5000, pop=512, sigma=1, lr=0.03),
 )
 print("final reward:", result.history[-1])
 
 # --- evaluate on the trained network ---
-xs = simulate(result.W, result.theta, x0, dt=dt, n_steps=n_steps)
-y = apply_readout(xs, result.R, result.b)
+xs = simulate(result.W, result.theta, x0, dt=dt, n_steps=n_steps)[burn_in:]
 tgt = targets[burn_in:]
-mse = float(jnp.mean((y[burn_in:] - tgt) ** 2))
+
+m = min(xs.shape[0], tgt.shape[0])
+xs, tgt = xs[:m], tgt[:m]
+
+y_trained = apply_readout(xs, result.R, result.b)
+
+R, b = fit_readout(xs, tgt, ridge=1e-6)
+y = apply_readout(xs, R, b)
+mse = float(jnp.mean((y - tgt) ** 2))
 const = float(jnp.mean((tgt.mean(0) - tgt) ** 2))
 print(f"readout MSE {mse:.4f}  vs constant-mean {const:.4f}")
 
+print("trained MSE:", float(jnp.mean((y_trained - tgt)**2)))
+print("refit MSE:  ", float(jnp.mean((y - tgt)**2)))
+
 # --- plots: vertical-offset stacking stays legible as N grows ---
+
+plt.rcParams.update({
+    "font.size": 14,
+    "axes.titlesize": 23,
+    "axes.labelsize": 14,
+    "xtick.labelsize": 23,
+    "ytick.labelsize": 23,
+})
+
 cmap = plt.cm.viridis(np.linspace(0, 1, N))
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(11, 1.4 * N + 2), sharex=True)
 
 spacing_a = 1.2 * float(jnp.max(xs))
 for i in range(N):
-    ax1.plot(xs[:, i] + i * spacing_a, color=cmap[i], lw=1.0)
-ax1.axvline(burn_in, ls="--", c="gray", lw=0.8)
+    ax1.plot(xs[:, i] + i * spacing_a, color=cmap[i], lw=2)
 ax1.set_yticks([i * spacing_a for i in range(N)])
 ax1.set_yticklabels([f"n{i}" for i in range(N)])
-ax1.set_title(f"trained gCTLN activations (N={N})")
+ax1.set_title(f"trained CTLN activations (N={N})")
 
 spacing_t = 1.2 * float(jnp.max(jnp.abs(targets)))
 for i in range(N):
-    ax2.plot(y[burn_in:, i] + i * spacing_t, color=cmap[i], lw=1.0)
-    ax2.plot(tgt[:, i] + i * spacing_t, ls=":", c="k", lw=0.7)
+    ax2.plot(y_trained[:, i] + i * spacing_t, color=cmap[i], lw=2)
+    ax2.plot(tgt[:, i] + i * spacing_t, ls=":", c="k", lw=2)
 ax2.set_yticks([i * spacing_t for i in range(N)])
 ax2.set_yticklabels([f"ch{i}" for i in range(N)])
 ax2.set_title("readout (color) vs target (dotted)")
 
 plt.tight_layout()
-plt.savefig(output_dir / f"scale_N{N}.png", dpi=130)
+plt.savefig(output_dir / f"scale_N{N}.png", dpi=200, bbox_inches="tight")
 print(f"saved scale_N{N}.png")
 
 # --- learned topology ---
@@ -355,7 +374,6 @@ def summarize_by_zstd(results):
         n = len(rows)
         n_emerged = sum(r["emerged"] for r in rows)
         n_topo = sum(r["cycle_topology"] for r in rows)
-        n_committed
         n_both = sum(r["emerged"] and r["cycle_topology"] for r in rows)
         n_ham = sum(r["hamiltonian_cycle"] for r in rows)
         n_fp_unstable = sum(r["fp_unstable"] for r in rows)
@@ -391,6 +409,55 @@ def summarize_by_zstd(results):
 
     return summary
 
+def hardened_ctln_check(spec, params, p2m, x0, targets, *, dt, n_steps, burn_in, ridge):
+    """
+    Compare soft-network dynamics to the hardened uniform-CTLN dynamics.
+    Returns (soft_mse, hard_mse, dyn_divergence) - the last is how much the
+    hardened dynamics differ from the soft ones.
+    """
+
+    print("RUNNING HARDENED CTLN CHECK...")
+
+    n = spec.n_total
+    rows, cols, eps_e, delta_e, W_cross = spec.compile_indices()
+    eps_j, delta_j = jnp.asarray(eps_e), jnp.asarray(delta_e)
+
+    n_edges = spec.n_edges
+
+    # theta (uniform: single scalar broadcast; per-node: the vector)
+    if spec.learn_theta:
+        theta = params[n_edges:]
+        # for uniform theta spec this block is length 1; broadcast:
+        if theta.shape[0] == 1:
+            theta = jnp.full((n,), theta[0])
+    else:
+        theta = jnp.full((n,), spec.theta_init)
+
+    # soft network
+    z = params[:n_edges]
+    W_soft, theta = p2m(params)
+    xs_soft = simulate(W_soft, theta, x0, dt=dt, n_steps=n_steps)[burn_in:]
+
+    # hardened uniform CTLN: snap each edge to the band endpoints
+    gate = jax.nn.sigmoid(z)
+    edge_present = gate > 0.5
+    w_hard_off = jnp.where(edge_present, -1.0 + eps_j, -1.0 - delta_j)   # per-edge endpoints
+    # edge -> -1+eps, non-edge -> -1-delta, zero diag
+    W_hard = jnp.asarray(W_cross).at[jnp.asarray(rows), jnp.asarray(cols)].set(w_hard_off)
+    xs_hard = simulate(W_hard, theta, x0, dt=dt, n_steps=n_steps)[burn_in:]
+
+    # fit the same readout style to each, compare to target
+    tgt = targets[burn_in:]
+    R_s, b_s = fit_readout(xs_soft, tgt, ridge)
+    R_h, b_h = fit_readout(xs_hard, tgt, ridge)
+    soft_mse = float(jnp.mean((apply_readout(xs_soft, R_s, b_s) - tgt) ** 2))
+    hard_mse = float(jnp.mean((apply_readout(xs_soft, R_h, b_h) - tgt) ** 2))
+
+    # direct dynamics divergence (aligned length)
+    m = min(xs_soft.shape[0], xs_hard.shape[0])
+    dyn_divergence = float(jnp.mean((xs_soft[:m] - xs_hard[:m]) ** 2))
+
+    return soft_mse, hard_mse, dyn_divergence
 
 def run_sweep(n_seeds=20, z_std=2.0):
     # fixed target: build once at a reference period so every seed faces
@@ -400,13 +467,13 @@ def run_sweep(n_seeds=20, z_std=2.0):
     t_sweep = jnp.arange(n_steps_sweep) * dt
     targets_sweep = make_targets(N, t_sweep, ref_period)
 
-    warm_iters = 4500
-    warm_pop = 256
+    warm_iters = 9000
+    warm_pop = 512
     warm_sigma = 2
     warm_lr = 0.05
 
-    cryst_iters = 2500
-    cryst_pop = 256
+    cryst_iters = 5000
+    cryst_pop = 512
     cryst_sigma = 1
     cryst_lr = 0.03
 
@@ -426,7 +493,7 @@ def run_sweep(n_seeds=20, z_std=2.0):
 
     out = Path(__file__).parent / "hyperparameters"
     out.mkdir(exist_ok=True)
-    with open(out / "ablation_hyperparams_direct.json", "w") as f:
+    with open(out / "uniform_theta_hyperparams.json", "w") as f:
         json.dump(hyperparameters, f, indent=2, default=float)
 
     results = []
@@ -443,12 +510,16 @@ def run_sweep(n_seeds=20, z_std=2.0):
                 x0,
                 targets_sweep,
                 key_s,
+                p2m=p2m,
                 dt=dt,
                 n_steps=n_steps_sweep,
                 burn_in=burn_in,
-                warm=dict(n_iters=4500, pop=256, sigma=2, lr=0.05),
-                cryst=dict(n_iters=2500, pop=256, sigma=1, lr=0.03),
+                warm=dict(n_iters=warm_iters, pop=warm_pop, sigma=2, lr=0.05),
+                cryst=dict(n_iters=cryst_iters, pop=cryst_pop, sigma=1, lr=0.03),
             )
+
+            # save model params
+            np.save(Path(__file__).parent / "results" / f"params_seed{seed}_z{z_std}.npy", np.asarray(res.params))
 
             emerged, amp, per = cycle_emerged(
                 res.W, res.theta, x0, dt, n_steps_sweep, burn_in
@@ -461,7 +532,10 @@ def run_sweep(n_seeds=20, z_std=2.0):
             u, stats = edge_commitment(res.params, spec, mode="soft")
             all_u.append(u)
 
-            results = []
+            soft_mse, hard_mse, div = hardened_ctln_check(spec, res.params, p2m, x0, targets,
+                                                          dt=dt, n_steps=n_steps,
+                                                          burn_in=burn_in, ridge=1e-6)
+
 
             record = {
                 "seed": seed,
@@ -474,6 +548,9 @@ def run_sweep(n_seeds=20, z_std=2.0):
                 "fp_unstable": not fp["stable"],  # want True for a real cycle
                 "max_real_eig": fp["max_real_eig"],
                 "final_reward": res.history[-1],
+                "hard_dyn_divergence": div,
+                "hard_mse": hard_mse,
+                "soft_mse": soft_mse,
                 **stats,
             }
 
@@ -495,11 +572,15 @@ def run_sweep(n_seeds=20, z_std=2.0):
             n_both = sum(r["emerged"] and r["cycle_topology"] for r in results)
             n_hamiltonian = sum(r["hamiltonian_cycle"] for r in results)
 
-    np.savez(out / "ablation_soft_u.npz", u=np.concatenate(all_u))
+    np.savez(out / "uniform_pop512_u.npz", u=np.concatenate(all_u))
+
+    u_pooled = np.concatenate(all_u)
+    np.save(Path(__file__).parent / "results" / "u_soft_pooled.npy", u_pooled)
+    plot_commitment_histogram(u_pooled, save_path=str(Path(__file__).parent / "images" / "commitment_hist.png"))
 
     out = Path(__file__).parent / "results"
     out.mkdir(exist_ok=True)
-    with open(out / "ablation_soft.json", "w") as f:
+    with open(out / "uniform_pop512.json", "w") as f:
         json.dump(results, f, indent=2, default=float)
 
     print("\n" + "=" * 60)
@@ -523,6 +604,30 @@ def run_sweep(n_seeds=20, z_std=2.0):
             f"hamiltonian {ham}/{n} ({100 * ham / n:.0f}%)"
         )
 
+def plot_commitment_histogram(u_soft, u_direct=None, save_path="commitment_hist.png"):
+    """
+    u_soft, u_direct: 1-D arrays of normalized edge values in [0,1],
+    pooled across all runs (and edges) for each arm.
+    """
+    print("PLOTTING EDGE COMMITMENT HISTOGRAM...")
+    fig, ax = plt.subplots(figsize=(7,4))
+    bins = np.linspace(0, 1, 41)
 
-if __name__ == "__main__" or True:  # set False to skip when running main script
-    sweep_results = run_sweep(n_seeds=50, z_std=2.0)
+    ax.hist(u_soft, bins=bins, density=True, alpha=0.6,
+            color="tab:blue", label=f"soft (n={u_soft.size} edges)")
+    if u_direct is not None:
+        ax.hist(u_direct, bins=bins, density=True, alpha=0.6,
+                color="tab:orange", label=f"direct (n={u_direct.size} edges)")
+
+    ax.axvline(0.5, ls="--", c="gray", lw=1.0, label="threshold")
+    ax.set_xlabel("normalized edge value $u = s(z)$")
+    ax.set_ylabel("Edge commitment distribution")
+    ax.legend()
+    plt.tight_layout()
+    plt.savefig(save_path, dpi=140)
+    print(f"HISTOGRAM SAVED AS: {save_path}")
+    plt.close()
+
+
+#if __name__ == "__main__" or True:  # set False to skip when running main script
+#    sweep_results = run_sweep(n_seeds=50, z_std=2.0)

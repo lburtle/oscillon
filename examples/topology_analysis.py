@@ -37,6 +37,8 @@ def local_stability(W, active):
     if len(active) == 0:
         return np.array([]), True
     Wss = W[np.ix_(active, active)]
+    if not np.all(np.isfinite(Wss)):          # diverged run
+        return np.array([]), False            # classify as unstable/failed
     eigs = np.linalg.eigvals(Wss)
     is_stable = bool(np.all(eigs.real < 1.0))
     return eigs, is_stable
@@ -51,11 +53,19 @@ def analyze_interior_fixed_point(W, theta):
     x_star = solve_fixed_point(W, theta, active)
     residual, consistent = check_fixed_point(W, theta, x_star)
     eigs, stable = local_stability(W, active)
+
+    if eigs.size == 0:
+        max_real = float("nan")
+        stable = True
+    else:
+        max_real = float(eigs.real.max())
+        stable = bool((eigs.real < 0).all())
+
     return {
         "x_star": x_star,
         "residual": residual,
         "sign_consistent": consistent,
         "eigs_Wss": eigs,
-        "max_real_eig": float(eigs.real.max()) if len(eigs) else float("nan"),
+        "max_real_eig": max_real,
         "stable": stable,
     }

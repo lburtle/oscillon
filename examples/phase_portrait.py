@@ -15,7 +15,7 @@ def plot_phase_portrait(
     W, theta, *,
     dims=(0, 1),              # which two neurons to view, OR ('pca', trajectory)
     x0s=None,                 # list of initial conditions to trace, each (N,)
-    grid_range=(-0.2, 2.0),
+    grid_range=(-1.0, 2.0),
     grid_n=22,
     slice_value=0.0,          # value held on the non-plotted axes (N>2 slice mode)
     dt=0.1, n_steps=3000,

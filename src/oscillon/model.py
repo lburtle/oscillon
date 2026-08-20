@@ -64,7 +64,8 @@ def make_fitness(
 
     if ablation == True:
         return ablation_fitness
-    return fitness
+    else:
+        return fitness
 
 
 @dataclass

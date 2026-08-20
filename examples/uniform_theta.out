@@ -1,0 +1,12 @@
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+Params size:  (21,)
+Expected for uniform:  21
+final reward: -0.04904461279511452
+readout MSE 0.0083  vs constant-mean 1.0504
+saved scale_N5.png
+kept seed cycle: False

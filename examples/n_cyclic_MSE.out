@@ -1,0 +1,446 @@
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.026797132566571236
+readout MSE 0.0129  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.02269275113940239
+readout MSE 0.0101  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.19661130011081696
+readout MSE 0.0824  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.03108052723109722
+readout MSE 0.0110  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.027389459311962128
+readout MSE 0.0132  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.3059663474559784
+readout MSE 0.0787  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.028546161949634552
+readout MSE 0.0105  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.17234590649604797
+readout MSE 0.1440  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.03425601124763489
+readout MSE 0.0087  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.013096167705953121
+readout MSE 0.0097  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.031469788402318954
+readout MSE 0.0109  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.032026972621679306
+readout MSE 0.0132  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+N=5  matched target period = 38.200 time units (382.0 steps)
+N=5  period=382 steps  ->  n_steps=3256
+final reward: -0.038873374462127686
+readout MSE 0.0000  vs constant-mean 1.0500
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.017921967431902885
+readout MSE 0.0101  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.03217305243015289
+readout MSE 0.0118  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.2941109240055084
+readout MSE 0.0883  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.029331913217902184
+readout MSE 0.0079  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.3105805814266205
+readout MSE 0.1645  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.20196080207824707
+readout MSE 0.0979  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.0301564559340477
+readout MSE 0.0126  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.02575686015188694
+readout MSE 0.0104  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.017491517588496208
+readout MSE 0.0099  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.1990378051996231
+readout MSE 0.0206  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.02884760871529579
+readout MSE 0.0124  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.029093436896800995
+readout MSE 0.0102  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.3085586726665497
+readout MSE 0.0867  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.024225778877735138
+readout MSE 0.0117  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+N=5  matched target period = 33.160 time units (331.6 steps)
+N=5  period=332 steps  ->  n_steps=2852
+final reward: -0.020634742453694344
+readout MSE 0.0021  vs constant-mean 1.0500
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.3134118616580963
+readout MSE 0.0423  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.05935557186603546
+readout MSE 0.0408  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.1867736577987671
+readout MSE 0.0595  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.037438251078128815
+readout MSE 0.0107  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.040179964154958725
+readout MSE 0.0118  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.02769440785050392
+readout MSE 0.0134  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.04480813816189766
+readout MSE 0.0127  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.01994076557457447
+readout MSE 0.0135  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+N=5  matched target period = 58.200 time units (582.0 steps)
+N=5  period=582 steps  ->  n_steps=4856
+final reward: -0.02374626137316227
+readout MSE 0.0006  vs constant-mean 1.0500
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.18553051352500916
+readout MSE 0.0991  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.044771093875169754
+readout MSE 0.0134  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.017449475824832916
+readout MSE 0.0130  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.031763311475515366
+readout MSE 0.0129  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.30938461422920227
+readout MSE 0.0904  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.021592605859041214
+readout MSE 0.0071  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.1947765052318573
+readout MSE 0.0727  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.04288084805011749
+readout MSE 0.0137  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.21216921508312225
+readout MSE 0.1411  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.18841107189655304
+readout MSE 0.0773  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.08532444387674332
+readout MSE 0.0432  vs constant-mean 1.0504
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+N=5  matched target period = 23.329 time units (233.3 steps)
+N=5  period=233 steps  ->  n_steps=2066
+final reward: -0.01104127336293459
+readout MSE 0.0022  vs constant-mean 1.0499
+kept seed cycle: False
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.035228181630373
+readout MSE 0.0123  vs constant-mean 1.0504
+kept seed cycle: False

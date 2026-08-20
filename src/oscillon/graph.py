@@ -198,7 +198,7 @@ def plot_network_graph(
     # node labels: index + theta if provided
     if theta is not None:
         theta = np.asarray(theta)
-        node_labels = {k: f"{k}\nθ={theta[k]:.2f}" for k in range(n)}
+        node_labels = {k: f"{k}\nθ={theta[0]:.2f}" for k in range(n)}
     elif labels is not None:
         node_labels = {k: labels[k] for k in range(n)}
     else:
@@ -206,7 +206,7 @@ def plot_network_graph(
 
     fig, ax = plt.subplots(figsize=(5.5, 5.5))
     nx.draw_networkx_nodes(graph, pos, node_color="#cbd5e1", node_size=1200, ax=ax)
-    nx.draw_networkx_labels(graph, pos, labels=node_labels, font_size=9, ax=ax)
+    nx.draw_networkx_labels(graph, pos, labels=node_labels, font_size=12, ax=ax)
     nx.draw_networkx_edges(
         graph, pos, 
         arrowstyle="-|>", 
@@ -218,12 +218,12 @@ def plot_network_graph(
     )
     nx.draw_networkx_edge_labels(
         graph, pos, edge_labels=edge_labels,
-        label_pos=0.5, font_size=8,
+        label_pos=0.5, font_size=12,
         connectionstyle="arc3,rad=0.10",     # must match the edge curve
         ax=ax,
     )
     ax.set_title("learned topology (edge = gate value)")
     ax.axis("off")
     if save_path:
-        plt.savefig(save_path, bbox_inches="tight", dpi=150)
+        plt.savefig(save_path, bbox_inches="tight", dpi=200)
     return fig

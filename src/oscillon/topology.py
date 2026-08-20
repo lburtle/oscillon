@@ -136,23 +136,53 @@ class BlockSoftSpec:
 def make_block_param_to_model(
     spec: BlockSoftSpec,
 ) -> Callable[[jax.Array], tuple[jax.Array, jax.Array]]:
+    """
+    Updated make_block_param_to_model; theta is a single shared scalar
+    broadcast to all nodes.
+    """
     rows, cols, eps_e, delta_e, W_cross = spec.compile_indices()
     rows_j, cols_j = jnp.asarray(rows), jnp.asarray(cols)
     eps_j, delta_j = jnp.asarray(eps_e), jnp.asarray(delta_e)
     W0 = jnp.asarray(W_cross)
     n_edges, N = spec.n_edges, spec.n_total
-    learn_theta, theta_const = spec.learn_theta, spec.theta_init
 
     @jax.jit  # type: ignore[untyped-decorator, unused-ignore]
     def f(params: jax.Array) -> tuple[jax.Array, jax.Array]:
         z = params[:n_edges]
-        theta = params[n_edges:] if learn_theta else jnp.full((N,), theta_const)
+        theta_scalar = params[n_edges]
+        theta = jnp.full((N,), theta_scalar)
         gate = jax.nn.sigmoid(z)
         w = -1.0 - delta_j + (eps_j + delta_j) * gate
         return W0.at[rows_j, cols_j].set(w), theta
 
     return cast("Callable[[jax.Array], tuple[jax.Array, jax.Array]]", f)
 
+def make_fixed_topology_p2m(spec, fixed_adjacency):
+    """
+    p2m that learns weights ONLY on the fixed (non-cyclic) edge set.
+    Edges not in fixed_adjacency stay at non-edge value; no topology change.
+    """
+    n_edges, N = spec.n_edges, spec.n_total
+    rows, cols, eps_e, delta_e, W_cross = spec.compile_indices()
+    rows_j, cols_j = jnp.asarray(rows), jnp.asarray(cols)
+    eps_j, delta_j = jnp.asarray(eps_e), jnp.asarray(delta_e)
+    W0 = jnp.asarray(W_cross)
+
+    # mask: which of the compile_indices edge slots are "present" in the fixed topology
+    present = jnp.asarray(fixed_adjacency[rows, cols], dtype=bool)  # (n_edges,)
+
+    @jax.jit
+    def f(params):
+        z = params[:n_edges]
+        theta_scalar = params[n_edges]
+        theta = jnp.full((N,), theta_scalar)
+        gate = jax.nn.sigmoid(z)
+        w = -1.0 - delta_j + (eps_j + delta_j) * gate
+        # force absent edges to the non-edge value, regardless of learned z
+        w = jnp.where(present, w, -1.0 - delta_j)
+        return W0.at[rows_j, cols_j].set(w), theta
+
+    return f
 
 def clipped_block_param_to_model(
     spec: BlockSoftSpec,
@@ -162,12 +192,12 @@ def clipped_block_param_to_model(
     eps_j, delta_j = jnp.asarray(eps_e), jnp.asarray(delta_e)
     W0 = jnp.asarray(W_cross)
     n_edges, N = spec.n_edges, spec.n_total
-    learn_theta, theta_const = spec.learn_theta, spec.theta_init
 
     @jax.jit  # type: ignore[untyped-decorator, unused-ignore]
     def f(params: jax.Array) -> tuple[jax.Array, jax.Array]:
         p = params[:n_edges]
-        theta = params[n_edges:] if learn_theta else jnp.full((N,), theta_const)
+        theta_scalar = params[n_edges]
+        theta = jnp.full((N,), theta_scalar)
         w = jnp.clip(p, -1.0 - delta_j, -1.0 + eps_j)
         return W0.at[rows_j, cols_j].set(w), theta
 
@@ -182,24 +212,13 @@ def init_block_params_from_adjacency(
     non_edge_logit: float = -3.0,
     noise_std: float = 0.3,
 ) -> jax.Array:
-    """Warm start from a full (N,N) adjacency, e.g. NetworkSpec.to_torch_adjacency()"""
+    """Adjacency init with uniform theta"""
     rows, cols, *_ = spec.compile_indices()
-    a = np.asarray(adjacency)[rows, cols]
+    a = np.array(adjacency)[rows, cols]
     z = jnp.asarray(np.where(a, edge_logit, non_edge_logit).astype(np.float32))
     z = z + noise_std * jax.random.normal(key, (spec.n_edges,))
-    if spec.learn_theta:
-        return jnp.concatenate([z, jnp.full((spec.n_total,), spec.theta_init)])
-    return z
-
-
-def init_params_asymmetric(spec, key, z_mean=0.0, z_std=2.0):
-    """Random asymmetric gate logits; no cyclic prior, but broken symmetry."""
-    key_z, _ = jax.random.split(key)
-    z = z_mean + z_std * jax.random.normal(key_z, (spec.n_edges,))
-    if spec.learn_theta:
-        theta = jnp.full((spec.n_total,), spec.theta_init)
-        return jnp.concatenate([z, theta])
-    return z
+    theta0 = jnp.array([spec.theta_init])
+    return jnp.concatenate([z, theta0])
 
 
 def init_params_asymmetric_direct(spec, key, z_std=2.0):
@@ -209,10 +228,14 @@ def init_params_asymmetric_direct(spec, key, z_std=2.0):
     z = z_std * jax.random.normal(key, (spec.n_edges,))  # sample in logit space
     p0 = -1.0 - delta_j + (eps_j + delta_j) * jax.nn.sigmoid(z)  # map once to weights
 
-    if spec.learn_theta:
-        return jnp.concatenate([p0, jnp.full((spec.n_total,), spec.theta_init)])
-    return p0
+    theta0 = jnp.array([spec.theta_init])
+    return jnp.concatenate([p0, theta0])
 
+def init_params_asymmetric(spec, key, z_std=2.0):
+    key_z, _ = jax.random.split(key)
+    z = z_std * jax.random.normal(key_z, (spec.n_edges,))
+    theta0 = jnp.array([spec.theta_init])
+    return jnp.concatenate([z, theta0])
 
 def gate_saturation_penalty(z_flat: jax.Array) -> jax.Array:
     """
@@ -252,8 +275,7 @@ def build_W(
     """
     Map off-diag logits -> full (n, n) inhib weight matrix
     z_flat: (n*(n-1),)
-    eps, delta: >0 parameters controlling range of weights (for stability)
-    If the weights stay in [-1-delta, -1+eps] then you will stay in the gCTLN regime.
+    eps, delta: >0 parameters controlling range of weights (for stability).
     """
     gate = jax.nn.sigmoid(z_flat)
     w_off = -1.0 - delta + (eps + delta) * gate
@@ -321,10 +343,8 @@ def init_params_from_adjacency(
     z_vals = np.where(adjacency[rows, cols], edge_logit, non_edge_logit)
     z = jnp.array(z_vals).astype(jnp.float32)
     z = z + noise_std * jax.random.normal(key, (spec.n_edges,))
-    if spec.learn_theta:
-        theta = jnp.full((spec.n,), spec.theta_init)
-        return jnp.concatenate([z, theta])
-    return z
+    theta0 = jnp.array([spec.theta_init])
+    return jnp.concatenate([z, theta])
 
 
 def gate_matrix(spec: SoftNetworkSpec, z_flat: jax.Array) -> NDArray[np.float64]:

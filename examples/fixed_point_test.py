@@ -85,6 +85,7 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 from phase_portrait import plot_phase_portrait
+from phase_grid import plot_phase_grid
 
 from oscillon.graph import plot_network_graph
 from oscillon.topology import block_gate_matrix, extract_block_adjacency
@@ -162,8 +163,32 @@ fig_after = plot_phase_portrait(
     title="phase space AFTER training (fixed point)",
     save_path=str(out / "fp_phase_after.png"),
 )
+
 print("saved phase portraits")
 
+
+grid_before = plot_phase_grid(
+    W0,
+    th0,
+    x0s=x0s,
+    dt=dt,
+    n_steps=n_steps,
+    title="phase space BEFORE training (warm start)",
+    save_path=str(out / "fp_grid_before.png")
+)
+
+# AFTER: trained dynamics converging to x*
+fig_after = plot_phase_grid(
+    W_star,
+    theta_star,
+    x0s=x0s,
+    dt=dt,
+    n_steps=n_steps,
+    title="phase space AFTER training (fixed point)",
+    save_path=str(out / "fp_grid_after.png")
+)
+
+print("saved phase grids")
 
 def diagnose_fixed_point(W, theta, x_star, tol=1e-6):
     x_star = np.asarray(x_star)
@@ -271,6 +296,7 @@ def summarize_by_zstd(results):
         n_fp_stable = sum(r["fp_stable"] for r in rows)
         eigs = [r["max_real_eig"] for r in rows if not np.isnan(r["max_real_eig"])]
         mean_eig = float(np.mean(eigs)) if eigs else float("nan")
+        n_dead = sum(r["network_died"] for r in rows)
 
         summary[z_std] = {
             "n": n,
@@ -279,12 +305,14 @@ def summarize_by_zstd(results):
             "both_pct": 100 * n_both / n,
             "fp_stable_pct": 100 * n_fp_stable / n,
             "mean_max_real_eig": mean_eig,
+            "network_died_pct": 100 * n_dead / n
         }
         print(
             f"{z_std:>6.1f} | {n:>3} | {n_settled:>3}/{n:<3} {100 * n_settled / n:>4.0f}%| "
             f"{n_acyclic:>3}/{n:<3} {100 * n_acyclic / n:>4.0f}%| "
             f"{100 * n_both / n:>5.0f}% | {n_fp_stable:>3}/{n:<3} {100 * n_fp_stable / n:>4.0f}%| "
             f"{mean_eig:>+9.3f}"
+            f"{n_dead:>3}/{n:<3} {100 * n_dead / n:>4.0f}%| "
         )
 
     print("=" * 70)
@@ -342,6 +370,15 @@ def run_sweep(n_seeds=20, z_stds=(1.0, 2.0, 3.0)):
             acyclic = not contains_directed_cycle(A_l, N)
             fp_stable, fp_eigs = is_stable_fixed_point(W_s, theta_s, x_star)
 
+            if fp_eigs.size == 0:
+                max_real = float("nan")
+                fp_stable = True
+                network_died = True
+            else:
+                max_real = float(fp_eigs.real.max())
+                network_died = False
+                fp_stable = bool((fp_eigs.real < 0).all())
+
             results.append(
                 {
                     "seed": seed,
@@ -351,17 +388,16 @@ def run_sweep(n_seeds=20, z_stds=(1.0, 2.0, 3.0)):
                     "dxdt_norm": dxdt_norm,
                     "acyclic": acyclic,
                     "fp_stable": fp_stable,
-                    "max_real_eig": float(fp_eigs.real.max())
-                    if len(fp_eigs)
-                    else float("nan"),
+                    "max_real_eig": max_real,
                     "final_reward": history_s[-1],
+                    "network_died": network_died,
                 }
             )
             print(
                 f"seed {seed:2d}: z_std={z_std:.2f} settled={settled!s:5} "
                 f"acyclic={acyclic!s:5} fp_stable={fp_stable!s:5} "
                 f"tail_var={tail_var:.4f} dxdt={dxdt_norm:.4f} "
-                f"eig={fp_eigs.real.max():+.3f}"
+                f"eig={max_real:+.3f}"
             )
 
     n = len(results)
@@ -369,6 +405,7 @@ def run_sweep(n_seeds=20, z_stds=(1.0, 2.0, 3.0)):
     n_acyclic = sum(r["acyclic"] for r in results)
     n_both = sum(r["settled"] and r["acyclic"] for r in results)
     n_fp_stable = sum(r["fp_stable"] for r in results)
+    n_died = sum(r["network_died"] for r in results)
 
     summary_by_zstd = summarize_by_zstd(results)
 
@@ -382,9 +419,10 @@ def run_sweep(n_seeds=20, z_stds=(1.0, 2.0, 3.0)):
     print(
         f"  fp analytically stable:   {n_fp_stable}/{n}  ({100 * n_fp_stable / n:.0f}%)"
     )
+    print(f"  networks died:   {n_died}/{n}  ({100 * n_died / n:.0f}%)")
     print("=" * 60)
     return results
 
 
 # Run the sweep
-# sweep_results = run_sweep(n_seeds=50, z_stds=(1.0, 2.0, 3.0))
+sweep_results = run_sweep(n_seeds=50, z_stds=(1.0, 2.0, 3.0))
