@@ -25,12 +25,13 @@ from topology_analysis import analyze_interior_fixed_point
 
 from gradient import gradient_baseline
 
+from diagnose_gradient_start import diagnose_gradient_start
 
 out = Path(__file__).parent / "results"; out.mkdir(exist_ok=True)
 
 # ------------------
 N = 5
-dt, n_steps, burn_in, ridge = 0.1, 2000, 200, 1e-6
+dt, n_steps, burn_in = 0.1, 2000, 200
 theta_init = 0.5
 
 print("HYPERPARAMETERS")
@@ -118,63 +119,69 @@ targets = make_targets(N, t, period)
 tgt = targets[burn_in:]
 
 results = []
-for seed in range(70):
-    key = jax.random.PRNGKey(1000 + seed)
-    params0 = init_params_asymmetric(spec, key, z_std=2.0)
+for lr in {1e-6, 1e-5, 1e-4, 1e-3, 1e-2, 3e-2, 1e-1, 3e-1, 1}:
+    for seed in range(20):
+        key = jax.random.PRNGKey(1000 + seed)
+        params0 = init_params_asymmetric(spec, key, z_std=2.0)
 
-    gparams, ghist, xs, pred = gradient_baseline(p2m, params0, x0, targets,
-                                       dt=dt, n_steps=n_steps,
-                                       burn_in=burn_in, ridge=ridge)
-    W, theta = p2m(gparams)
-    W_np = np.asarray(W)
-    diverged = not np.isfinite(W_np).all()
+        gparams, ghist, xs, pred = gradient_baseline(p2m, params0, x0, targets,
+                                           dt=dt, n_steps=n_steps,
+                                           burn_in=burn_in, ridge=1e-6, lr=lr)
+        W, theta = p2m(gparams)
+        W_np = np.asarray(W)
+        diverged = not np.isfinite(W_np).all()
 
-    if diverged:
-        emerged, fp_stable, max_eig = False, False, float("nan")
-        print(f"seed {seed} DIVERGED, max_eig set to {max_eig}")
-    else:
-        xs = simulate(W, theta, x0, dt=dt, n_steps=n_steps)[burn_in:]
-        emerged, amp, per = cycle_emerged(W, theta, x0, dt, n_steps, burn_in)
-        fp = analyze_interior_fixed_point(W, theta)
-        fp_stable, max_eig = fp["stable"], fp["max_real_eig"]
+        d = diagnose_gradient_start(p2m, params0, x0, targets,
+                                    dt=dt, n_steps=n_steps, burn_in=burn_in, ridge=1e-6)
+        print(d)
 
-        if pred is not None and seed % 5:
+        if diverged:
+            emerged, fp_stable, max_eig = False, False, float("nan")
+            print(f"seed {seed} DIVERGED, max_eig set to {max_eig}")
+        else:
+            xs = simulate(W, theta, x0, dt=dt, n_steps=n_steps)[burn_in:]
+            emerged, amp, per = cycle_emerged(W, theta, x0, dt, n_steps, burn_in)
+            fp = analyze_interior_fixed_point(W, theta)
+            fp_stable, max_eig = fp["stable"], fp["max_real_eig"]
 
-            # --- plots: vertical-offset stacking stays legible as N grows ---
-            cmap = plt.cm.viridis(np.linspace(0, 1, N))
-            fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(11, 1.4 * N + 2), sharex=True)
+            if pred is not None and seed % 5:
 
-            spacing_a = 1.2 * float(jnp.max(xs))
-            for i in range(N):
-                ax1.plot(xs[:, i] + i * spacing_a, color=cmap[i], lw=1.0)
-                ax1.axvline(burn_in, ls="--", c="gray", lw=0.8)
-                ax1.set_yticks([i * spacing_a for i in range(N)])
-                ax1.set_yticklabels([f"n{i}" for i in range(N)])
-                ax1.set_title(f"trained CTLN activations (N={N})")
+                # --- plots: vertical-offset stacking stays legible as N grows ---
+                cmap = plt.cm.viridis(np.linspace(0, 1, N))
+                fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(11, 1.4 * N + 2), sharex=True)
 
-            spacing_t = 1.2 * float(jnp.max(jnp.abs(targets)))
-            for i in range(N):
-                ax2.plot(pred[burn_in:, i] + i * spacing_t, color=cmap[i], lw=1.0)
-                ax2.plot(tgt[:, i] + i * spacing_t, ls=":", c="k", lw=0.7)
-                ax2.set_yticks([i * spacing_t for i in range(N)])
-                ax2.set_yticklabels([f"ch{i}" for i in range(N)])
-                ax2.set_title("readout (color) vs target (dotted)")
+                spacing_a = 1.2 * float(jnp.max(xs))
+                for i in range(N):
+                    ax1.plot(xs[:, i] + i * spacing_a, color=cmap[i], lw=1.0)
+                    ax1.axvline(burn_in, ls="--", c="gray", lw=0.8)
+                    ax1.set_yticks([i * spacing_a for i in range(N)])
+                    ax1.set_yticklabels([f"n{i}" for i in range(N)])
+                    ax1.set_title(f"trained CTLN activations (N={N}) lr={lr}")
 
-            plt.tight_layout()
-            script_dir = Path(__file__).parent
-            plot_dir = script_dir / "gradient_plots"
-            plot_dir.mkdir(exist_ok=True)
-            plt.savefig(plot_dir / f"scale_N{N}_{seed}.png", dpi=130)
-            print(f"saved scale_N{N}_{seed}.png")
+                spacing_t = 1.2 * float(jnp.max(jnp.abs(targets)))
+                for i in range(N):
+                    ax2.plot(pred[burn_in:, i] + i * spacing_t, color=cmap[i], lw=1.0)
+                    ax2.plot(tgt[:, i] + i * spacing_t, ls=":", c="k", lw=0.7)
+                    ax2.set_yticks([i * spacing_t for i in range(N)])
+                    ax2.set_yticklabels([f"ch{i}" for i in range(N)])
+                    ax2.set_title(f"readout (color) vs target (dotted) lr={lr}")
 
-    rec = {"seed": seed, "emerged": bool(emerged),
-           "final_loss": ghist[-1], "diverged": diverged,
-           "fp_stable": bool(fp["stable"]),
-           "max_real_eig": float(max_eig)}
-    results.append(rec)
-    with open(out / "grad_baseline.jsonl", "a") as f:
-        f.write(json.dumps(rec, default=float) + "\n")
-    np.save(out / f"grad_params_seed{seed}.npy", np.asarray(gparams))
+                plt.tight_layout()
+                script_dir = Path(__file__).parent
+                plot_dir = script_dir / "gradient_plots"
+                plot_dir.mkdir(exist_ok=True)
+                plt.savefig(plot_dir / f"scale_N{N}_{seed}_{lr}.png", dpi=130)
+                print(f"saved scale_N{N}_{seed}_{lr}.png")
+
+        rec = {"seed": seed, "emerged": bool(emerged),
+               "final_loss": ghist[-1], "diverged": diverged,
+               "fp_stable": bool(fp["stable"]),
+               "max_real_eig": float(max_eig),
+               "lr": lr,}
+        results.append(rec)
+        with open(out / "grad_baseline.jsonl", "a") as f:
+            f.write(json.dumps(rec, default=float) + "\n")
+        np.save(out / f"grad_params_seed{seed}_lr{lr}.npy", np.asarray(gparams))
 
 n = len(results)
 print(f"cycle emerged: {sum(r['emerged'] for r in results)}/{n}")

@@ -513,8 +513,8 @@ def run_sweep(n_seeds, z_std=2.0):
             u, stats = edge_commitment(res.params, spec, mode="direct")
             all_u.append(u)
 
-            soft_mse, hard_mse, div = hardened_ctln_check(spec, res.params, p2m, x0, targets,
-                                                          dt=dt, n_steps=n_steps,
+            soft_mse, hard_mse, div = hardened_ctln_check(spec, res.params, p2m, x0, targets_sweep,
+                                                          dt=dt, n_steps=n_steps_sweep,
                                                           burn_in=burn_in, ridge=1e-6)
 
             record = {

@@ -451,7 +451,7 @@ def hardened_ctln_check(spec, params, p2m, x0, targets, *, dt, n_steps, burn_in,
     R_s, b_s = fit_readout(xs_soft, tgt, ridge)
     R_h, b_h = fit_readout(xs_hard, tgt, ridge)
     soft_mse = float(jnp.mean((apply_readout(xs_soft, R_s, b_s) - tgt) ** 2))
-    hard_mse = float(jnp.mean((apply_readout(xs_soft, R_h, b_h) - tgt) ** 2))
+    hard_mse = float(jnp.mean((apply_readout(xs_hard, R_h, b_h) - tgt) ** 2))
 
     # direct dynamics divergence (aligned length)
     m = min(xs_soft.shape[0], xs_hard.shape[0])
@@ -532,8 +532,8 @@ def run_sweep(n_seeds=20, z_std=2.0):
             u, stats = edge_commitment(res.params, spec, mode="soft")
             all_u.append(u)
 
-            soft_mse, hard_mse, div = hardened_ctln_check(spec, res.params, p2m, x0, targets,
-                                                          dt=dt, n_steps=n_steps,
+            soft_mse, hard_mse, div = hardened_ctln_check(spec, res.params, p2m, x0, targets_sweep,
+                                                          dt=dt, n_steps=n_steps_sweep,
                                                           burn_in=burn_in, ridge=1e-6)
 
 
@@ -629,5 +629,5 @@ def plot_commitment_histogram(u_soft, u_direct=None, save_path="commitment_hist.
     plt.close()
 
 
-#if __name__ == "__main__" or True:  # set False to skip when running main script
-#    sweep_results = run_sweep(n_seeds=50, z_std=2.0)
+if __name__ == "__main__" or True:  # set False to skip when running main script
+    sweep_results = run_sweep(n_seeds=50, z_std=2.0)

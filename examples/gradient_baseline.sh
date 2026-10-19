@@ -2,7 +2,7 @@
 #SBATCH --job-name=gradient_baseline
 #SBATCH --output=gradient_baseline.out
 #SBATCH --error=gradient_baseline.err
-#SBATCH --time=12:00:00
+#SBATCH --time=6:00:00
 #SBATCH --partition=standard
 #SBATCH --account=sds_baek_energetic
 #SBATCH --cpus-per-task=8

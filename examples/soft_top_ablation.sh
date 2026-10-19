@@ -9,7 +9,7 @@
 #SBATCH --mem=16G
 
 module purge
-module load miniforge      # or whatever provides your python/conda on Rivanna
+module load miniforge/26.3.2      # or whatever provides your python/conda on Rivanna
 source activate oscillon   # your env
 
 cd /scratch/xfd3tf/oscillon/examples
