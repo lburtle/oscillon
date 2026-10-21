@@ -39,6 +39,9 @@ dependencies = [
     "torch",
 ]
 
+[project.scripts]
+oscillon = "oscillon.cli:main"
+
 [project.optional-dependencies]
 cuda12 = ["jax[cuda12]"]             # bundled CUDA 12 — simple, heavier download
 cuda12-local = ["jax[cuda12-local]"] # uses system CUDA 12
@@ -189,6 +192,7 @@ ignore = [
 "tests/**" = ["T20"]
 "noxfile.py" = ["T20"]
 "examples/**" = ["T20"]
+"experiments/**" = ["T20"]
 
 
 [tool.pylint]

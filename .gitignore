@@ -171,6 +171,7 @@ src/*/_version.py
 
 # Caches
 .*_cache/
+.claude/
 
 # OS specific stuff
 .DS_Store

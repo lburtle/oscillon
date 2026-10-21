@@ -14,16 +14,16 @@ try:
 except PackageNotFoundError:
     __version__ = "unknown"
 
-from oscillon.dynamics import simulate
-from oscillon.topology import (
+from oscillon.ctln import (
     SoftNetworkSpec,
     build_W,
     extract_adjacency,
     gate_matrix,
     init_params,
     make_param_to_model,
+    simulate,
 )
-from oscillon.train import openai_es
+from oscillon.search import openai_es
 
 __all__ = [
     "SoftNetworkSpec",
