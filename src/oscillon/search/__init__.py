@@ -1,4 +1,4 @@
-"""search — evolutionary search over gCTLN topologies: the ES optimizer,
+"""search — evolutionary search over CTLN topologies: the ES optimizer,
 fitness construction, and training orchestration.
 
 `es` holds the problem-agnostic OpenAI-ES optimizer. `train` builds the

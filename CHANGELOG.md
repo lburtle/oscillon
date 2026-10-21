@@ -21,6 +21,6 @@ and this project's version is derived from git tags via `hatch-vcs`.
 
 ## [0.1.0] - Unreleased
 
-- Initial gCTLN model: soft/block topology specs, forward-Euler dynamics
+- Initial CTLN model: soft/block topology specs, forward-Euler dynamics
   simulation, closed-form readout fitting, and OpenAI-ES-based topology
   search.

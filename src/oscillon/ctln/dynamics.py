@@ -1,4 +1,4 @@
-# gCTLN dynamics
+# CTLN dynamics
 # d/dx_i = -x + relu(Wx + theta)
 #        = -x + max(Wx + theta, 0)
 #

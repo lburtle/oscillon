@@ -1,7 +1,7 @@
-"""ctln — gCTLN model primitives: weight construction, simulation, dynamics.
+"""ctln — CTLN model primitives: weight construction, simulation, dynamics.
 
-This subpackage holds the building blocks of a single graph-coupled
-threshold-linear network (gCTLN): turning a topology spec into a weight
+This subpackage holds the building blocks of a single combinatorial
+threshold-linear network (CTLN): turning a topology spec into a weight
 matrix (`topology`), constructing discrete motif graphs (`graph`), rolling
 out the threshold-linear ODE (`dynamics`), and fitting a linear readout on
 top of the resulting trajectory (`readout`).

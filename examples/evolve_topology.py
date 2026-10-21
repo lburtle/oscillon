@@ -1,4 +1,4 @@
-"""Evolve a gCTLN topology to track a target signal via OpenAI-ES.
+"""Evolve a CTLN topology to track a target signal via OpenAI-ES.
 
 Minimal demo of oscillon.search: wrap a BlockSoftSpec in a closed-form-
 readout fitness function and optimize its topology with the evolutionary

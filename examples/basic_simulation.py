@@ -1,4 +1,4 @@
-"""Simulate a small random gCTLN and plot its trajectory.
+"""Simulate a small random CTLN and plot its trajectory.
 
 Minimal end-to-end example: build a soft-topology spec, sample random
 parameters, turn them into a weight matrix + drive, and roll out the
@@ -34,7 +34,7 @@ def main() -> None:
     ax.plot(xs)
     ax.set_xlabel("step")
     ax.set_ylabel("activity")
-    ax.set_title(f"gCTLN trajectory (n={n})")
+    ax.set_title(f"CTLN trajectory (n={n})")
     fig.savefig("basic_simulation.png", dpi=150, bbox_inches="tight")
     print("wrote basic_simulation.png")
 

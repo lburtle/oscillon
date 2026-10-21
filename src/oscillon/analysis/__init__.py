@@ -1,4 +1,4 @@
-"""analysis — post-hoc analysis of simulated gCTLN trajectories.
+"""analysis — post-hoc analysis of simulated CTLN trajectories.
 
 Intended home for fixed-point finding, oscillation metrics (period, order,
 commitment), and hardening/dynamics diagnostics. Currently a placeholder:

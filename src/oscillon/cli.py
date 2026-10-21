@@ -1,7 +1,7 @@
 """oscillon — command-line entry point.
 
 Optional convenience CLI around the public API. Currently exposes a single
-`simulate` subcommand that builds a random soft-topology gCTLN and rolls it
+`simulate` subcommand that builds a random soft-topology CTLN and rolls it
 out, as a smoke test that the installed package works end to end.
 """
 
@@ -39,7 +39,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     subparsers = parser.add_subparsers(dest="command", required=True)
 
-    sim = subparsers.add_parser("simulate", help="roll out a random gCTLN and print its final state")
+    sim = subparsers.add_parser("simulate", help="roll out a random CTLN and print its final state")
     sim.add_argument("-n", type=int, default=5, help="number of neurons (default: 5)")
     sim.add_argument("--eps", type=float, default=0.10, help="epsilon parameter (default: 0.10)")
     sim.add_argument("--delta", type=float, default=0.50, help="delta parameter (default: 0.50)")

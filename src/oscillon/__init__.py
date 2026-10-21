@@ -1,6 +1,6 @@
 """Copyright (c) 2026 Landon Burtle. All rights reserved.
 
-oscillon: A Python machine learning implementation for gCTLN models.
+oscillon: A Python machine learning implementation for CTLN models.
 """
 
 from __future__ import annotations

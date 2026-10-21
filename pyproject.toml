@@ -8,7 +8,7 @@ name = "oscillon"
 authors = [
   { name = "Landon Burtle", email = "landonburtle10@gmail.com" },
 ]
-description = "A Python machine learning implementation for gCTLN models."
+description = "A Python machine learning implementation for CTLN models."
 readme = "README.md"
 license = "BSD-3-Clause"
 license-files = ["LICENSE"]

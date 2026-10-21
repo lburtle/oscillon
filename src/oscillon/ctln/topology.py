@@ -16,7 +16,7 @@ if TYPE_CHECKING:
 
 @dataclass
 class SoftNetworkSpec:
-    """Continuous-topology gCTLN with an all-inhibitory weight band."""
+    """Soft (continuous-relaxation) topology CTLN with an all-inhibitory weight band."""
 
     n: int
     eps: float
