@@ -1,0 +1,12 @@
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+final reward: -0.8762509822845459
+readout MSE 0.3445  vs constant-mean 1.0504
+saved scale_N5.png
+kept seed cycle: False
+seed  0: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=True  amp=1.238 period=None eig=+1.274
+seed  0: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.878 period=19.0 eig=+1.430
+seed  0: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=False amp=0.836 period=18.85 eig=+1.571
+seed  1: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=False amp=0.452 period=19.05 eig=+1.416
+seed  1: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.563 period=19.3 eig=+1.175

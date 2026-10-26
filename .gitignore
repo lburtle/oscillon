@@ -171,6 +171,7 @@ src/*/_version.py
 
 # Caches
 .*_cache/
+.claude/
 
 # OS specific stuff
 .DS_Store
@@ -184,3 +185,5 @@ Thumbs.db
 # Common editor files
 *~
 *.swp
+
+.python-version

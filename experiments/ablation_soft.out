@@ -1,0 +1,474 @@
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+N=5  period=63 steps  ->  n_steps=702
+Params size:  (21,)
+Expected for uniform:  21
+final reward: -0.03198275342583656
+readout MSE 0.0119  vs constant-mean 1.0504
+saved scale_N5.png
+kept seed cycle: False
+Params size:  (21,)
+Expected for uniform:  21
+seed  0: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=False amp=0.076 period=18.85 eig=+1.536
+Params size:  (21,)
+Expected for uniform:  21
+seed  0: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.757 period=18.900000000000002 eig=+1.220
+Params size:  (21,)
+Expected for uniform:  21
+seed  0: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=False amp=0.698 period=8.540000000000001 eig=+1.379
+Params size:  (21,)
+Expected for uniform:  21
+seed  1: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.176 period=12.566666666666668 eig=+1.326
+Params size:  (21,)
+Expected for uniform:  21
+seed  1: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.649 period=12.566666666666668 eig=+1.199
+Params size:  (21,)
+Expected for uniform:  21
+seed  1: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.188 period=12.566666666666668 eig=+1.334
+Params size:  (21,)
+Expected for uniform:  21
+seed  2: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.132 period=18.8 eig=+1.295
+Params size:  (21,)
+Expected for uniform:  21
+seed  2: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.215 period=12.566666666666668 eig=+1.235
+Params size:  (21,)
+Expected for uniform:  21
+seed  2: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.432 period=12.533333333333333 eig=+1.231
+Params size:  (21,)
+Expected for uniform:  21
+seed  3: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.630 period=12.600000000000001 eig=+1.226
+Params size:  (21,)
+Expected for uniform:  21
+seed  3: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.650 period=12.633333333333333 eig=+1.315
+Params size:  (21,)
+Expected for uniform:  21
+seed  3: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=False amp=1.280 period=18.900000000000002 eig=+1.830
+Params size:  (21,)
+Expected for uniform:  21
+seed  4: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.596 period=6.185714285714286 eig=+1.270
+Params size:  (21,)
+Expected for uniform:  21
+seed  4: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.736 period=12.533333333333333 eig=+1.195
+Params size:  (21,)
+Expected for uniform:  21
+seed  4: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.858 period=18.8 eig=+1.344
+Params size:  (21,)
+Expected for uniform:  21
+seed  5: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.755 period=18.8 eig=+1.313
+Params size:  (21,)
+Expected for uniform:  21
+seed  5: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.086 period=12.566666666666668 eig=+1.209
+Params size:  (21,)
+Expected for uniform:  21
+seed  5: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.485 period=12.600000000000001 eig=+1.215
+Params size:  (21,)
+Expected for uniform:  21
+seed  6: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.306 period=12.566666666666668 eig=+1.203
+Params size:  (21,)
+Expected for uniform:  21
+seed  6: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.197 period=12.566666666666668 eig=+1.443
+Params size:  (21,)
+Expected for uniform:  21
+seed  6: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.515 period=18.8 eig=+1.352
+Params size:  (21,)
+Expected for uniform:  21
+seed  7: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=True  amp=0.191 period=None eig=+1.229
+Params size:  (21,)
+Expected for uniform:  21
+seed  7: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=2.170 period=18.75 eig=+1.376
+Params size:  (21,)
+Expected for uniform:  21
+seed  7: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.316 period=18.8 eig=+1.260
+Params size:  (21,)
+Expected for uniform:  21
+seed  8: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.479 period=12.566666666666668 eig=+1.259
+Params size:  (21,)
+Expected for uniform:  21
+seed  8: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.131 period=12.533333333333333 eig=+1.210
+Params size:  (21,)
+Expected for uniform:  21
+seed  8: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.295 period=12.566666666666668 eig=+1.177
+Params size:  (21,)
+Expected for uniform:  21
+seed  9: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.405 period=12.600000000000001 eig=+1.219
+Params size:  (21,)
+Expected for uniform:  21
+seed  9: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.350 period=18.900000000000002 eig=+1.347
+Params size:  (21,)
+Expected for uniform:  21
+seed  9: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.733 period=18.6 eig=+1.266
+Params size:  (21,)
+Expected for uniform:  21
+seed 10: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.113 period=18.900000000000002 eig=+1.173
+Params size:  (21,)
+Expected for uniform:  21
+seed 10: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.302 period=12.566666666666668 eig=+1.243
+Params size:  (21,)
+Expected for uniform:  21
+seed 10: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.667 period=12.533333333333333 eig=+1.302
+Params size:  (21,)
+Expected for uniform:  21
+seed 11: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.634 period=8.9 eig=+1.229
+Params size:  (21,)
+Expected for uniform:  21
+seed 11: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.847 period=18.85 eig=+1.272
+Params size:  (21,)
+Expected for uniform:  21
+seed 11: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.554 period=12.566666666666668 eig=+1.252
+Params size:  (21,)
+Expected for uniform:  21
+seed 12: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.385 period=12.566666666666668 eig=+1.186
+Params size:  (21,)
+Expected for uniform:  21
+seed 12: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.315 period=12.600000000000001 eig=+1.219
+Params size:  (21,)
+Expected for uniform:  21
+seed 12: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.904 period=12.566666666666668 eig=+1.260
+Params size:  (21,)
+Expected for uniform:  21
+seed 13: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.383 period=18.900000000000002 eig=+1.319
+Params size:  (21,)
+Expected for uniform:  21
+seed 13: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.402 period=12.566666666666668 eig=+1.228
+Params size:  (21,)
+Expected for uniform:  21
+seed 13: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.573 period=18.8 eig=+1.464
+Params size:  (21,)
+Expected for uniform:  21
+seed 14: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.111 period=12.600000000000001 eig=+1.334
+Params size:  (21,)
+Expected for uniform:  21
+seed 14: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=True  amp=1.509 period=None eig=+1.250
+Params size:  (21,)
+Expected for uniform:  21
+seed 14: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.356 period=18.8 eig=+1.345
+Params size:  (21,)
+Expected for uniform:  21
+seed 15: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.448 period=12.533333333333333 eig=+1.224
+Params size:  (21,)
+Expected for uniform:  21
+seed 15: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.853 period=12.566666666666668 eig=+1.254
+Params size:  (21,)
+Expected for uniform:  21
+seed 15: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.070 period=12.566666666666668 eig=+1.243
+Params size:  (21,)
+Expected for uniform:  21
+seed 16: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.240 period=18.95 eig=+1.353
+Params size:  (21,)
+Expected for uniform:  21
+seed 16: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.608 period=18.85 eig=+1.336
+Params size:  (21,)
+Expected for uniform:  21
+seed 16: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.656 period=12.533333333333333 eig=+1.300
+Params size:  (21,)
+Expected for uniform:  21
+seed 17: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=False amp=0.155 period=18.7 eig=+1.388
+Params size:  (21,)
+Expected for uniform:  21
+seed 17: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.649 period=18.8 eig=+1.313
+Params size:  (21,)
+Expected for uniform:  21
+seed 17: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=False amp=0.613 period=12.5 eig=+1.457
+Params size:  (21,)
+Expected for uniform:  21
+seed 18: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.230 period=12.566666666666668 eig=+1.266
+Params size:  (21,)
+Expected for uniform:  21
+seed 18: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.569 period=12.566666666666668 eig=+1.222
+Params size:  (21,)
+Expected for uniform:  21
+seed 18: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.403 period=12.566666666666668 eig=+1.242
+Params size:  (21,)
+Expected for uniform:  21
+seed 19: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.017 period=18.900000000000002 eig=+1.425
+Params size:  (21,)
+Expected for uniform:  21
+seed 19: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.573 period=18.900000000000002 eig=+1.365
+Params size:  (21,)
+Expected for uniform:  21
+seed 19: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.145 period=12.533333333333333 eig=+1.440
+Params size:  (21,)
+Expected for uniform:  21
+seed 20: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.545 period=18.75 eig=+1.312
+Params size:  (21,)
+Expected for uniform:  21
+seed 20: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.801 period=12.600000000000001 eig=+1.215
+Params size:  (21,)
+Expected for uniform:  21
+seed 20: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.060 period=12.600000000000001 eig=+1.288
+Params size:  (21,)
+Expected for uniform:  21
+seed 21: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.518 period=12.566666666666668 eig=+1.208
+Params size:  (21,)
+Expected for uniform:  21
+seed 21: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.653 period=12.566666666666668 eig=+1.201
+Params size:  (21,)
+Expected for uniform:  21
+seed 21: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.851 period=12.566666666666668 eig=+1.263
+Params size:  (21,)
+Expected for uniform:  21
+seed 22: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.059 period=12.566666666666668 eig=+1.225
+Params size:  (21,)
+Expected for uniform:  21
+seed 22: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.265 period=12.566666666666668 eig=+1.259
+Params size:  (21,)
+Expected for uniform:  21
+seed 22: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.124 period=18.8 eig=+1.337
+Params size:  (21,)
+Expected for uniform:  21
+seed 23: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.469 period=18.85 eig=+1.389
+Params size:  (21,)
+Expected for uniform:  21
+seed 23: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.747 period=12.566666666666668 eig=+1.243
+Params size:  (21,)
+Expected for uniform:  21
+seed 23: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.403 period=18.8 eig=+1.421
+Params size:  (21,)
+Expected for uniform:  21
+seed 24: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.468 period=18.8 eig=+1.354
+Params size:  (21,)
+Expected for uniform:  21
+seed 24: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.805 period=6.228571428571429 eig=+1.422
+Params size:  (21,)
+Expected for uniform:  21
+seed 24: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.711 period=12.566666666666668 eig=+1.325
+Params size:  (21,)
+Expected for uniform:  21
+seed 25: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.244 period=12.600000000000001 eig=+1.209
+Params size:  (21,)
+Expected for uniform:  21
+seed 25: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.146 period=12.600000000000001 eig=+1.302
+Params size:  (21,)
+Expected for uniform:  21
+seed 25: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.869 period=12.566666666666668 eig=+1.331
+Params size:  (21,)
+Expected for uniform:  21
+seed 26: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.371 period=12.566666666666668 eig=+1.212
+Params size:  (21,)
+Expected for uniform:  21
+seed 26: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.468 period=12.600000000000001 eig=+1.224
+Params size:  (21,)
+Expected for uniform:  21
+seed 26: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.384 period=12.566666666666668 eig=+1.222
+Params size:  (21,)
+Expected for uniform:  21
+seed 27: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.341 period=12.533333333333333 eig=+1.266
+Params size:  (21,)
+Expected for uniform:  21
+seed 27: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.539 period=12.533333333333333 eig=+1.230
+Params size:  (21,)
+Expected for uniform:  21
+seed 27: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.723 period=18.95 eig=+1.410
+Params size:  (21,)
+Expected for uniform:  21
+seed 28: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.772 period=12.566666666666668 eig=+1.251
+Params size:  (21,)
+Expected for uniform:  21
+seed 28: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.675 period=12.533333333333333 eig=+1.255
+Params size:  (21,)
+Expected for uniform:  21
+seed 28: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.443 period=12.566666666666668 eig=+1.235
+Params size:  (21,)
+Expected for uniform:  21
+seed 29: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.665 period=18.8 eig=+1.292
+Params size:  (21,)
+Expected for uniform:  21
+seed 29: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.478 period=18.8 eig=+1.315
+Params size:  (21,)
+Expected for uniform:  21
+seed 29: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.437 period=6.271428571428572 eig=+1.512
+Params size:  (21,)
+Expected for uniform:  21
+seed 30: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.481 period=18.650000000000002 eig=+1.217
+Params size:  (21,)
+Expected for uniform:  21
+seed 30: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.252 period=18.900000000000002 eig=+1.334
+Params size:  (21,)
+Expected for uniform:  21
+seed 30: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=False amp=1.376 period=18.8 eig=+1.527
+Params size:  (21,)
+Expected for uniform:  21
+seed 31: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.292 period=12.566666666666668 eig=+1.295
+Params size:  (21,)
+Expected for uniform:  21
+seed 31: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.760 period=12.600000000000001 eig=+1.232
+Params size:  (21,)
+Expected for uniform:  21
+seed 31: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.433 period=None eig=+1.463
+Params size:  (21,)
+Expected for uniform:  21
+seed 32: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.302 period=12.533333333333333 eig=+1.204
+Params size:  (21,)
+Expected for uniform:  21
+seed 32: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.807 period=12.566666666666668 eig=+1.184
+Params size:  (21,)
+Expected for uniform:  21
+seed 32: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.304 period=12.600000000000001 eig=+1.255
+Params size:  (21,)
+Expected for uniform:  21
+seed 33: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.786 period=12.566666666666668 eig=+1.204
+Params size:  (21,)
+Expected for uniform:  21
+seed 33: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.931 period=12.566666666666668 eig=+1.287
+Params size:  (21,)
+Expected for uniform:  21
+seed 33: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.660 period=12.566666666666668 eig=+1.207
+Params size:  (21,)
+Expected for uniform:  21
+seed 34: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.214 period=7.800000000000001 eig=+1.320
+Params size:  (21,)
+Expected for uniform:  21
+seed 34: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.793 period=12.533333333333333 eig=+1.196
+Params size:  (21,)
+Expected for uniform:  21
+seed 34: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.284 period=18.900000000000002 eig=+1.271
+Params size:  (21,)
+Expected for uniform:  21
+seed 35: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=True  amp=0.586 period=None eig=+1.355
+Params size:  (21,)
+Expected for uniform:  21
+seed 35: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=False amp=0.322 period=8.76 eig=+1.527
+Params size:  (21,)
+Expected for uniform:  21
+seed 35: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=False amp=0.278 period=18.900000000000002 eig=+1.602
+Params size:  (21,)
+Expected for uniform:  21
+seed 36: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.632 period=12.566666666666668 eig=+1.247
+Params size:  (21,)
+Expected for uniform:  21
+seed 36: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.650 period=12.533333333333333 eig=+1.199
+Params size:  (21,)
+Expected for uniform:  21
+seed 36: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=2.128 period=12.566666666666668 eig=+1.323
+Params size:  (21,)
+Expected for uniform:  21
+seed 37: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.408 period=12.566666666666668 eig=+1.320
+Params size:  (21,)
+Expected for uniform:  21
+seed 37: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.212 period=12.566666666666668 eig=+1.228
+Params size:  (21,)
+Expected for uniform:  21
+seed 37: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.362 period=12.533333333333333 eig=+1.312
+Params size:  (21,)
+Expected for uniform:  21
+seed 38: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.527 period=6.314285714285715 eig=+1.162
+Params size:  (21,)
+Expected for uniform:  21
+seed 38: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.909 period=12.566666666666668 eig=+1.254
+Params size:  (21,)
+Expected for uniform:  21
+seed 38: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.351 period=12.566666666666668 eig=+1.204
+Params size:  (21,)
+Expected for uniform:  21
+seed 39: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.771 period=18.8 eig=+1.277
+Params size:  (21,)
+Expected for uniform:  21
+seed 39: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.663 period=12.566666666666668 eig=+1.213
+Params size:  (21,)
+Expected for uniform:  21
+seed 39: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=False amp=0.533 period=18.85 eig=+1.556
+Params size:  (21,)
+Expected for uniform:  21
+seed 40: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.859 period=18.6 eig=+1.373
+Params size:  (21,)
+Expected for uniform:  21
+seed 40: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.298 period=12.566666666666668 eig=+1.303
+Params size:  (21,)
+Expected for uniform:  21
+seed 40: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.688 period=12.533333333333333 eig=+1.297
+Params size:  (21,)
+Expected for uniform:  21
+seed 41: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.282 period=18.85 eig=+1.236
+Params size:  (21,)
+Expected for uniform:  21
+seed 41: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.411 period=18.85 eig=+1.352
+Params size:  (21,)
+Expected for uniform:  21
+seed 41: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=False amp=0.564 period=18.900000000000002 eig=+1.473
+Params size:  (21,)
+Expected for uniform:  21
+seed 42: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.653 period=12.566666666666668 eig=+1.245
+Params size:  (21,)
+Expected for uniform:  21
+seed 42: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.694 period=12.533333333333333 eig=+1.352
+Params size:  (21,)
+Expected for uniform:  21
+seed 42: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.619 period=12.566666666666668 eig=+1.209
+Params size:  (21,)
+Expected for uniform:  21
+seed 43: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.291 period=18.85 eig=+1.306
+Params size:  (21,)
+Expected for uniform:  21
+seed 43: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.458 period=12.600000000000001 eig=+1.222
+Params size:  (21,)
+Expected for uniform:  21
+seed 43: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.557 period=18.85 eig=+1.515
+Params size:  (21,)
+Expected for uniform:  21
+seed 44: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.996 period=18.900000000000002 eig=+1.297
+Params size:  (21,)
+Expected for uniform:  21
+seed 44: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.396 period=18.85 eig=+1.229
+Params size:  (21,)
+Expected for uniform:  21
+seed 44: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.255 period=18.900000000000002 eig=+1.336
+Params size:  (21,)
+Expected for uniform:  21
+seed 45: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.187 period=18.8 eig=+1.304
+Params size:  (21,)
+Expected for uniform:  21
+seed 45: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.479 period=12.533333333333333 eig=+1.211
+Params size:  (21,)
+Expected for uniform:  21
+seed 45: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.827 period=18.8 eig=+1.372
+Params size:  (21,)
+Expected for uniform:  21
+seed 46: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.325 period=18.85 eig=+1.332
+Params size:  (21,)
+Expected for uniform:  21
+seed 46: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.935 period=12.566666666666668 eig=+1.252
+Params size:  (21,)
+Expected for uniform:  21
+seed 46: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=False amp=0.362 period=18.8 eig=+1.583
+Params size:  (21,)
+Expected for uniform:  21
+seed 47: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.066 period=18.85 eig=+1.181
+Params size:  (21,)
+Expected for uniform:  21
+seed 47: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.723 period=18.8 eig=+1.307
+Params size:  (21,)
+Expected for uniform:  21
+seed 47: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=1.006 period=18.95 eig=+1.448
+Params size:  (21,)
+Expected for uniform:  21
+seed 48: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=True  amp=0.049 period=12.566666666666668 eig=+1.260
+Params size:  (21,)
+Expected for uniform:  21
+seed 48: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.158 period=12.600000000000001 eig=+1.260
+Params size:  (21,)
+Expected for uniform:  21
+seed 48: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.258 period=18.95 eig=+1.277
+Params size:  (21,)
+Expected for uniform:  21
+seed 49: z_std=1.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.455 period=7.566666666666667 eig=+1.279
+Params size:  (21,)
+Expected for uniform:  21
+seed 49: z_std=2.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.726 period=6.257142857142857 eig=+1.303
+Params size:  (21,)
+Expected for uniform:  21
+seed 49: z_std=3.00 cycle=True  topo=False fp_unstable=True  hamiltonian=True  amp=0.777 period=6.1375 eig=+1.194
+
+============================================================
+DISCOVERY SWEEP  (N=5, 50 seeds, z_std=3.0)
+  oscillation emerged:      145/150  (97%)
+  recovered cycle topology: 0/150  (0%)
+  both (full discovery):    0/150  (0%)
+  hamiltonian cycle:        138/150  (92%)
+============================================================
+
+================================================================================
+ z_std |   n |  emerged |  topology |   both |  hamilton | fp_unstab |  mean_eig
+--------------------------------------------------------------------------------

@@ -1,0 +1,3040 @@
+================================================================
+SCTLN GRADIENT BASELINE
+================================================================
+HYPERPARAMETERS
+==================================================
+N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
+WARN: warm start not oscillating; using fallback period 6.283185307179586
+N=5  matched target period = 6.283 time units (62.8 steps)
+grad iter 0: loss=1.0334
+grad iter 200: loss=1.0241
+grad iter 400: loss=1.0241
+grad iter 600: loss=1.0241
+grad iter 800: loss=1.0241
+grad iter 1000: loss=1.0241
+grad iter 1200: loss=1.0241
+grad iter 1400: loss=1.0241
+grad iter 1600: loss=1.0241
+grad iter 1800: loss=1.0241
+grad iter 2000: loss=1.0241
+grad iter 2200: loss=1.0240
+grad iter 2400: loss=1.0240
+grad iter 2600: loss=1.0240
+grad iter 2800: loss=1.0240
+{'loss': 1.0333646535873413, 'target_var': 1.049382209777832, 'grad_norm': 0.2080966830253601, 'grad_finite': True, 'state_std_per_neuron': [0.005282863043248653, 1.5912729467437714e-10, 5.0454419288359365e-12, 6.026900506439503e-11, 0.003451962023973465], 'state_scale': 0.49999988079071045, 'flat': False}
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0155
+grad iter 400: loss=1.0155
+grad iter 600: loss=1.0155
+grad iter 800: loss=1.0155
+grad iter 1000: loss=1.0155
+grad iter 1200: loss=1.0155
+grad iter 1400: loss=1.0155
+grad iter 1600: loss=1.0156
+grad iter 1800: loss=1.0155
+grad iter 2000: loss=1.0155
+grad iter 2200: loss=1.0155
+grad iter 2400: loss=1.0155
+grad iter 2600: loss=1.0155
+grad iter 2800: loss=1.0154
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 1.2617451972118943e-08, 'grad_finite': True, 'state_std_per_neuron': [2.0621106211482498e-10, 8.954483377010547e-08, 4.754975302390108e-10, 5.634115136238238e-12, 5.459722951517421e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_1_0.03.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 6.880556924215853e-08, 'grad_finite': True, 'state_std_per_neuron': [2.1251980730774278e-10, 8.940696716308594e-08, 8.216622694734443e-12, 3.670368262792545e-12, 1.515936334794965e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_2_0.03.png
+grad iter 0: loss=1.0485
+grad iter 200: loss=1.0441
+grad iter 400: loss=1.0442
+grad iter 600: loss=1.0441
+grad iter 800: loss=1.0441
+grad iter 1000: loss=1.0441
+grad iter 1200: loss=1.0441
+grad iter 1400: loss=1.0441
+grad iter 1600: loss=1.0441
+grad iter 1800: loss=1.0441
+grad iter 2000: loss=1.0441
+grad iter 2200: loss=1.0441
+grad iter 2400: loss=1.0441
+grad iter 2600: loss=1.0441
+grad iter 2800: loss=1.0441
+{'loss': 1.0485098361968994, 'target_var': 1.049382209777832, 'grad_norm': 0.056989725679159164, 'grad_finite': True, 'state_std_per_neuron': [5.202890895894541e-11, 6.7980395618283396e-12, 0.03466356173157692, 2.0187206073440933e-11, 0.0344286784529686], 'state_scale': 0.49999988079071045, 'flat': False}
+saved scale_N5_3_0.03.png
+grad iter 0: loss=1.0469
+grad iter 200: loss=1.0442
+grad iter 400: loss=1.0442
+grad iter 600: loss=1.0442
+grad iter 800: loss=1.0441
+grad iter 1000: loss=1.0441
+grad iter 1200: loss=1.0441
+grad iter 1400: loss=1.0442
+grad iter 1600: loss=1.0441
+grad iter 1800: loss=1.0441
+grad iter 2000: loss=1.0441
+grad iter 2200: loss=1.0441
+grad iter 2400: loss=1.0441
+grad iter 2600: loss=1.0442
+grad iter 2800: loss=1.0441
+{'loss': 1.0469474792480469, 'target_var': 1.049382209777832, 'grad_norm': 0.07878581434488297, 'grad_finite': True, 'state_std_per_neuron': [4.607344887552767e-12, 3.970054063273665e-09, 1.6358574217445465e-11, 0.0233030803501606, 0.02441432513296604], 'state_scale': 0.49999988079071045, 'flat': False}
+saved scale_N5_4_0.03.png
+grad iter 0: loss=1.0491
+grad iter 200: loss=1.0480
+grad iter 400: loss=1.0480
+grad iter 600: loss=1.0480
+grad iter 800: loss=1.0480
+grad iter 1000: loss=1.0480
+grad iter 1200: loss=1.0480
+grad iter 1400: loss=1.0480
+grad iter 1600: loss=1.0480
+grad iter 1800: loss=1.0480
+grad iter 2000: loss=1.0480
+grad iter 2200: loss=1.0480
+grad iter 2400: loss=1.0480
+grad iter 2600: loss=1.0480
+grad iter 2800: loss=1.0480
+{'loss': 1.049073576927185, 'target_var': 1.049382209777832, 'grad_norm': 0.0006399337435141206, 'grad_finite': True, 'state_std_per_neuron': [0.027835963293910027, 0.02844151295721531, 4.866624030847033e-12, 1.7179865169358877e-11, 3.4152780430118934e-12], 'state_scale': 0.46167147159576416, 'flat': False}
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 2.9135748036424047e-07, 'grad_finite': True, 'state_std_per_neuron': [2.716627200971544e-10, 4.13526071024739e-12, 7.831568171745573e-10, 9.055852956407762e-08, 4.875476758425812e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_6_0.03.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0241
+grad iter 400: loss=1.0243
+grad iter 600: loss=1.0241
+grad iter 800: loss=1.0242
+grad iter 1000: loss=1.0241
+grad iter 1200: loss=1.0241
+grad iter 1400: loss=1.0241
+grad iter 1600: loss=1.0243
+grad iter 1800: loss=1.0241
+grad iter 2000: loss=1.0241
+grad iter 2200: loss=1.0241
+grad iter 2400: loss=1.0241
+grad iter 2600: loss=1.0243
+grad iter 2800: loss=1.0243
+{'loss': 1.0493590831756592, 'target_var': 1.049382209777832, 'grad_norm': 0.00046234382898546755, 'grad_finite': True, 'state_std_per_neuron': [6.282046882688519e-08, 9.975159400710254e-07, 1.4917954371806985e-10, 1.599270715857415e-11, 2.276845911808323e-08], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_7_0.03.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0484
+grad iter 400: loss=1.0483
+grad iter 600: loss=1.0483
+grad iter 800: loss=1.0484
+grad iter 1000: loss=1.0483
+grad iter 1200: loss=1.0483
+grad iter 1400: loss=1.0482
+grad iter 1600: loss=1.0483
+grad iter 1800: loss=1.0482
+grad iter 2000: loss=1.0483
+grad iter 2200: loss=1.0482
+grad iter 2400: loss=1.0482
+grad iter 2600: loss=1.0482
+grad iter 2800: loss=1.0482
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 1.2602312438048102e-07, 'grad_finite': True, 'state_std_per_neuron': [3.4152780430118934e-12, 8.304234383471609e-11, 2.443457658429793e-09, 2.4328247749672016e-11, 9.707255088642341e-08], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_8_0.03.png
+grad iter 0: loss=1.0488
+grad iter 200: loss=1.0330
+grad iter 400: loss=1.0331
+grad iter 600: loss=1.0338
+grad iter 800: loss=1.0330
+grad iter 1000: loss=1.0335
+grad iter 1200: loss=1.0330
+grad iter 1400: loss=1.0332
+grad iter 1600: loss=1.0331
+grad iter 1800: loss=1.0331
+grad iter 2000: loss=1.0368
+grad iter 2200: loss=1.0329
+grad iter 2400: loss=1.0329
+grad iter 2600: loss=1.0330
+grad iter 2800: loss=1.0330
+{'loss': 1.0487691164016724, 'target_var': 1.049382209777832, 'grad_norm': 0.026276934891939163, 'grad_finite': True, 'state_std_per_neuron': [4.690477624080813e-07, 4.178031531854032e-11, 4.247728471046264e-12, 1.436205841753857e-11, 5.3526855481322855e-06], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_9_0.03.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0331
+grad iter 400: loss=1.0331
+grad iter 600: loss=1.0331
+grad iter 800: loss=1.0332
+grad iter 1000: loss=1.0330
+grad iter 1200: loss=1.0330
+grad iter 1400: loss=1.0329
+grad iter 1600: loss=1.0329
+grad iter 1800: loss=1.0330
+grad iter 2000: loss=1.0329
+grad iter 2200: loss=1.0329
+grad iter 2400: loss=1.0329
+grad iter 2600: loss=1.0329
+grad iter 2800: loss=1.0331
+{'loss': 1.0493708848953247, 'target_var': 1.049382209777832, 'grad_norm': 0.00018092739628627896, 'grad_finite': True, 'state_std_per_neuron': [5.166876041601265e-12, 5.2761567559400646e-08, 1.034020265244795e-11, 7.002806228229019e-07, 4.477506213018678e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+grad iter 0: loss=1.0493
+grad iter 200: loss=1.0332
+grad iter 400: loss=1.0331
+grad iter 600: loss=1.0337
+grad iter 800: loss=1.0336
+grad iter 1000: loss=1.0337
+grad iter 1200: loss=1.0336
+grad iter 1400: loss=1.0336
+grad iter 1600: loss=1.0335
+grad iter 1800: loss=1.0334
+grad iter 2000: loss=1.0334
+grad iter 2200: loss=1.0333
+grad iter 2400: loss=1.0332
+grad iter 2600: loss=1.0331
+grad iter 2800: loss=1.0332
+{'loss': 1.0492558479309082, 'target_var': 1.049382209777832, 'grad_norm': 0.006223040632903576, 'grad_finite': True, 'state_std_per_neuron': [9.161961189718681e-10, 4.830313926618146e-09, 2.0581717308232328e-07, 2.547082336712414e-11, 2.3509915081376676e-06], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_11_0.03.png
+grad iter 0: loss=1.0341
+grad iter 200: loss=1.0112
+grad iter 400: loss=1.0104
+grad iter 600: loss=1.0102
+grad iter 800: loss=1.0104
+grad iter 1000: loss=1.0100
+grad iter 1200: loss=1.0099
+grad iter 1400: loss=1.0099
+grad iter 1600: loss=1.0098
+grad iter 1800: loss=1.0098
+grad iter 2000: loss=1.0102
+grad iter 2200: loss=1.0096
+grad iter 2400: loss=1.0098
+grad iter 2600: loss=1.0096
+grad iter 2800: loss=1.0094
+{'loss': 1.0340982675552368, 'target_var': 1.049382209777832, 'grad_norm': 0.10594519972801208, 'grad_finite': True, 'state_std_per_neuron': [0.04457845538854599, 5.988120221900317e-09, 0.04810278117656708, 0.006180204916745424, 0.07325306534767151], 'state_scale': 0.39541536569595337, 'flat': False}
+saved scale_N5_12_0.03.png
+grad iter 0: loss=1.0428
+grad iter 200: loss=1.0484
+grad iter 400: loss=1.0482
+grad iter 600: loss=1.0481
+grad iter 800: loss=1.0481
+grad iter 1000: loss=1.0481
+grad iter 1200: loss=1.0480
+grad iter 1400: loss=1.0480
+grad iter 1600: loss=1.0480
+grad iter 1800: loss=1.0480
+grad iter 2000: loss=1.0480
+grad iter 2200: loss=1.0480
+grad iter 2400: loss=1.0480
+grad iter 2600: loss=1.0480
+grad iter 2800: loss=1.0480
+{'loss': 1.0428153276443481, 'target_var': 1.049382209777832, 'grad_norm': 0.022166911512613297, 'grad_finite': True, 'state_std_per_neuron': [7.0361169147992175e-12, 5.639123834555448e-09, 0.015964852645993233, 0.01568552479147911, 0.0001489737187512219], 'state_scale': 0.3690131902694702, 'flat': False}
+saved scale_N5_13_0.03.png
+grad iter 0: loss=1.0389
+grad iter 200: loss=1.0333
+grad iter 400: loss=1.0334
+grad iter 600: loss=1.0337
+grad iter 800: loss=1.0332
+grad iter 1000: loss=1.0332
+grad iter 1200: loss=1.0332
+grad iter 1400: loss=1.0332
+grad iter 1600: loss=1.0332
+grad iter 1800: loss=1.0331
+grad iter 2000: loss=1.0331
+grad iter 2200: loss=1.0331
+grad iter 2400: loss=1.0330
+grad iter 2600: loss=1.0337
+grad iter 2800: loss=1.0335
+{'loss': 1.0388901233673096, 'target_var': 1.049382209777832, 'grad_norm': 0.33112260699272156, 'grad_finite': True, 'state_std_per_neuron': [0.009226107969880104, 0.011498827487230301, 3.1338196482266767e-09, 1.1849660142004836e-10, 2.253906089544344e-11], 'state_scale': 0.49999988079071045, 'flat': False}
+saved scale_N5_14_0.03.png
+grad iter 0: loss=1.0415
+grad iter 200: loss=1.0239
+grad iter 400: loss=1.0239
+grad iter 600: loss=1.0239
+grad iter 800: loss=1.0239
+grad iter 1000: loss=1.0247
+grad iter 1200: loss=1.0239
+grad iter 1400: loss=1.0239
+grad iter 1600: loss=1.0239
+grad iter 1800: loss=1.0239
+grad iter 2000: loss=1.0239
+grad iter 2200: loss=1.0239
+grad iter 2400: loss=1.0239
+grad iter 2600: loss=1.0239
+grad iter 2800: loss=1.0003
+{'loss': 1.0415486097335815, 'target_var': 1.049382209777832, 'grad_norm': 0.03622085973620415, 'grad_finite': True, 'state_std_per_neuron': [0.00021776136418338865, 0.0056123374961316586, 2.6186041779396874e-08, 4.55981363778335e-11, 0.007645137142390013], 'state_scale': 0.49999988079071045, 'flat': False}
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0415
+grad iter 400: loss=1.0407
+grad iter 600: loss=1.0400
+grad iter 800: loss=1.0296
+grad iter 1000: loss=1.0277
+grad iter 1200: loss=1.0262
+grad iter 1400: loss=1.0255
+grad iter 1600: loss=1.0228
+grad iter 1800: loss=1.0194
+grad iter 2000: loss=1.0175
+grad iter 2200: loss=1.0158
+grad iter 2400: loss=1.0160
+grad iter 2600: loss=1.0157
+grad iter 2800: loss=1.0147
+{'loss': 1.0493751764297485, 'target_var': 1.049382209777832, 'grad_norm': 0.000515496009029448, 'grad_finite': True, 'state_std_per_neuron': [4.943171427740367e-10, 2.7155971693559877e-08, 9.941748813080409e-12, 5.561605576076545e-07, 6.387656625861382e-09], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_16_0.03.png
+grad iter 0: loss=1.0489
+grad iter 200: loss=1.0484
+grad iter 400: loss=1.0483
+grad iter 600: loss=1.0483
+grad iter 800: loss=1.0483
+grad iter 1000: loss=1.0482
+grad iter 1200: loss=1.0482
+grad iter 1400: loss=1.0482
+grad iter 1600: loss=1.0481
+grad iter 1800: loss=1.0481
+grad iter 2000: loss=1.0481
+grad iter 2200: loss=1.0481
+grad iter 2400: loss=1.0481
+grad iter 2600: loss=1.0480
+grad iter 2800: loss=1.0480
+{'loss': 1.0488919019699097, 'target_var': 1.049382209777832, 'grad_norm': 0.0005823341198265553, 'grad_finite': True, 'state_std_per_neuron': [3.31701693889741e-10, 0.01426425576210022, 3.5991183991446185e-12, 5.8139819347768906e-11, 0.014112773351371288], 'state_scale': 0.32368505001068115, 'flat': False}
+saved scale_N5_17_0.03.png
+grad iter 0: loss=1.0488
+grad iter 200: loss=1.0335
+grad iter 400: loss=1.0335
+grad iter 600: loss=1.0334
+grad iter 800: loss=1.0333
+grad iter 1000: loss=1.0333
+grad iter 1200: loss=1.0332
+grad iter 1400: loss=1.0332
+grad iter 1600: loss=1.0331
+grad iter 1800: loss=1.0332
+grad iter 2000: loss=1.0331
+grad iter 2200: loss=1.0330
+grad iter 2400: loss=1.0330
+grad iter 2600: loss=1.0330
+grad iter 2800: loss=1.0329
+{'loss': 1.0488461256027222, 'target_var': 1.049382209777832, 'grad_norm': 0.012182993814349174, 'grad_finite': True, 'state_std_per_neuron': [5.036692982685054e-07, 2.4710174878483926e-11, 1.2141181289504477e-11, 4.972026090399595e-06, 6.923784028750601e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_18_0.03.png
+grad iter 0: loss=1.0449
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.044927954673767, 'target_var': 1.049382209777832, 'grad_norm': 0.18519145250320435, 'grad_finite': True, 'state_std_per_neuron': [2.1359690435929224e-05, 1.7023807004079572e-06, 3.568270678933061e-11, 1.1154991513828705e-10, 6.428360881799433e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_19_0.03.png
+grad iter 0: loss=1.0334
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.0333646535873413, 'target_var': 1.049382209777832, 'grad_norm': 0.2080966830253601, 'grad_finite': True, 'state_std_per_neuron': [0.005282863043248653, 1.5912729467437714e-10, 5.0454419288359365e-12, 6.026900506439503e-11, 0.003451962023973465], 'state_scale': 0.49999988079071045, 'flat': False}
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 1.2617451972118943e-08, 'grad_finite': True, 'state_std_per_neuron': [2.0621106211482498e-10, 8.954483377010547e-08, 4.754975302390108e-10, 5.634115136238238e-12, 5.459722951517421e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_1_0.1.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 6.880556924215853e-08, 'grad_finite': True, 'state_std_per_neuron': [2.1251980730774278e-10, 8.940696716308594e-08, 8.216622694734443e-12, 3.670368262792545e-12, 1.515936334794965e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_2_0.1.png
+grad iter 0: loss=1.0485
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.0485098361968994, 'target_var': 1.049382209777832, 'grad_norm': 0.056989725679159164, 'grad_finite': True, 'state_std_per_neuron': [5.202890895894541e-11, 6.7980395618283396e-12, 0.03466356173157692, 2.0187206073440933e-11, 0.0344286784529686], 'state_scale': 0.49999988079071045, 'flat': False}
+saved scale_N5_3_0.1.png
+grad iter 0: loss=1.0469
+grad iter 200: loss=1.0336
+grad iter 400: loss=1.0343
+grad iter 600: loss=1.0336
+grad iter 800: loss=1.0333
+grad iter 1000: loss=1.0333
+grad iter 1200: loss=1.0333
+grad iter 1400: loss=1.0333
+grad iter 1600: loss=1.0337
+grad iter 1800: loss=1.0376
+grad iter 2000: loss=1.0376
+grad iter 2200: loss=1.0376
+grad iter 2400: loss=1.0376
+grad iter 2600: loss=1.0376
+grad iter 2800: loss=1.0376
+{'loss': 1.0469474792480469, 'target_var': 1.049382209777832, 'grad_norm': 0.07878581434488297, 'grad_finite': True, 'state_std_per_neuron': [4.607344887552767e-12, 3.970054063273665e-09, 1.6358574217445465e-11, 0.0233030803501606, 0.02441432513296604], 'state_scale': 0.49999988079071045, 'flat': False}
+saved scale_N5_4_0.1.png
+grad iter 0: loss=1.0491
+grad iter 200: loss=1.0470
+grad iter 400: loss=1.0467
+grad iter 600: loss=1.0466
+grad iter 800: loss=1.0466
+grad iter 1000: loss=1.0465
+grad iter 1200: loss=1.0465
+grad iter 1400: loss=1.0465
+grad iter 1600: loss=1.0465
+grad iter 1800: loss=1.0465
+grad iter 2000: loss=1.0464
+grad iter 2200: loss=1.0464
+grad iter 2400: loss=1.0464
+grad iter 2600: loss=1.0464
+grad iter 2800: loss=1.0464
+{'loss': 1.049073576927185, 'target_var': 1.049382209777832, 'grad_norm': 0.0006399337435141206, 'grad_finite': True, 'state_std_per_neuron': [0.027835963293910027, 0.02844151295721531, 4.866624030847033e-12, 1.7179865169358877e-11, 3.4152780430118934e-12], 'state_scale': 0.46167147159576416, 'flat': False}
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 2.9135748036424047e-07, 'grad_finite': True, 'state_std_per_neuron': [2.716627200971544e-10, 4.13526071024739e-12, 7.831568171745573e-10, 9.055852956407762e-08, 4.875476758425812e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_6_0.1.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0336
+grad iter 400: loss=1.0334
+grad iter 600: loss=1.0333
+grad iter 800: loss=1.0333
+grad iter 1000: loss=1.0376
+grad iter 1200: loss=1.0376
+grad iter 1400: loss=1.0376
+grad iter 1600: loss=1.0376
+grad iter 1800: loss=1.0376
+grad iter 2000: loss=1.0376
+grad iter 2200: loss=1.0376
+grad iter 2400: loss=1.0376
+grad iter 2600: loss=1.0376
+grad iter 2800: loss=1.0376
+{'loss': 1.0493590831756592, 'target_var': 1.049382209777832, 'grad_norm': 0.00046234382898546755, 'grad_finite': True, 'state_std_per_neuron': [6.282046882688519e-08, 9.975159400710254e-07, 1.4917954371806985e-10, 1.599270715857415e-11, 2.276845911808323e-08], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_7_0.1.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0483
+grad iter 400: loss=1.0482
+grad iter 600: loss=1.0481
+grad iter 800: loss=1.0481
+grad iter 1000: loss=1.0480
+grad iter 1200: loss=nan
+grad iter 1400: loss=nan
+grad iter 1600: loss=nan
+grad iter 1800: loss=nan
+grad iter 2000: loss=nan
+grad iter 2200: loss=nan
+grad iter 2400: loss=nan
+grad iter 2600: loss=nan
+grad iter 2800: loss=nan
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 1.2602312438048102e-07, 'grad_finite': True, 'state_std_per_neuron': [3.4152780430118934e-12, 8.304234383471609e-11, 2.443457658429793e-09, 2.4328247749672016e-11, 9.707255088642341e-08], 'state_scale': 0.49999988079071045, 'flat': True}
+seed 8 DIVERGED, max_eig set to nan
+grad iter 0: loss=1.0488
+grad iter 200: loss=1.0479
+grad iter 400: loss=1.0488
+grad iter 600: loss=nan
+grad iter 800: loss=nan
+grad iter 1000: loss=nan
+grad iter 1200: loss=nan
+grad iter 1400: loss=nan
+grad iter 1600: loss=nan
+grad iter 1800: loss=nan
+grad iter 2000: loss=nan
+grad iter 2200: loss=nan
+grad iter 2400: loss=nan
+grad iter 2600: loss=nan
+grad iter 2800: loss=nan
+{'loss': 1.0487691164016724, 'target_var': 1.049382209777832, 'grad_norm': 0.026276934891939163, 'grad_finite': True, 'state_std_per_neuron': [4.690477624080813e-07, 4.178031531854032e-11, 4.247728471046264e-12, 1.436205841753857e-11, 5.3526855481322855e-06], 'state_scale': 0.49999988079071045, 'flat': True}
+seed 9 DIVERGED, max_eig set to nan
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0333
+grad iter 400: loss=1.0332
+grad iter 600: loss=1.0332
+grad iter 800: loss=1.0331
+grad iter 1000: loss=1.0343
+grad iter 1200: loss=1.0331
+grad iter 1400: loss=1.0376
+grad iter 1600: loss=1.0376
+grad iter 1800: loss=1.0376
+grad iter 2000: loss=1.0376
+grad iter 2200: loss=1.0376
+grad iter 2400: loss=1.0376
+grad iter 2600: loss=1.0376
+grad iter 2800: loss=1.0376
+{'loss': 1.0493708848953247, 'target_var': 1.049382209777832, 'grad_norm': 0.00018092739628627896, 'grad_finite': True, 'state_std_per_neuron': [5.166876041601265e-12, 5.2761567559400646e-08, 1.034020265244795e-11, 7.002806228229019e-07, 4.477506213018678e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+grad iter 0: loss=1.0493
+grad iter 200: loss=1.0441
+grad iter 400: loss=1.0441
+grad iter 600: loss=1.0441
+grad iter 800: loss=1.0441
+grad iter 1000: loss=1.0443
+grad iter 1200: loss=1.0441
+grad iter 1400: loss=1.0441
+grad iter 1600: loss=1.0442
+grad iter 1800: loss=1.0441
+grad iter 2000: loss=1.0441
+grad iter 2200: loss=1.0441
+grad iter 2400: loss=1.0441
+grad iter 2600: loss=1.0441
+grad iter 2800: loss=1.0441
+{'loss': 1.0492558479309082, 'target_var': 1.049382209777832, 'grad_norm': 0.006223040632903576, 'grad_finite': True, 'state_std_per_neuron': [9.161961189718681e-10, 4.830313926618146e-09, 2.0581717308232328e-07, 2.547082336712414e-11, 2.3509915081376676e-06], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_11_0.1.png
+grad iter 0: loss=1.0341
+grad iter 200: loss=1.0260
+grad iter 400: loss=1.0221
+grad iter 600: loss=1.0221
+grad iter 800: loss=1.0221
+grad iter 1000: loss=1.0214
+grad iter 1200: loss=1.0212
+grad iter 1400: loss=1.0267
+grad iter 1600: loss=1.0212
+grad iter 1800: loss=1.0257
+grad iter 2000: loss=1.0256
+grad iter 2200: loss=1.0256
+grad iter 2400: loss=1.0258
+grad iter 2600: loss=1.0265
+grad iter 2800: loss=1.0352
+{'loss': 1.0340982675552368, 'target_var': 1.049382209777832, 'grad_norm': 0.10594519972801208, 'grad_finite': True, 'state_std_per_neuron': [0.04457845538854599, 5.988120221900317e-09, 0.04810278117656708, 0.006180204916745424, 0.07325306534767151], 'state_scale': 0.39541536569595337, 'flat': False}
+saved scale_N5_12_0.1.png
+grad iter 0: loss=1.0428
+grad iter 200: loss=1.0483
+grad iter 400: loss=1.0481
+grad iter 600: loss=1.0481
+grad iter 800: loss=1.0480
+grad iter 1000: loss=1.0480
+grad iter 1200: loss=1.0480
+grad iter 1400: loss=1.0480
+grad iter 1600: loss=1.0480
+grad iter 1800: loss=1.0480
+grad iter 2000: loss=1.0480
+grad iter 2200: loss=1.0480
+grad iter 2400: loss=1.0480
+grad iter 2600: loss=1.0480
+grad iter 2800: loss=1.0480
+{'loss': 1.0428153276443481, 'target_var': 1.049382209777832, 'grad_norm': 0.022166911512613297, 'grad_finite': True, 'state_std_per_neuron': [7.0361169147992175e-12, 5.639123834555448e-09, 0.015964852645993233, 0.01568552479147911, 0.0001489737187512219], 'state_scale': 0.3690131902694702, 'flat': False}
+saved scale_N5_13_0.1.png
+grad iter 0: loss=1.0389
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=nan
+grad iter 2400: loss=nan
+grad iter 2600: loss=nan
+grad iter 2800: loss=nan
+{'loss': 1.0388901233673096, 'target_var': 1.049382209777832, 'grad_norm': 0.33112260699272156, 'grad_finite': True, 'state_std_per_neuron': [0.009226107969880104, 0.011498827487230301, 3.1338196482266767e-09, 1.1849660142004836e-10, 2.253906089544344e-11], 'state_scale': 0.49999988079071045, 'flat': False}
+seed 14 DIVERGED, max_eig set to nan
+grad iter 0: loss=1.0415
+grad iter 200: loss=1.0376
+grad iter 400: loss=1.0376
+grad iter 600: loss=1.0376
+grad iter 800: loss=1.0376
+grad iter 1000: loss=1.0376
+grad iter 1200: loss=1.0376
+grad iter 1400: loss=1.0376
+grad iter 1600: loss=1.0376
+grad iter 1800: loss=1.0376
+grad iter 2000: loss=1.0376
+grad iter 2200: loss=1.0376
+grad iter 2400: loss=1.0376
+grad iter 2600: loss=1.0376
+grad iter 2800: loss=1.0376
+{'loss': 1.0415486097335815, 'target_var': 1.049382209777832, 'grad_norm': 0.03622085973620415, 'grad_finite': True, 'state_std_per_neuron': [0.00021776136418338865, 0.0056123374961316586, 2.6186041779396874e-08, 4.55981363778335e-11, 0.007645137142390013], 'state_scale': 0.49999988079071045, 'flat': False}
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.0493751764297485, 'target_var': 1.049382209777832, 'grad_norm': 0.000515496009029448, 'grad_finite': True, 'state_std_per_neuron': [4.943171427740367e-10, 2.7155971693559877e-08, 9.941748813080409e-12, 5.561605576076545e-07, 6.387656625861382e-09], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_16_0.1.png
+grad iter 0: loss=1.0489
+grad iter 200: loss=1.0480
+grad iter 400: loss=1.0480
+grad iter 600: loss=1.0480
+grad iter 800: loss=1.0480
+grad iter 1000: loss=1.0480
+grad iter 1200: loss=1.0480
+grad iter 1400: loss=1.0480
+grad iter 1600: loss=1.0480
+grad iter 1800: loss=1.0480
+grad iter 2000: loss=1.0480
+grad iter 2200: loss=1.0480
+grad iter 2400: loss=1.0480
+grad iter 2600: loss=1.0480
+grad iter 2800: loss=1.0480
+{'loss': 1.0488919019699097, 'target_var': 1.049382209777832, 'grad_norm': 0.0005823341198265553, 'grad_finite': True, 'state_std_per_neuron': [3.31701693889741e-10, 0.01426425576210022, 3.5991183991446185e-12, 5.8139819347768906e-11, 0.014112773351371288], 'state_scale': 0.32368505001068115, 'flat': False}
+saved scale_N5_17_0.1.png
+grad iter 0: loss=1.0488
+grad iter 200: loss=1.0335
+grad iter 400: loss=1.0341
+grad iter 600: loss=1.0336
+grad iter 800: loss=1.0334
+grad iter 1000: loss=1.0334
+grad iter 1200: loss=1.0333
+grad iter 1400: loss=1.0334
+grad iter 1600: loss=1.0334
+grad iter 1800: loss=1.0333
+grad iter 2000: loss=1.0333
+grad iter 2200: loss=1.0333
+grad iter 2400: loss=1.0332
+grad iter 2600: loss=1.0376
+grad iter 2800: loss=1.0376
+{'loss': 1.0488461256027222, 'target_var': 1.049382209777832, 'grad_norm': 0.012182993814349174, 'grad_finite': True, 'state_std_per_neuron': [5.036692982685054e-07, 2.4710174878483926e-11, 1.2141181289504477e-11, 4.972026090399595e-06, 6.923784028750601e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_18_0.1.png
+grad iter 0: loss=1.0449
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.044927954673767, 'target_var': 1.049382209777832, 'grad_norm': 0.18519145250320435, 'grad_finite': True, 'state_std_per_neuron': [2.1359690435929224e-05, 1.7023807004079572e-06, 3.568270678933061e-11, 1.1154991513828705e-10, 6.428360881799433e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_19_0.1.png
+grad iter 0: loss=1.0334
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.0333646535873413, 'target_var': 1.049382209777832, 'grad_norm': 0.2080966830253601, 'grad_finite': True, 'state_std_per_neuron': [0.005282863043248653, 1.5912729467437714e-10, 5.0454419288359365e-12, 6.026900506439503e-11, 0.003451962023973465], 'state_scale': 0.49999988079071045, 'flat': False}
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 1.2617451972118943e-08, 'grad_finite': True, 'state_std_per_neuron': [2.0621106211482498e-10, 8.954483377010547e-08, 4.754975302390108e-10, 5.634115136238238e-12, 5.459722951517421e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_1_0.3.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 6.880556924215853e-08, 'grad_finite': True, 'state_std_per_neuron': [2.1251980730774278e-10, 8.940696716308594e-08, 8.216622694734443e-12, 3.670368262792545e-12, 1.515936334794965e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_2_0.3.png
+grad iter 0: loss=1.0485
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.0485098361968994, 'target_var': 1.049382209777832, 'grad_norm': 0.056989725679159164, 'grad_finite': True, 'state_std_per_neuron': [5.202890895894541e-11, 6.7980395618283396e-12, 0.03466356173157692, 2.0187206073440933e-11, 0.0344286784529686], 'state_scale': 0.49999988079071045, 'flat': False}
+saved scale_N5_3_0.3.png
+grad iter 0: loss=1.0469
+grad iter 200: loss=1.0480
+grad iter 400: loss=1.0480
+grad iter 600: loss=1.0480
+grad iter 800: loss=1.0480
+grad iter 1000: loss=1.0480
+grad iter 1200: loss=1.0480
+grad iter 1400: loss=nan
+grad iter 1600: loss=nan
+grad iter 1800: loss=nan
+grad iter 2000: loss=nan
+grad iter 2200: loss=nan
+grad iter 2400: loss=nan
+grad iter 2600: loss=nan
+grad iter 2800: loss=nan
+{'loss': 1.0469474792480469, 'target_var': 1.049382209777832, 'grad_norm': 0.07878581434488297, 'grad_finite': True, 'state_std_per_neuron': [4.607344887552767e-12, 3.970054063273665e-09, 1.6358574217445465e-11, 0.0233030803501606, 0.02441432513296604], 'state_scale': 0.49999988079071045, 'flat': False}
+seed 4 DIVERGED, max_eig set to nan
+grad iter 0: loss=1.0491
+grad iter 200: loss=1.0480
+grad iter 400: loss=1.0480
+grad iter 600: loss=1.0480
+grad iter 800: loss=1.0480
+grad iter 1000: loss=nan
+grad iter 1200: loss=nan
+grad iter 1400: loss=nan
+grad iter 1600: loss=nan
+grad iter 1800: loss=nan
+grad iter 2000: loss=nan
+grad iter 2200: loss=nan
+grad iter 2400: loss=nan
+grad iter 2600: loss=nan
+grad iter 2800: loss=nan
+{'loss': 1.049073576927185, 'target_var': 1.049382209777832, 'grad_norm': 0.0006399337435141206, 'grad_finite': True, 'state_std_per_neuron': [0.027835963293910027, 0.02844151295721531, 4.866624030847033e-12, 1.7179865169358877e-11, 3.4152780430118934e-12], 'state_scale': 0.46167147159576416, 'flat': False}
+seed 5 DIVERGED, max_eig set to nan
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 2.9135748036424047e-07, 'grad_finite': True, 'state_std_per_neuron': [2.716627200971544e-10, 4.13526071024739e-12, 7.831568171745573e-10, 9.055852956407762e-08, 4.875476758425812e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_6_0.3.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0480
+grad iter 400: loss=1.0480
+grad iter 600: loss=1.0480
+grad iter 800: loss=1.0480
+grad iter 1000: loss=1.0480
+grad iter 1200: loss=1.0480
+grad iter 1400: loss=1.0480
+grad iter 1600: loss=1.0480
+grad iter 1800: loss=1.0480
+grad iter 2000: loss=1.0480
+grad iter 2200: loss=1.0480
+grad iter 2400: loss=1.0480
+grad iter 2600: loss=1.0480
+grad iter 2800: loss=1.0480
+{'loss': 1.0493590831756592, 'target_var': 1.049382209777832, 'grad_norm': 0.00046234382898546755, 'grad_finite': True, 'state_std_per_neuron': [6.282046882688519e-08, 9.975159400710254e-07, 1.4917954371806985e-10, 1.599270715857415e-11, 2.276845911808323e-08], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_7_0.3.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=nan
+grad iter 400: loss=nan
+grad iter 600: loss=nan
+grad iter 800: loss=nan
+grad iter 1000: loss=nan
+grad iter 1200: loss=nan
+grad iter 1400: loss=nan
+grad iter 1600: loss=nan
+grad iter 1800: loss=nan
+grad iter 2000: loss=nan
+grad iter 2200: loss=nan
+grad iter 2400: loss=nan
+grad iter 2600: loss=nan
+grad iter 2800: loss=nan
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 1.2602312438048102e-07, 'grad_finite': True, 'state_std_per_neuron': [3.4152780430118934e-12, 8.304234383471609e-11, 2.443457658429793e-09, 2.4328247749672016e-11, 9.707255088642341e-08], 'state_scale': 0.49999988079071045, 'flat': True}
+seed 8 DIVERGED, max_eig set to nan
+grad iter 0: loss=1.0488
+grad iter 200: loss=nan
+grad iter 400: loss=nan
+grad iter 600: loss=nan
+grad iter 800: loss=nan
+grad iter 1000: loss=nan
+grad iter 1200: loss=nan
+grad iter 1400: loss=nan
+grad iter 1600: loss=nan
+grad iter 1800: loss=nan
+grad iter 2000: loss=nan
+grad iter 2200: loss=nan
+grad iter 2400: loss=nan
+grad iter 2600: loss=nan
+grad iter 2800: loss=nan
+{'loss': 1.0487691164016724, 'target_var': 1.049382209777832, 'grad_norm': 0.026276934891939163, 'grad_finite': True, 'state_std_per_neuron': [4.690477624080813e-07, 4.178031531854032e-11, 4.247728471046264e-12, 1.436205841753857e-11, 5.3526855481322855e-06], 'state_scale': 0.49999988079071045, 'flat': True}
+seed 9 DIVERGED, max_eig set to nan
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0457
+grad iter 400: loss=1.0388
+grad iter 600: loss=1.0389
+grad iter 800: loss=1.0387
+grad iter 1000: loss=1.0387
+grad iter 1200: loss=1.0387
+grad iter 1400: loss=1.0387
+grad iter 1600: loss=1.0387
+grad iter 1800: loss=1.0387
+grad iter 2000: loss=1.0388
+grad iter 2200: loss=1.0388
+grad iter 2400: loss=1.0387
+grad iter 2600: loss=1.0388
+grad iter 2800: loss=1.0387
+{'loss': 1.0493708848953247, 'target_var': 1.049382209777832, 'grad_norm': 0.00018092739628627896, 'grad_finite': True, 'state_std_per_neuron': [5.166876041601265e-12, 5.2761567559400646e-08, 1.034020265244795e-11, 7.002806228229019e-07, 4.477506213018678e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+grad iter 0: loss=1.0493
+grad iter 200: loss=nan
+grad iter 400: loss=nan
+grad iter 600: loss=nan
+grad iter 800: loss=nan
+grad iter 1000: loss=nan
+grad iter 1200: loss=nan
+grad iter 1400: loss=nan
+grad iter 1600: loss=nan
+grad iter 1800: loss=nan
+grad iter 2000: loss=nan
+grad iter 2200: loss=nan
+grad iter 2400: loss=nan
+grad iter 2600: loss=nan
+grad iter 2800: loss=nan
+{'loss': 1.0492558479309082, 'target_var': 1.049382209777832, 'grad_norm': 0.006223040632903576, 'grad_finite': True, 'state_std_per_neuron': [9.161961189718681e-10, 4.830313926618146e-09, 2.0581717308232328e-07, 2.547082336712414e-11, 2.3509915081376676e-06], 'state_scale': 0.49999988079071045, 'flat': True}
+seed 11 DIVERGED, max_eig set to nan
+grad iter 0: loss=1.0341
+grad iter 200: loss=1.0166
+grad iter 400: loss=1.0165
+grad iter 600: loss=1.0203
+grad iter 800: loss=1.0203
+grad iter 1000: loss=1.0203
+grad iter 1200: loss=1.0202
+grad iter 1400: loss=1.0201
+grad iter 1600: loss=1.0201
+grad iter 1800: loss=1.0201
+grad iter 2000: loss=1.0200
+grad iter 2200: loss=1.0200
+grad iter 2400: loss=1.0200
+grad iter 2600: loss=1.0200
+grad iter 2800: loss=1.0200
+{'loss': 1.0340982675552368, 'target_var': 1.049382209777832, 'grad_norm': 0.10594519972801208, 'grad_finite': True, 'state_std_per_neuron': [0.04457845538854599, 5.988120221900317e-09, 0.04810278117656708, 0.006180204916745424, 0.07325306534767151], 'state_scale': 0.39541536569595337, 'flat': False}
+saved scale_N5_12_0.3.png
+grad iter 0: loss=1.0428
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.0428153276443481, 'target_var': 1.049382209777832, 'grad_norm': 0.022166911512613297, 'grad_finite': True, 'state_std_per_neuron': [7.0361169147992175e-12, 5.639123834555448e-09, 0.015964852645993233, 0.01568552479147911, 0.0001489737187512219], 'state_scale': 0.3690131902694702, 'flat': False}
+saved scale_N5_13_0.3.png
+grad iter 0: loss=1.0389
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.0388901233673096, 'target_var': 1.049382209777832, 'grad_norm': 0.33112260699272156, 'grad_finite': True, 'state_std_per_neuron': [0.009226107969880104, 0.011498827487230301, 3.1338196482266767e-09, 1.1849660142004836e-10, 2.253906089544344e-11], 'state_scale': 0.49999988079071045, 'flat': False}
+saved scale_N5_14_0.3.png
+grad iter 0: loss=1.0415
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.0415486097335815, 'target_var': 1.049382209777832, 'grad_norm': 0.03622085973620415, 'grad_finite': True, 'state_std_per_neuron': [0.00021776136418338865, 0.0056123374961316586, 2.6186041779396874e-08, 4.55981363778335e-11, 0.007645137142390013], 'state_scale': 0.49999988079071045, 'flat': False}
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0491
+grad iter 400: loss=1.0435
+grad iter 600: loss=1.0434
+grad iter 800: loss=1.0435
+grad iter 1000: loss=1.0432
+grad iter 1200: loss=1.0436
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.0493751764297485, 'target_var': 1.049382209777832, 'grad_norm': 0.000515496009029448, 'grad_finite': True, 'state_std_per_neuron': [4.943171427740367e-10, 2.7155971693559877e-08, 9.941748813080409e-12, 5.561605576076545e-07, 6.387656625861382e-09], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_16_0.3.png
+grad iter 0: loss=1.0489
+grad iter 200: loss=1.0480
+grad iter 400: loss=1.0479
+grad iter 600: loss=1.0479
+grad iter 800: loss=1.0479
+grad iter 1000: loss=1.0479
+grad iter 1200: loss=1.0479
+grad iter 1400: loss=1.0479
+grad iter 1600: loss=1.0480
+grad iter 1800: loss=1.0479
+grad iter 2000: loss=1.0480
+grad iter 2200: loss=1.0480
+grad iter 2400: loss=1.0480
+grad iter 2600: loss=1.0480
+grad iter 2800: loss=1.0480
+{'loss': 1.0488919019699097, 'target_var': 1.049382209777832, 'grad_norm': 0.0005823341198265553, 'grad_finite': True, 'state_std_per_neuron': [3.31701693889741e-10, 0.01426425576210022, 3.5991183991446185e-12, 5.8139819347768906e-11, 0.014112773351371288], 'state_scale': 0.32368505001068115, 'flat': False}
+saved scale_N5_17_0.3.png
+grad iter 0: loss=1.0488
+grad iter 200: loss=nan
+grad iter 400: loss=nan
+grad iter 600: loss=nan
+grad iter 800: loss=nan
+grad iter 1000: loss=nan
+grad iter 1200: loss=nan
+grad iter 1400: loss=nan
+grad iter 1600: loss=nan
+grad iter 1800: loss=nan
+grad iter 2000: loss=nan
+grad iter 2200: loss=nan
+grad iter 2400: loss=nan
+grad iter 2600: loss=nan
+grad iter 2800: loss=nan
+{'loss': 1.0488461256027222, 'target_var': 1.049382209777832, 'grad_norm': 0.012182993814349174, 'grad_finite': True, 'state_std_per_neuron': [5.036692982685054e-07, 2.4710174878483926e-11, 1.2141181289504477e-11, 4.972026090399595e-06, 6.923784028750601e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+seed 18 DIVERGED, max_eig set to nan
+grad iter 0: loss=1.0449
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.044927954673767, 'target_var': 1.049382209777832, 'grad_norm': 0.18519145250320435, 'grad_finite': True, 'state_std_per_neuron': [2.1359690435929224e-05, 1.7023807004079572e-06, 3.568270678933061e-11, 1.1154991513828705e-10, 6.428360881799433e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_19_0.3.png
+grad iter 0: loss=1.0334
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.0333646535873413, 'target_var': 1.049382209777832, 'grad_norm': 0.2080966830253601, 'grad_finite': True, 'state_std_per_neuron': [0.005282863043248653, 1.5912729467437714e-10, 5.0454419288359365e-12, 6.026900506439503e-11, 0.003451962023973465], 'state_scale': 0.49999988079071045, 'flat': False}
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 1.2617451972118943e-08, 'grad_finite': True, 'state_std_per_neuron': [2.0621106211482498e-10, 8.954483377010547e-08, 4.754975302390108e-10, 5.634115136238238e-12, 5.459722951517421e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_1_1.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 6.880556924215853e-08, 'grad_finite': True, 'state_std_per_neuron': [2.1251980730774278e-10, 8.940696716308594e-08, 8.216622694734443e-12, 3.670368262792545e-12, 1.515936334794965e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_2_1.png
+grad iter 0: loss=1.0485
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.0485098361968994, 'target_var': 1.049382209777832, 'grad_norm': 0.056989725679159164, 'grad_finite': True, 'state_std_per_neuron': [5.202890895894541e-11, 6.7980395618283396e-12, 0.03466356173157692, 2.0187206073440933e-11, 0.0344286784529686], 'state_scale': 0.49999988079071045, 'flat': False}
+saved scale_N5_3_1.png
+grad iter 0: loss=1.0469
+grad iter 200: loss=1.0480
+grad iter 400: loss=1.0480
+grad iter 600: loss=1.0479
+grad iter 800: loss=1.0478
+grad iter 1000: loss=1.0479
+grad iter 1200: loss=1.0479
+grad iter 1400: loss=1.0478
+grad iter 1600: loss=1.0479
+grad iter 1800: loss=1.0480
+grad iter 2000: loss=1.0480
+grad iter 2200: loss=1.0479
+grad iter 2400: loss=1.0479
+grad iter 2600: loss=1.0479
+grad iter 2800: loss=1.0479
+{'loss': 1.0469474792480469, 'target_var': 1.049382209777832, 'grad_norm': 0.07878581434488297, 'grad_finite': True, 'state_std_per_neuron': [4.607344887552767e-12, 3.970054063273665e-09, 1.6358574217445465e-11, 0.0233030803501606, 0.02441432513296604], 'state_scale': 0.49999988079071045, 'flat': False}
+saved scale_N5_4_1.png
+grad iter 0: loss=1.0491
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049073576927185, 'target_var': 1.049382209777832, 'grad_norm': 0.0006399337435141206, 'grad_finite': True, 'state_std_per_neuron': [0.027835963293910027, 0.02844151295721531, 4.866624030847033e-12, 1.7179865169358877e-11, 3.4152780430118934e-12], 'state_scale': 0.46167147159576416, 'flat': False}
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0464
+grad iter 400: loss=1.0465
+grad iter 600: loss=1.0464
+grad iter 800: loss=1.0464
+grad iter 1000: loss=1.0464
+grad iter 1200: loss=1.0464
+grad iter 1400: loss=1.0464
+grad iter 1600: loss=1.0464
+grad iter 1800: loss=1.0464
+grad iter 2000: loss=nan
+grad iter 2200: loss=nan
+grad iter 2400: loss=nan
+grad iter 2600: loss=nan
+grad iter 2800: loss=nan
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 2.9135748036424047e-07, 'grad_finite': True, 'state_std_per_neuron': [2.716627200971544e-10, 4.13526071024739e-12, 7.831568171745573e-10, 9.055852956407762e-08, 4.875476758425812e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+seed 6 DIVERGED, max_eig set to nan
+grad iter 0: loss=1.0494
+grad iter 200: loss=nan
+grad iter 400: loss=nan
+grad iter 600: loss=nan
+grad iter 800: loss=nan
+grad iter 1000: loss=nan
+grad iter 1200: loss=nan
+grad iter 1400: loss=nan
+grad iter 1600: loss=nan
+grad iter 1800: loss=nan
+grad iter 2000: loss=nan
+grad iter 2200: loss=nan
+grad iter 2400: loss=nan
+grad iter 2600: loss=nan
+grad iter 2800: loss=nan
+{'loss': 1.0493590831756592, 'target_var': 1.049382209777832, 'grad_norm': 0.00046234382898546755, 'grad_finite': True, 'state_std_per_neuron': [6.282046882688519e-08, 9.975159400710254e-07, 1.4917954371806985e-10, 1.599270715857415e-11, 2.276845911808323e-08], 'state_scale': 0.49999988079071045, 'flat': True}
+seed 7 DIVERGED, max_eig set to nan
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0464
+grad iter 400: loss=nan
+grad iter 600: loss=nan
+grad iter 800: loss=nan
+grad iter 1000: loss=nan
+grad iter 1200: loss=nan
+grad iter 1400: loss=nan
+grad iter 1600: loss=nan
+grad iter 1800: loss=nan
+grad iter 2000: loss=nan
+grad iter 2200: loss=nan
+grad iter 2400: loss=nan
+grad iter 2600: loss=nan
+grad iter 2800: loss=nan
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 1.2602312438048102e-07, 'grad_finite': True, 'state_std_per_neuron': [3.4152780430118934e-12, 8.304234383471609e-11, 2.443457658429793e-09, 2.4328247749672016e-11, 9.707255088642341e-08], 'state_scale': 0.49999988079071045, 'flat': True}
+seed 8 DIVERGED, max_eig set to nan
+grad iter 0: loss=1.0488
+grad iter 200: loss=1.0480
+grad iter 400: loss=1.0480
+grad iter 600: loss=1.0480
+grad iter 800: loss=1.0480
+grad iter 1000: loss=1.0480
+grad iter 1200: loss=1.0480
+grad iter 1400: loss=1.0480
+grad iter 1600: loss=1.0480
+grad iter 1800: loss=1.0480
+grad iter 2000: loss=1.0480
+grad iter 2200: loss=1.0480
+grad iter 2400: loss=1.0480
+grad iter 2600: loss=1.0480
+grad iter 2800: loss=1.0480
+{'loss': 1.0487691164016724, 'target_var': 1.049382209777832, 'grad_norm': 0.026276934891939163, 'grad_finite': True, 'state_std_per_neuron': [4.690477624080813e-07, 4.178031531854032e-11, 4.247728471046264e-12, 1.436205841753857e-11, 5.3526855481322855e-06], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_9_1.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=nan
+grad iter 400: loss=nan
+grad iter 600: loss=nan
+grad iter 800: loss=nan
+grad iter 1000: loss=nan
+grad iter 1200: loss=nan
+grad iter 1400: loss=nan
+grad iter 1600: loss=nan
+grad iter 1800: loss=nan
+grad iter 2000: loss=nan
+grad iter 2200: loss=nan
+grad iter 2400: loss=nan
+grad iter 2600: loss=nan
+grad iter 2800: loss=nan
+{'loss': 1.0493708848953247, 'target_var': 1.049382209777832, 'grad_norm': 0.00018092739628627896, 'grad_finite': True, 'state_std_per_neuron': [5.166876041601265e-12, 5.2761567559400646e-08, 1.034020265244795e-11, 7.002806228229019e-07, 4.477506213018678e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+seed 10 DIVERGED, max_eig set to nan
+grad iter 0: loss=1.0493
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.0492558479309082, 'target_var': 1.049382209777832, 'grad_norm': 0.006223040632903576, 'grad_finite': True, 'state_std_per_neuron': [9.161961189718681e-10, 4.830313926618146e-09, 2.0581717308232328e-07, 2.547082336712414e-11, 2.3509915081376676e-06], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_11_1.png
+grad iter 0: loss=1.0341
+grad iter 200: loss=1.0479
+grad iter 400: loss=1.0479
+grad iter 600: loss=1.0478
+grad iter 800: loss=1.0479
+grad iter 1000: loss=1.0478
+grad iter 1200: loss=1.0478
+grad iter 1400: loss=1.0479
+grad iter 1600: loss=1.0478
+grad iter 1800: loss=1.0480
+grad iter 2000: loss=1.0479
+grad iter 2200: loss=1.0472
+grad iter 2400: loss=1.0472
+grad iter 2600: loss=1.0472
+grad iter 2800: loss=1.0473
+{'loss': 1.0340982675552368, 'target_var': 1.049382209777832, 'grad_norm': 0.10594519972801208, 'grad_finite': True, 'state_std_per_neuron': [0.04457845538854599, 5.988120221900317e-09, 0.04810278117656708, 0.006180204916745424, 0.07325306534767151], 'state_scale': 0.39541536569595337, 'flat': False}
+saved scale_N5_12_1.png
+grad iter 0: loss=1.0428
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.0428153276443481, 'target_var': 1.049382209777832, 'grad_norm': 0.022166911512613297, 'grad_finite': True, 'state_std_per_neuron': [7.0361169147992175e-12, 5.639123834555448e-09, 0.015964852645993233, 0.01568552479147911, 0.0001489737187512219], 'state_scale': 0.3690131902694702, 'flat': False}
+saved scale_N5_13_1.png
+grad iter 0: loss=1.0389
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.0388901233673096, 'target_var': 1.049382209777832, 'grad_norm': 0.33112260699272156, 'grad_finite': True, 'state_std_per_neuron': [0.009226107969880104, 0.011498827487230301, 3.1338196482266767e-09, 1.1849660142004836e-10, 2.253906089544344e-11], 'state_scale': 0.49999988079071045, 'flat': False}
+saved scale_N5_14_1.png
+grad iter 0: loss=1.0415
+grad iter 200: loss=nan
+grad iter 400: loss=nan
+grad iter 600: loss=nan
+grad iter 800: loss=nan
+grad iter 1000: loss=nan
+grad iter 1200: loss=nan
+grad iter 1400: loss=nan
+grad iter 1600: loss=nan
+grad iter 1800: loss=nan
+grad iter 2000: loss=nan
+grad iter 2200: loss=nan
+grad iter 2400: loss=nan
+grad iter 2600: loss=nan
+grad iter 2800: loss=nan
+{'loss': 1.0415486097335815, 'target_var': 1.049382209777832, 'grad_norm': 0.03622085973620415, 'grad_finite': True, 'state_std_per_neuron': [0.00021776136418338865, 0.0056123374961316586, 2.6186041779396874e-08, 4.55981363778335e-11, 0.007645137142390013], 'state_scale': 0.49999988079071045, 'flat': False}
+seed 15 DIVERGED, max_eig set to nan
+grad iter 0: loss=1.0494
+grad iter 200: loss=nan
+grad iter 400: loss=nan
+grad iter 600: loss=nan
+grad iter 800: loss=nan
+grad iter 1000: loss=nan
+grad iter 1200: loss=nan
+grad iter 1400: loss=nan
+grad iter 1600: loss=nan
+grad iter 1800: loss=nan
+grad iter 2000: loss=nan
+grad iter 2200: loss=nan
+grad iter 2400: loss=nan
+grad iter 2600: loss=nan
+grad iter 2800: loss=nan
+{'loss': 1.0493751764297485, 'target_var': 1.049382209777832, 'grad_norm': 0.000515496009029448, 'grad_finite': True, 'state_std_per_neuron': [4.943171427740367e-10, 2.7155971693559877e-08, 9.941748813080409e-12, 5.561605576076545e-07, 6.387656625861382e-09], 'state_scale': 0.49999988079071045, 'flat': True}
+seed 16 DIVERGED, max_eig set to nan
+grad iter 0: loss=1.0489
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.0488919019699097, 'target_var': 1.049382209777832, 'grad_norm': 0.0005823341198265553, 'grad_finite': True, 'state_std_per_neuron': [3.31701693889741e-10, 0.01426425576210022, 3.5991183991446185e-12, 5.8139819347768906e-11, 0.014112773351371288], 'state_scale': 0.32368505001068115, 'flat': False}
+saved scale_N5_17_1.png
+grad iter 0: loss=1.0488
+grad iter 200: loss=1.0464
+grad iter 400: loss=1.0464
+grad iter 600: loss=1.0464
+grad iter 800: loss=1.0464
+grad iter 1000: loss=1.0464
+grad iter 1200: loss=nan
+grad iter 1400: loss=nan
+grad iter 1600: loss=nan
+grad iter 1800: loss=nan
+grad iter 2000: loss=nan
+grad iter 2200: loss=nan
+grad iter 2400: loss=nan
+grad iter 2600: loss=nan
+grad iter 2800: loss=nan
+{'loss': 1.0488461256027222, 'target_var': 1.049382209777832, 'grad_norm': 0.012182993814349174, 'grad_finite': True, 'state_std_per_neuron': [5.036692982685054e-07, 2.4710174878483926e-11, 1.2141181289504477e-11, 4.972026090399595e-06, 6.923784028750601e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+seed 18 DIVERGED, max_eig set to nan
+grad iter 0: loss=1.0449
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.044927954673767, 'target_var': 1.049382209777832, 'grad_norm': 0.18519145250320435, 'grad_finite': True, 'state_std_per_neuron': [2.1359690435929224e-05, 1.7023807004079572e-06, 3.568270678933061e-11, 1.1154991513828705e-10, 6.428360881799433e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_19_1.png
+grad iter 0: loss=1.0334
+grad iter 200: loss=1.0330
+grad iter 400: loss=1.0330
+grad iter 600: loss=1.0330
+grad iter 800: loss=1.0330
+grad iter 1000: loss=1.0330
+grad iter 1200: loss=1.0330
+grad iter 1400: loss=1.0330
+grad iter 1600: loss=1.0330
+grad iter 1800: loss=1.0330
+grad iter 2000: loss=1.0330
+grad iter 2200: loss=1.0330
+grad iter 2400: loss=1.0330
+grad iter 2600: loss=1.0330
+grad iter 2800: loss=1.0330
+{'loss': 1.0333646535873413, 'target_var': 1.049382209777832, 'grad_norm': 0.2080966830253601, 'grad_finite': True, 'state_std_per_neuron': [0.005282863043248653, 1.5912729467437714e-10, 5.0454419288359365e-12, 6.026900506439503e-11, 0.003451962023973465], 'state_scale': 0.49999988079071045, 'flat': False}
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 1.2617451972118943e-08, 'grad_finite': True, 'state_std_per_neuron': [2.0621106211482498e-10, 8.954483377010547e-08, 4.754975302390108e-10, 5.634115136238238e-12, 5.459722951517421e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_1_1e-05.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 6.880556924215853e-08, 'grad_finite': True, 'state_std_per_neuron': [2.1251980730774278e-10, 8.940696716308594e-08, 8.216622694734443e-12, 3.670368262792545e-12, 1.515936334794965e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_2_1e-05.png
+grad iter 0: loss=1.0485
+grad iter 200: loss=1.0483
+grad iter 400: loss=1.0480
+grad iter 600: loss=1.0478
+grad iter 800: loss=1.0476
+grad iter 1000: loss=1.0475
+grad iter 1200: loss=1.0475
+grad iter 1400: loss=1.0475
+grad iter 1600: loss=1.0475
+grad iter 1800: loss=1.0475
+grad iter 2000: loss=1.0475
+grad iter 2200: loss=1.0475
+grad iter 2400: loss=1.0475
+grad iter 2600: loss=1.0475
+grad iter 2800: loss=1.0475
+{'loss': 1.0485098361968994, 'target_var': 1.049382209777832, 'grad_norm': 0.056989725679159164, 'grad_finite': True, 'state_std_per_neuron': [5.202890895894541e-11, 6.7980395618283396e-12, 0.03466356173157692, 2.0187206073440933e-11, 0.0344286784529686], 'state_scale': 0.49999988079071045, 'flat': False}
+saved scale_N5_3_1e-05.png
+grad iter 0: loss=1.0469
+grad iter 200: loss=1.0465
+grad iter 400: loss=1.0460
+grad iter 600: loss=1.0455
+grad iter 800: loss=1.0451
+grad iter 1000: loss=1.0448
+grad iter 1200: loss=1.0445
+grad iter 1400: loss=1.0444
+grad iter 1600: loss=1.0443
+grad iter 1800: loss=1.0442
+grad iter 2000: loss=1.0442
+grad iter 2200: loss=1.0442
+grad iter 2400: loss=1.0442
+grad iter 2600: loss=1.0442
+grad iter 2800: loss=1.0442
+{'loss': 1.0469474792480469, 'target_var': 1.049382209777832, 'grad_norm': 0.07878581434488297, 'grad_finite': True, 'state_std_per_neuron': [4.607344887552767e-12, 3.970054063273665e-09, 1.6358574217445465e-11, 0.0233030803501606, 0.02441432513296604], 'state_scale': 0.49999988079071045, 'flat': False}
+saved scale_N5_4_1e-05.png
+grad iter 0: loss=1.0491
+grad iter 200: loss=nan
+grad iter 400: loss=nan
+grad iter 600: loss=nan
+grad iter 800: loss=nan
+grad iter 1000: loss=nan
+grad iter 1200: loss=nan
+grad iter 1400: loss=nan
+grad iter 1600: loss=nan
+grad iter 1800: loss=nan
+grad iter 2000: loss=nan
+grad iter 2200: loss=nan
+grad iter 2400: loss=nan
+grad iter 2600: loss=nan
+grad iter 2800: loss=nan
+{'loss': 1.049073576927185, 'target_var': 1.049382209777832, 'grad_norm': 0.0006399337435141206, 'grad_finite': True, 'state_std_per_neuron': [0.027835963293910027, 0.02844151295721531, 4.866624030847033e-12, 1.7179865169358877e-11, 3.4152780430118934e-12], 'state_scale': 0.46167147159576416, 'flat': False}
+seed 5 DIVERGED, max_eig set to nan
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 2.9135748036424047e-07, 'grad_finite': True, 'state_std_per_neuron': [2.716627200971544e-10, 4.13526071024739e-12, 7.831568171745573e-10, 9.055852956407762e-08, 4.875476758425812e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_6_1e-05.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0493
+grad iter 800: loss=1.0493
+grad iter 1000: loss=1.0493
+grad iter 1200: loss=1.0493
+grad iter 1400: loss=1.0493
+grad iter 1600: loss=1.0493
+grad iter 1800: loss=1.0493
+grad iter 2000: loss=1.0492
+grad iter 2200: loss=1.0492
+grad iter 2400: loss=1.0492
+grad iter 2600: loss=1.0491
+grad iter 2800: loss=1.0490
+{'loss': 1.0493590831756592, 'target_var': 1.049382209777832, 'grad_norm': 0.00046234382898546755, 'grad_finite': True, 'state_std_per_neuron': [6.282046882688519e-08, 9.975159400710254e-07, 1.4917954371806985e-10, 1.599270715857415e-11, 2.276845911808323e-08], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_7_1e-05.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 1.2602312438048102e-07, 'grad_finite': True, 'state_std_per_neuron': [3.4152780430118934e-12, 8.304234383471609e-11, 2.443457658429793e-09, 2.4328247749672016e-11, 9.707255088642341e-08], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_8_1e-05.png
+grad iter 0: loss=1.0488
+grad iter 200: loss=1.0487
+grad iter 400: loss=1.0485
+grad iter 600: loss=1.0483
+grad iter 800: loss=1.0481
+grad iter 1000: loss=1.0478
+grad iter 1200: loss=1.0474
+grad iter 1400: loss=1.0470
+grad iter 1600: loss=1.0465
+grad iter 1800: loss=1.0461
+grad iter 2000: loss=1.0457
+grad iter 2200: loss=1.0453
+grad iter 2400: loss=1.0450
+grad iter 2600: loss=1.0447
+grad iter 2800: loss=1.0444
+{'loss': 1.0487691164016724, 'target_var': 1.049382209777832, 'grad_norm': 0.026276934891939163, 'grad_finite': True, 'state_std_per_neuron': [4.690477624080813e-07, 4.178031531854032e-11, 4.247728471046264e-12, 1.436205841753857e-11, 5.3526855481322855e-06], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_9_1e-05.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0493
+{'loss': 1.0493708848953247, 'target_var': 1.049382209777832, 'grad_norm': 0.00018092739628627896, 'grad_finite': True, 'state_std_per_neuron': [5.166876041601265e-12, 5.2761567559400646e-08, 1.034020265244795e-11, 7.002806228229019e-07, 4.477506213018678e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+grad iter 0: loss=1.0493
+grad iter 200: loss=1.0492
+grad iter 400: loss=1.0492
+grad iter 600: loss=1.0491
+grad iter 800: loss=1.0490
+grad iter 1000: loss=1.0488
+grad iter 1200: loss=1.0484
+grad iter 1400: loss=1.0479
+grad iter 1600: loss=1.0472
+grad iter 1800: loss=1.0463
+grad iter 2000: loss=1.0454
+grad iter 2200: loss=1.0448
+grad iter 2400: loss=1.0443
+grad iter 2600: loss=1.0439
+grad iter 2800: loss=1.0437
+{'loss': 1.0492558479309082, 'target_var': 1.049382209777832, 'grad_norm': 0.006223040632903576, 'grad_finite': True, 'state_std_per_neuron': [9.161961189718681e-10, 4.830313926618146e-09, 2.0581717308232328e-07, 2.547082336712414e-11, 2.3509915081376676e-06], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_11_1e-05.png
+grad iter 0: loss=1.0341
+grad iter 200: loss=1.0335
+grad iter 400: loss=1.0330
+grad iter 600: loss=1.0325
+grad iter 800: loss=1.0320
+grad iter 1000: loss=1.0315
+grad iter 1200: loss=1.0311
+grad iter 1400: loss=1.0307
+grad iter 1600: loss=1.0303
+grad iter 1800: loss=1.0299
+grad iter 2000: loss=1.0296
+grad iter 2200: loss=1.0294
+grad iter 2400: loss=1.0291
+grad iter 2600: loss=1.0289
+grad iter 2800: loss=1.0287
+{'loss': 1.0340982675552368, 'target_var': 1.049382209777832, 'grad_norm': 0.10594519972801208, 'grad_finite': True, 'state_std_per_neuron': [0.04457845538854599, 5.988120221900317e-09, 0.04810278117656708, 0.006180204916745424, 0.07325306534767151], 'state_scale': 0.39541536569595337, 'flat': False}
+saved scale_N5_12_1e-05.png
+grad iter 0: loss=1.0428
+grad iter 200: loss=1.0368
+grad iter 400: loss=1.0299
+grad iter 600: loss=1.0299
+grad iter 800: loss=1.0299
+grad iter 1000: loss=1.0299
+grad iter 1200: loss=1.0299
+grad iter 1400: loss=1.0299
+grad iter 1600: loss=1.0299
+grad iter 1800: loss=1.0299
+grad iter 2000: loss=1.0299
+grad iter 2200: loss=1.0299
+grad iter 2400: loss=1.0299
+grad iter 2600: loss=1.0299
+grad iter 2800: loss=1.0299
+{'loss': 1.0428153276443481, 'target_var': 1.049382209777832, 'grad_norm': 0.022166911512613297, 'grad_finite': True, 'state_std_per_neuron': [7.0361169147992175e-12, 5.639123834555448e-09, 0.015964852645993233, 0.01568552479147911, 0.0001489737187512219], 'state_scale': 0.3690131902694702, 'flat': False}
+saved scale_N5_13_1e-05.png
+grad iter 0: loss=1.0389
+grad iter 200: loss=1.0373
+grad iter 400: loss=1.0360
+grad iter 600: loss=1.0350
+grad iter 800: loss=1.0343
+grad iter 1000: loss=1.0339
+grad iter 1200: loss=1.0336
+grad iter 1400: loss=1.0335
+grad iter 1600: loss=1.0334
+grad iter 1800: loss=1.0333
+grad iter 2000: loss=1.0333
+grad iter 2200: loss=1.0333
+grad iter 2400: loss=1.0333
+grad iter 2600: loss=1.0333
+grad iter 2800: loss=1.0333
+{'loss': 1.0388901233673096, 'target_var': 1.049382209777832, 'grad_norm': 0.33112260699272156, 'grad_finite': True, 'state_std_per_neuron': [0.009226107969880104, 0.011498827487230301, 3.1338196482266767e-09, 1.1849660142004836e-10, 2.253906089544344e-11], 'state_scale': 0.49999988079071045, 'flat': False}
+saved scale_N5_14_1e-05.png
+grad iter 0: loss=1.0415
+grad iter 200: loss=1.0415
+grad iter 400: loss=1.0415
+grad iter 600: loss=1.0415
+grad iter 800: loss=1.0415
+grad iter 1000: loss=1.0415
+grad iter 1200: loss=1.0415
+grad iter 1400: loss=1.0415
+grad iter 1600: loss=1.0415
+grad iter 1800: loss=1.0415
+grad iter 2000: loss=1.0415
+grad iter 2200: loss=1.0415
+grad iter 2400: loss=1.0415
+grad iter 2600: loss=1.0415
+grad iter 2800: loss=1.0415
+{'loss': 1.0415486097335815, 'target_var': 1.049382209777832, 'grad_norm': 0.03622085973620415, 'grad_finite': True, 'state_std_per_neuron': [0.00021776136418338865, 0.0056123374961316586, 2.6186041779396874e-08, 4.55981363778335e-11, 0.007645137142390013], 'state_scale': 0.49999988079071045, 'flat': False}
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0493
+grad iter 1000: loss=1.0491
+grad iter 1200: loss=1.0461
+grad iter 1400: loss=1.0431
+grad iter 1600: loss=1.0430
+grad iter 1800: loss=1.0430
+grad iter 2000: loss=1.0430
+grad iter 2200: loss=1.0429
+grad iter 2400: loss=1.0233
+grad iter 2600: loss=1.0231
+grad iter 2800: loss=1.0232
+{'loss': 1.0493751764297485, 'target_var': 1.049382209777832, 'grad_norm': 0.000515496009029448, 'grad_finite': True, 'state_std_per_neuron': [4.943171427740367e-10, 2.7155971693559877e-08, 9.941748813080409e-12, 5.561605576076545e-07, 6.387656625861382e-09], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_16_1e-05.png
+grad iter 0: loss=1.0489
+grad iter 200: loss=1.0489
+grad iter 400: loss=1.0489
+grad iter 600: loss=1.0489
+grad iter 800: loss=1.0489
+grad iter 1000: loss=1.0489
+grad iter 1200: loss=1.0489
+grad iter 1400: loss=1.0489
+grad iter 1600: loss=1.0489
+grad iter 1800: loss=1.0489
+grad iter 2000: loss=1.0489
+grad iter 2200: loss=1.0489
+grad iter 2400: loss=1.0489
+grad iter 2600: loss=1.0489
+grad iter 2800: loss=1.0489
+{'loss': 1.0488919019699097, 'target_var': 1.049382209777832, 'grad_norm': 0.0005823341198265553, 'grad_finite': True, 'state_std_per_neuron': [3.31701693889741e-10, 0.01426425576210022, 3.5991183991446185e-12, 5.8139819347768906e-11, 0.014112773351371288], 'state_scale': 0.32368505001068115, 'flat': False}
+saved scale_N5_17_1e-05.png
+grad iter 0: loss=1.0488
+grad iter 200: loss=1.0488
+grad iter 400: loss=1.0488
+grad iter 600: loss=1.0487
+grad iter 800: loss=1.0487
+grad iter 1000: loss=1.0486
+grad iter 1200: loss=1.0485
+grad iter 1400: loss=1.0484
+grad iter 1600: loss=1.0484
+grad iter 1800: loss=1.0483
+grad iter 2000: loss=1.0482
+grad iter 2200: loss=1.0480
+grad iter 2400: loss=1.0479
+grad iter 2600: loss=1.0478
+grad iter 2800: loss=1.0477
+{'loss': 1.0488461256027222, 'target_var': 1.049382209777832, 'grad_norm': 0.012182993814349174, 'grad_finite': True, 'state_std_per_neuron': [5.036692982685054e-07, 2.4710174878483926e-11, 1.2141181289504477e-11, 4.972026090399595e-06, 6.923784028750601e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_18_1e-05.png
+grad iter 0: loss=1.0449
+grad iter 200: loss=1.0441
+grad iter 400: loss=1.0436
+grad iter 600: loss=1.0434
+grad iter 800: loss=1.0432
+grad iter 1000: loss=1.0431
+grad iter 1200: loss=1.0431
+grad iter 1400: loss=1.0431
+grad iter 1600: loss=1.0430
+grad iter 1800: loss=1.0430
+grad iter 2000: loss=1.0430
+grad iter 2200: loss=1.0430
+grad iter 2400: loss=1.0430
+grad iter 2600: loss=1.0430
+grad iter 2800: loss=1.0430
+{'loss': 1.044927954673767, 'target_var': 1.049382209777832, 'grad_norm': 0.18519145250320435, 'grad_finite': True, 'state_std_per_neuron': [2.1359690435929224e-05, 1.7023807004079572e-06, 3.568270678933061e-11, 1.1154991513828705e-10, 6.428360881799433e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_19_1e-05.png
+grad iter 0: loss=1.0334
+grad iter 200: loss=1.0330
+grad iter 400: loss=1.0330
+grad iter 600: loss=1.0330
+grad iter 800: loss=1.0330
+grad iter 1000: loss=1.0330
+grad iter 1200: loss=1.0330
+grad iter 1400: loss=1.0330
+grad iter 1600: loss=1.0330
+grad iter 1800: loss=1.0329
+grad iter 2000: loss=1.0329
+grad iter 2200: loss=1.0329
+grad iter 2400: loss=1.0330
+grad iter 2600: loss=1.0330
+grad iter 2800: loss=1.0330
+{'loss': 1.0333646535873413, 'target_var': 1.049382209777832, 'grad_norm': 0.2080966830253601, 'grad_finite': True, 'state_std_per_neuron': [0.005282863043248653, 1.5912729467437714e-10, 5.0454419288359365e-12, 6.026900506439503e-11, 0.003451962023973465], 'state_scale': 0.49999988079071045, 'flat': False}
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 1.2617451972118943e-08, 'grad_finite': True, 'state_std_per_neuron': [2.0621106211482498e-10, 8.954483377010547e-08, 4.754975302390108e-10, 5.634115136238238e-12, 5.459722951517421e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_1_0.01.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 6.880556924215853e-08, 'grad_finite': True, 'state_std_per_neuron': [2.1251980730774278e-10, 8.940696716308594e-08, 8.216622694734443e-12, 3.670368262792545e-12, 1.515936334794965e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_2_0.01.png
+grad iter 0: loss=1.0485
+grad iter 200: loss=1.0475
+grad iter 400: loss=1.0475
+grad iter 600: loss=1.0474
+grad iter 800: loss=1.0474
+grad iter 1000: loss=1.0474
+grad iter 1200: loss=1.0474
+grad iter 1400: loss=1.0474
+grad iter 1600: loss=1.0474
+grad iter 1800: loss=1.0474
+grad iter 2000: loss=1.0474
+grad iter 2200: loss=1.0473
+grad iter 2400: loss=1.0474
+grad iter 2600: loss=1.0473
+grad iter 2800: loss=1.0473
+{'loss': 1.0485098361968994, 'target_var': 1.049382209777832, 'grad_norm': 0.056989725679159164, 'grad_finite': True, 'state_std_per_neuron': [5.202890895894541e-11, 6.7980395618283396e-12, 0.03466356173157692, 2.0187206073440933e-11, 0.0344286784529686], 'state_scale': 0.49999988079071045, 'flat': False}
+saved scale_N5_3_0.01.png
+grad iter 0: loss=1.0469
+grad iter 200: loss=1.0442
+grad iter 400: loss=1.0442
+grad iter 600: loss=1.0441
+grad iter 800: loss=1.0441
+grad iter 1000: loss=1.0441
+grad iter 1200: loss=1.0441
+grad iter 1400: loss=1.0441
+grad iter 1600: loss=1.0441
+grad iter 1800: loss=1.0441
+grad iter 2000: loss=1.0441
+grad iter 2200: loss=1.0441
+grad iter 2400: loss=1.0441
+grad iter 2600: loss=1.0441
+grad iter 2800: loss=1.0441
+{'loss': 1.0469474792480469, 'target_var': 1.049382209777832, 'grad_norm': 0.07878581434488297, 'grad_finite': True, 'state_std_per_neuron': [4.607344887552767e-12, 3.970054063273665e-09, 1.6358574217445465e-11, 0.0233030803501606, 0.02441432513296604], 'state_scale': 0.49999988079071045, 'flat': False}
+saved scale_N5_4_0.01.png
+grad iter 0: loss=1.0491
+grad iter 200: loss=1.0485
+grad iter 400: loss=1.0484
+grad iter 600: loss=1.0483
+grad iter 800: loss=1.0483
+grad iter 1000: loss=1.0482
+grad iter 1200: loss=1.0482
+grad iter 1400: loss=1.0481
+grad iter 1600: loss=1.0481
+grad iter 1800: loss=1.0481
+grad iter 2000: loss=1.0481
+grad iter 2200: loss=1.0480
+grad iter 2400: loss=1.0480
+grad iter 2600: loss=1.0480
+grad iter 2800: loss=1.0480
+{'loss': 1.049073576927185, 'target_var': 1.049382209777832, 'grad_norm': 0.0006399337435141206, 'grad_finite': True, 'state_std_per_neuron': [0.027835963293910027, 0.02844151295721531, 4.866624030847033e-12, 1.7179865169358877e-11, 3.4152780430118934e-12], 'state_scale': 0.46167147159576416, 'flat': False}
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 2.9135748036424047e-07, 'grad_finite': True, 'state_std_per_neuron': [2.716627200971544e-10, 4.13526071024739e-12, 7.831568171745573e-10, 9.055852956407762e-08, 4.875476758425812e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_6_0.01.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0241
+grad iter 400: loss=1.0241
+grad iter 600: loss=1.0241
+grad iter 800: loss=1.0241
+grad iter 1000: loss=1.0241
+grad iter 1200: loss=1.0241
+grad iter 1400: loss=1.0241
+grad iter 1600: loss=1.0241
+grad iter 1800: loss=1.0241
+grad iter 2000: loss=1.0241
+grad iter 2200: loss=1.0241
+grad iter 2400: loss=1.0241
+grad iter 2600: loss=1.0241
+grad iter 2800: loss=1.0241
+{'loss': 1.0493590831756592, 'target_var': 1.049382209777832, 'grad_norm': 0.00046234382898546755, 'grad_finite': True, 'state_std_per_neuron': [6.282046882688519e-08, 9.975159400710254e-07, 1.4917954371806985e-10, 1.599270715857415e-11, 2.276845911808323e-08], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_7_0.01.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0484
+grad iter 400: loss=1.0483
+grad iter 600: loss=1.0483
+grad iter 800: loss=1.0483
+grad iter 1000: loss=1.0482
+grad iter 1200: loss=1.0482
+grad iter 1400: loss=1.0482
+grad iter 1600: loss=1.0482
+grad iter 1800: loss=1.0482
+grad iter 2000: loss=1.0481
+grad iter 2200: loss=1.0481
+grad iter 2400: loss=1.0481
+grad iter 2600: loss=1.0481
+grad iter 2800: loss=1.0481
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 1.2602312438048102e-07, 'grad_finite': True, 'state_std_per_neuron': [3.4152780430118934e-12, 8.304234383471609e-11, 2.443457658429793e-09, 2.4328247749672016e-11, 9.707255088642341e-08], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_8_0.01.png
+grad iter 0: loss=1.0488
+grad iter 200: loss=1.0330
+grad iter 400: loss=1.0330
+grad iter 600: loss=1.0330
+grad iter 800: loss=1.0330
+grad iter 1000: loss=1.0330
+grad iter 1200: loss=1.0330
+grad iter 1400: loss=1.0330
+grad iter 1600: loss=1.0330
+grad iter 1800: loss=1.0329
+grad iter 2000: loss=1.0329
+grad iter 2200: loss=1.0329
+grad iter 2400: loss=1.0329
+grad iter 2600: loss=1.0330
+grad iter 2800: loss=1.0329
+{'loss': 1.0487691164016724, 'target_var': 1.049382209777832, 'grad_norm': 0.026276934891939163, 'grad_finite': True, 'state_std_per_neuron': [4.690477624080813e-07, 4.178031531854032e-11, 4.247728471046264e-12, 1.436205841753857e-11, 5.3526855481322855e-06], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_9_0.01.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0331
+grad iter 400: loss=1.0331
+grad iter 600: loss=1.0331
+grad iter 800: loss=1.0331
+grad iter 1000: loss=1.0331
+grad iter 1200: loss=1.0330
+grad iter 1400: loss=1.0330
+grad iter 1600: loss=1.0331
+grad iter 1800: loss=1.0330
+grad iter 2000: loss=1.0330
+grad iter 2200: loss=1.0330
+grad iter 2400: loss=1.0329
+grad iter 2600: loss=1.0329
+grad iter 2800: loss=1.0329
+{'loss': 1.0493708848953247, 'target_var': 1.049382209777832, 'grad_norm': 0.00018092739628627896, 'grad_finite': True, 'state_std_per_neuron': [5.166876041601265e-12, 5.2761567559400646e-08, 1.034020265244795e-11, 7.002806228229019e-07, 4.477506213018678e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+grad iter 0: loss=1.0493
+grad iter 200: loss=1.0332
+grad iter 400: loss=1.0332
+grad iter 600: loss=1.0332
+grad iter 800: loss=1.0331
+grad iter 1000: loss=1.0332
+grad iter 1200: loss=1.0330
+grad iter 1400: loss=1.0330
+grad iter 1600: loss=1.0331
+grad iter 1800: loss=1.0330
+grad iter 2000: loss=1.0330
+grad iter 2200: loss=1.0330
+grad iter 2400: loss=1.0330
+grad iter 2600: loss=1.0329
+grad iter 2800: loss=1.0329
+{'loss': 1.0492558479309082, 'target_var': 1.049382209777832, 'grad_norm': 0.006223040632903576, 'grad_finite': True, 'state_std_per_neuron': [9.161961189718681e-10, 4.830313926618146e-09, 2.0581717308232328e-07, 2.547082336712414e-11, 2.3509915081376676e-06], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_11_0.01.png
+grad iter 0: loss=1.0341
+grad iter 200: loss=1.0269
+grad iter 400: loss=1.0264
+grad iter 600: loss=1.0261
+grad iter 800: loss=1.0259
+grad iter 1000: loss=1.0258
+grad iter 1200: loss=1.0258
+grad iter 1400: loss=1.0257
+grad iter 1600: loss=1.0257
+grad iter 1800: loss=1.0257
+grad iter 2000: loss=1.0256
+grad iter 2200: loss=1.0256
+grad iter 2400: loss=1.0255
+grad iter 2600: loss=1.0255
+grad iter 2800: loss=1.0255
+{'loss': 1.0340982675552368, 'target_var': 1.049382209777832, 'grad_norm': 0.10594519972801208, 'grad_finite': True, 'state_std_per_neuron': [0.04457845538854599, 5.988120221900317e-09, 0.04810278117656708, 0.006180204916745424, 0.07325306534767151], 'state_scale': 0.39541536569595337, 'flat': False}
+saved scale_N5_12_0.01.png
+grad iter 0: loss=1.0428
+grad iter 200: loss=1.0224
+grad iter 400: loss=1.0222
+grad iter 600: loss=1.0221
+grad iter 800: loss=1.0241
+grad iter 1000: loss=1.0242
+grad iter 1200: loss=1.0221
+grad iter 1400: loss=1.0220
+grad iter 1600: loss=1.0220
+grad iter 1800: loss=1.0222
+grad iter 2000: loss=1.0221
+grad iter 2200: loss=1.0220
+grad iter 2400: loss=1.0224
+grad iter 2600: loss=1.0221
+grad iter 2800: loss=1.0221
+{'loss': 1.0428153276443481, 'target_var': 1.049382209777832, 'grad_norm': 0.022166911512613297, 'grad_finite': True, 'state_std_per_neuron': [7.0361169147992175e-12, 5.639123834555448e-09, 0.015964852645993233, 0.01568552479147911, 0.0001489737187512219], 'state_scale': 0.3690131902694702, 'flat': False}
+saved scale_N5_13_0.01.png
+grad iter 0: loss=1.0389
+grad iter 200: loss=1.0333
+grad iter 400: loss=1.0333
+grad iter 600: loss=1.0333
+grad iter 800: loss=1.0333
+grad iter 1000: loss=1.0332
+grad iter 1200: loss=1.0332
+grad iter 1400: loss=1.0332
+grad iter 1600: loss=1.0332
+grad iter 1800: loss=1.0332
+grad iter 2000: loss=1.0331
+grad iter 2200: loss=1.0331
+grad iter 2400: loss=1.0331
+grad iter 2600: loss=1.0332
+grad iter 2800: loss=1.0331
+{'loss': 1.0388901233673096, 'target_var': 1.049382209777832, 'grad_norm': 0.33112260699272156, 'grad_finite': True, 'state_std_per_neuron': [0.009226107969880104, 0.011498827487230301, 3.1338196482266767e-09, 1.1849660142004836e-10, 2.253906089544344e-11], 'state_scale': 0.49999988079071045, 'flat': False}
+saved scale_N5_14_0.01.png
+grad iter 0: loss=1.0415
+grad iter 200: loss=1.0208
+grad iter 400: loss=1.0207
+grad iter 600: loss=1.0207
+grad iter 800: loss=1.0207
+grad iter 1000: loss=1.0206
+grad iter 1200: loss=1.0205
+grad iter 1400: loss=1.0202
+grad iter 1600: loss=1.0196
+grad iter 1800: loss=1.0179
+grad iter 2000: loss=1.0166
+grad iter 2200: loss=1.0161
+grad iter 2400: loss=1.0160
+grad iter 2600: loss=1.0161
+grad iter 2800: loss=1.0160
+{'loss': 1.0415486097335815, 'target_var': 1.049382209777832, 'grad_norm': 0.03622085973620415, 'grad_finite': True, 'state_std_per_neuron': [0.00021776136418338865, 0.0056123374961316586, 2.6186041779396874e-08, 4.55981363778335e-11, 0.007645137142390013], 'state_scale': 0.49999988079071045, 'flat': False}
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0418
+grad iter 400: loss=1.0415
+grad iter 600: loss=1.0414
+grad iter 800: loss=1.0413
+grad iter 1000: loss=1.0412
+grad iter 1200: loss=1.0410
+grad iter 1400: loss=1.0409
+grad iter 1600: loss=1.0406
+grad iter 1800: loss=1.0319
+grad iter 2000: loss=1.0315
+grad iter 2200: loss=1.0310
+grad iter 2400: loss=1.0296
+grad iter 2600: loss=1.0285
+grad iter 2800: loss=1.0279
+{'loss': 1.0493751764297485, 'target_var': 1.049382209777832, 'grad_norm': 0.000515496009029448, 'grad_finite': True, 'state_std_per_neuron': [4.943171427740367e-10, 2.7155971693559877e-08, 9.941748813080409e-12, 5.561605576076545e-07, 6.387656625861382e-09], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_16_0.01.png
+grad iter 0: loss=1.0489
+grad iter 200: loss=1.0484
+grad iter 400: loss=1.0483
+grad iter 600: loss=1.0482
+grad iter 800: loss=1.0482
+grad iter 1000: loss=1.0481
+grad iter 1200: loss=1.0481
+grad iter 1400: loss=1.0481
+grad iter 1600: loss=1.0480
+grad iter 1800: loss=1.0480
+grad iter 2000: loss=1.0480
+grad iter 2200: loss=1.0480
+grad iter 2400: loss=1.0480
+grad iter 2600: loss=1.0480
+grad iter 2800: loss=1.0480
+{'loss': 1.0488919019699097, 'target_var': 1.049382209777832, 'grad_norm': 0.0005823341198265553, 'grad_finite': True, 'state_std_per_neuron': [3.31701693889741e-10, 0.01426425576210022, 3.5991183991446185e-12, 5.8139819347768906e-11, 0.014112773351371288], 'state_scale': 0.32368505001068115, 'flat': False}
+saved scale_N5_17_0.01.png
+grad iter 0: loss=1.0488
+grad iter 200: loss=1.0335
+grad iter 400: loss=1.0335
+grad iter 600: loss=1.0335
+grad iter 800: loss=1.0335
+grad iter 1000: loss=1.0334
+grad iter 1200: loss=1.0334
+grad iter 1400: loss=1.0334
+grad iter 1600: loss=1.0333
+grad iter 1800: loss=1.0333
+grad iter 2000: loss=1.0332
+grad iter 2200: loss=1.0332
+grad iter 2400: loss=1.0331
+grad iter 2600: loss=1.0331
+grad iter 2800: loss=1.0331
+{'loss': 1.0488461256027222, 'target_var': 1.049382209777832, 'grad_norm': 0.012182993814349174, 'grad_finite': True, 'state_std_per_neuron': [5.036692982685054e-07, 2.4710174878483926e-11, 1.2141181289504477e-11, 4.972026090399595e-06, 6.923784028750601e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_18_0.01.png
+grad iter 0: loss=1.0449
+grad iter 200: loss=1.0424
+grad iter 400: loss=1.0422
+grad iter 600: loss=1.0427
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0444
+grad iter 1200: loss=1.0382
+grad iter 1400: loss=1.0431
+grad iter 1600: loss=1.0241
+grad iter 1800: loss=1.0241
+grad iter 2000: loss=1.0241
+grad iter 2200: loss=1.0242
+grad iter 2400: loss=1.0241
+grad iter 2600: loss=1.0241
+grad iter 2800: loss=1.0241
+{'loss': 1.044927954673767, 'target_var': 1.049382209777832, 'grad_norm': 0.18519145250320435, 'grad_finite': True, 'state_std_per_neuron': [2.1359690435929224e-05, 1.7023807004079572e-06, 3.568270678933061e-11, 1.1154991513828705e-10, 6.428360881799433e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_19_0.01.png
+grad iter 0: loss=1.0334
+grad iter 200: loss=1.0330
+grad iter 400: loss=1.0330
+grad iter 600: loss=1.0330
+grad iter 800: loss=1.0330
+grad iter 1000: loss=1.0330
+grad iter 1200: loss=1.0330
+grad iter 1400: loss=1.0330
+grad iter 1600: loss=1.0330
+grad iter 1800: loss=1.0330
+grad iter 2000: loss=1.0330
+grad iter 2200: loss=1.0330
+grad iter 2400: loss=1.0330
+grad iter 2600: loss=1.0330
+grad iter 2800: loss=1.0330
+{'loss': 1.0333646535873413, 'target_var': 1.049382209777832, 'grad_norm': 0.2080966830253601, 'grad_finite': True, 'state_std_per_neuron': [0.005282863043248653, 1.5912729467437714e-10, 5.0454419288359365e-12, 6.026900506439503e-11, 0.003451962023973465], 'state_scale': 0.49999988079071045, 'flat': False}
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 1.2617451972118943e-08, 'grad_finite': True, 'state_std_per_neuron': [2.0621106211482498e-10, 8.954483377010547e-08, 4.754975302390108e-10, 5.634115136238238e-12, 5.459722951517421e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_1_0.0001.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 6.880556924215853e-08, 'grad_finite': True, 'state_std_per_neuron': [2.1251980730774278e-10, 8.940696716308594e-08, 8.216622694734443e-12, 3.670368262792545e-12, 1.515936334794965e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_2_0.0001.png
+grad iter 0: loss=1.0485
+grad iter 200: loss=1.0475
+grad iter 400: loss=1.0475
+grad iter 600: loss=1.0475
+grad iter 800: loss=1.0475
+grad iter 1000: loss=1.0475
+grad iter 1200: loss=1.0475
+grad iter 1400: loss=1.0475
+grad iter 1600: loss=1.0475
+grad iter 1800: loss=1.0475
+grad iter 2000: loss=1.0475
+grad iter 2200: loss=1.0475
+grad iter 2400: loss=1.0475
+grad iter 2600: loss=1.0475
+grad iter 2800: loss=1.0475
+{'loss': 1.0485098361968994, 'target_var': 1.049382209777832, 'grad_norm': 0.056989725679159164, 'grad_finite': True, 'state_std_per_neuron': [5.202890895894541e-11, 6.7980395618283396e-12, 0.03466356173157692, 2.0187206073440933e-11, 0.0344286784529686], 'state_scale': 0.49999988079071045, 'flat': False}
+saved scale_N5_3_0.0001.png
+grad iter 0: loss=1.0469
+grad iter 200: loss=1.0442
+grad iter 400: loss=1.0442
+grad iter 600: loss=1.0442
+grad iter 800: loss=1.0442
+grad iter 1000: loss=1.0442
+grad iter 1200: loss=1.0442
+grad iter 1400: loss=1.0442
+grad iter 1600: loss=1.0442
+grad iter 1800: loss=1.0442
+grad iter 2000: loss=1.0442
+grad iter 2200: loss=1.0442
+grad iter 2400: loss=1.0442
+grad iter 2600: loss=1.0442
+grad iter 2800: loss=1.0442
+{'loss': 1.0469474792480469, 'target_var': 1.049382209777832, 'grad_norm': 0.07878581434488297, 'grad_finite': True, 'state_std_per_neuron': [4.607344887552767e-12, 3.970054063273665e-09, 1.6358574217445465e-11, 0.0233030803501606, 0.02441432513296604], 'state_scale': 0.49999988079071045, 'flat': False}
+saved scale_N5_4_0.0001.png
+grad iter 0: loss=1.0491
+grad iter 200: loss=nan
+grad iter 400: loss=nan
+grad iter 600: loss=nan
+grad iter 800: loss=nan
+grad iter 1000: loss=nan
+grad iter 1200: loss=nan
+grad iter 1400: loss=nan
+grad iter 1600: loss=nan
+grad iter 1800: loss=nan
+grad iter 2000: loss=nan
+grad iter 2200: loss=nan
+grad iter 2400: loss=nan
+grad iter 2600: loss=nan
+grad iter 2800: loss=nan
+{'loss': 1.049073576927185, 'target_var': 1.049382209777832, 'grad_norm': 0.0006399337435141206, 'grad_finite': True, 'state_std_per_neuron': [0.027835963293910027, 0.02844151295721531, 4.866624030847033e-12, 1.7179865169358877e-11, 3.4152780430118934e-12], 'state_scale': 0.46167147159576416, 'flat': False}
+seed 5 DIVERGED, max_eig set to nan
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 2.9135748036424047e-07, 'grad_finite': True, 'state_std_per_neuron': [2.716627200971544e-10, 4.13526071024739e-12, 7.831568171745573e-10, 9.055852956407762e-08, 4.875476758425812e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_6_0.0001.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0492
+grad iter 400: loss=1.0456
+grad iter 600: loss=1.0431
+grad iter 800: loss=1.0430
+grad iter 1000: loss=1.0429
+grad iter 1200: loss=1.0428
+grad iter 1400: loss=1.0424
+grad iter 1600: loss=1.0365
+grad iter 1800: loss=1.0244
+grad iter 2000: loss=1.0244
+grad iter 2200: loss=1.0244
+grad iter 2400: loss=1.0244
+grad iter 2600: loss=1.0244
+grad iter 2800: loss=1.0244
+{'loss': 1.0493590831756592, 'target_var': 1.049382209777832, 'grad_norm': 0.00046234382898546755, 'grad_finite': True, 'state_std_per_neuron': [6.282046882688519e-08, 9.975159400710254e-07, 1.4917954371806985e-10, 1.599270715857415e-11, 2.276845911808323e-08], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_7_0.0001.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0493
+grad iter 1800: loss=1.0238
+grad iter 2000: loss=1.0239
+grad iter 2200: loss=1.0233
+grad iter 2400: loss=1.0230
+grad iter 2600: loss=1.0207
+grad iter 2800: loss=1.0227
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 1.2602312438048102e-07, 'grad_finite': True, 'state_std_per_neuron': [3.4152780430118934e-12, 8.304234383471609e-11, 2.443457658429793e-09, 2.4328247749672016e-11, 9.707255088642341e-08], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_8_0.0001.png
+grad iter 0: loss=1.0488
+grad iter 200: loss=1.0456
+grad iter 400: loss=1.0434
+grad iter 600: loss=1.0431
+grad iter 800: loss=1.0430
+grad iter 1000: loss=1.0430
+grad iter 1200: loss=1.0429
+grad iter 1400: loss=1.0429
+grad iter 1600: loss=1.0429
+grad iter 1800: loss=1.0427
+grad iter 2000: loss=1.0377
+grad iter 2200: loss=1.0376
+grad iter 2400: loss=1.0376
+grad iter 2600: loss=1.0376
+grad iter 2800: loss=1.0376
+{'loss': 1.0487691164016724, 'target_var': 1.049382209777832, 'grad_norm': 0.026276934891939163, 'grad_finite': True, 'state_std_per_neuron': [4.690477624080813e-07, 4.178031531854032e-11, 4.247728471046264e-12, 1.436205841753857e-11, 5.3526855481322855e-06], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_9_0.0001.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0493
+grad iter 600: loss=1.0489
+grad iter 800: loss=1.0460
+grad iter 1000: loss=1.0436
+grad iter 1200: loss=1.0432
+grad iter 1400: loss=1.0431
+grad iter 1600: loss=1.0430
+grad iter 1800: loss=1.0430
+grad iter 2000: loss=1.0430
+grad iter 2200: loss=1.0430
+grad iter 2400: loss=1.0430
+grad iter 2600: loss=1.0429
+grad iter 2800: loss=1.0429
+{'loss': 1.0493708848953247, 'target_var': 1.049382209777832, 'grad_norm': 0.00018092739628627896, 'grad_finite': True, 'state_std_per_neuron': [5.166876041601265e-12, 5.2761567559400646e-08, 1.034020265244795e-11, 7.002806228229019e-07, 4.477506213018678e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+grad iter 0: loss=1.0493
+grad iter 200: loss=1.0454
+grad iter 400: loss=1.0430
+grad iter 600: loss=1.0429
+grad iter 800: loss=1.0428
+grad iter 1000: loss=1.0377
+grad iter 1200: loss=1.0332
+grad iter 1400: loss=1.0332
+grad iter 1600: loss=1.0332
+grad iter 1800: loss=1.0332
+grad iter 2000: loss=1.0332
+grad iter 2200: loss=1.0332
+grad iter 2400: loss=1.0332
+grad iter 2600: loss=1.0332
+grad iter 2800: loss=1.0332
+{'loss': 1.0492558479309082, 'target_var': 1.049382209777832, 'grad_norm': 0.006223040632903576, 'grad_finite': True, 'state_std_per_neuron': [9.161961189718681e-10, 4.830313926618146e-09, 2.0581717308232328e-07, 2.547082336712414e-11, 2.3509915081376676e-06], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_11_0.0001.png
+grad iter 0: loss=1.0341
+grad iter 200: loss=1.0296
+grad iter 400: loss=1.0281
+grad iter 600: loss=1.0278
+grad iter 800: loss=1.0277
+grad iter 1000: loss=1.0276
+grad iter 1200: loss=1.0276
+grad iter 1400: loss=1.0276
+grad iter 1600: loss=1.0275
+grad iter 1800: loss=1.0275
+grad iter 2000: loss=1.0275
+grad iter 2200: loss=1.0275
+grad iter 2400: loss=1.0274
+grad iter 2600: loss=1.0274
+grad iter 2800: loss=1.0274
+{'loss': 1.0340982675552368, 'target_var': 1.049382209777832, 'grad_norm': 0.10594519972801208, 'grad_finite': True, 'state_std_per_neuron': [0.04457845538854599, 5.988120221900317e-09, 0.04810278117656708, 0.006180204916745424, 0.07325306534767151], 'state_scale': 0.39541536569595337, 'flat': False}
+saved scale_N5_12_0.0001.png
+grad iter 0: loss=1.0428
+grad iter 200: loss=1.0299
+grad iter 400: loss=1.0299
+grad iter 600: loss=1.0299
+grad iter 800: loss=1.0299
+grad iter 1000: loss=1.0299
+grad iter 1200: loss=1.0299
+grad iter 1400: loss=1.0299
+grad iter 1600: loss=1.0299
+grad iter 1800: loss=1.0299
+grad iter 2000: loss=1.0299
+grad iter 2200: loss=1.0299
+grad iter 2400: loss=1.0299
+grad iter 2600: loss=1.0299
+grad iter 2800: loss=1.0299
+{'loss': 1.0428153276443481, 'target_var': 1.049382209777832, 'grad_norm': 0.022166911512613297, 'grad_finite': True, 'state_std_per_neuron': [7.0361169147992175e-12, 5.639123834555448e-09, 0.015964852645993233, 0.01568552479147911, 0.0001489737187512219], 'state_scale': 0.3690131902694702, 'flat': False}
+saved scale_N5_13_0.0001.png
+grad iter 0: loss=1.0389
+grad iter 200: loss=1.0333
+grad iter 400: loss=1.0333
+grad iter 600: loss=1.0333
+grad iter 800: loss=1.0333
+grad iter 1000: loss=1.0333
+grad iter 1200: loss=1.0333
+grad iter 1400: loss=1.0333
+grad iter 1600: loss=1.0333
+grad iter 1800: loss=1.0333
+grad iter 2000: loss=1.0333
+grad iter 2200: loss=1.0333
+grad iter 2400: loss=1.0333
+grad iter 2600: loss=1.0333
+grad iter 2800: loss=1.0333
+{'loss': 1.0388901233673096, 'target_var': 1.049382209777832, 'grad_norm': 0.33112260699272156, 'grad_finite': True, 'state_std_per_neuron': [0.009226107969880104, 0.011498827487230301, 3.1338196482266767e-09, 1.1849660142004836e-10, 2.253906089544344e-11], 'state_scale': 0.49999988079071045, 'flat': False}
+saved scale_N5_14_0.0001.png
+grad iter 0: loss=1.0415
+grad iter 200: loss=1.0413
+grad iter 400: loss=1.0413
+grad iter 600: loss=1.0413
+grad iter 800: loss=1.0413
+grad iter 1000: loss=1.0413
+grad iter 1200: loss=1.0413
+grad iter 1400: loss=1.0413
+grad iter 1600: loss=1.0413
+grad iter 1800: loss=1.0413
+grad iter 2000: loss=1.0413
+grad iter 2200: loss=1.0413
+grad iter 2400: loss=1.0413
+grad iter 2600: loss=1.0413
+grad iter 2800: loss=1.0413
+{'loss': 1.0415486097335815, 'target_var': 1.049382209777832, 'grad_norm': 0.03622085973620415, 'grad_finite': True, 'state_std_per_neuron': [0.00021776136418338865, 0.0056123374961316586, 2.6186041779396874e-08, 4.55981363778335e-11, 0.007645137142390013], 'state_scale': 0.49999988079071045, 'flat': False}
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0376
+grad iter 400: loss=1.0438
+grad iter 600: loss=1.0394
+grad iter 800: loss=1.0247
+grad iter 1000: loss=1.0236
+grad iter 1200: loss=1.0266
+grad iter 1400: loss=1.0248
+grad iter 1600: loss=1.0236
+grad iter 1800: loss=1.0239
+grad iter 2000: loss=1.0239
+grad iter 2200: loss=1.0244
+grad iter 2400: loss=1.0241
+grad iter 2600: loss=1.0244
+grad iter 2800: loss=1.0239
+{'loss': 1.0493751764297485, 'target_var': 1.049382209777832, 'grad_norm': 0.000515496009029448, 'grad_finite': True, 'state_std_per_neuron': [4.943171427740367e-10, 2.7155971693559877e-08, 9.941748813080409e-12, 5.561605576076545e-07, 6.387656625861382e-09], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_16_0.0001.png
+grad iter 0: loss=1.0489
+grad iter 200: loss=1.0489
+grad iter 400: loss=1.0489
+grad iter 600: loss=1.0488
+grad iter 800: loss=1.0488
+grad iter 1000: loss=1.0488
+grad iter 1200: loss=1.0488
+grad iter 1400: loss=1.0488
+grad iter 1600: loss=1.0488
+grad iter 1800: loss=1.0488
+grad iter 2000: loss=1.0487
+grad iter 2200: loss=1.0487
+grad iter 2400: loss=1.0487
+grad iter 2600: loss=1.0487
+grad iter 2800: loss=1.0487
+{'loss': 1.0488919019699097, 'target_var': 1.049382209777832, 'grad_norm': 0.0005823341198265553, 'grad_finite': True, 'state_std_per_neuron': [3.31701693889741e-10, 0.01426425576210022, 3.5991183991446185e-12, 5.8139819347768906e-11, 0.014112773351371288], 'state_scale': 0.32368505001068115, 'flat': False}
+saved scale_N5_17_0.0001.png
+grad iter 0: loss=1.0488
+grad iter 200: loss=1.0482
+grad iter 400: loss=1.0463
+grad iter 600: loss=1.0443
+grad iter 800: loss=1.0435
+grad iter 1000: loss=1.0432
+grad iter 1200: loss=1.0431
+grad iter 1400: loss=1.0430
+grad iter 1600: loss=1.0430
+grad iter 1800: loss=1.0430
+grad iter 2000: loss=1.0430
+grad iter 2200: loss=1.0429
+grad iter 2400: loss=1.0429
+grad iter 2600: loss=1.0429
+grad iter 2800: loss=1.0429
+{'loss': 1.0488461256027222, 'target_var': 1.049382209777832, 'grad_norm': 0.012182993814349174, 'grad_finite': True, 'state_std_per_neuron': [5.036692982685054e-07, 2.4710174878483926e-11, 1.2141181289504477e-11, 4.972026090399595e-06, 6.923784028750601e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_18_0.0001.png
+grad iter 0: loss=1.0449
+grad iter 200: loss=1.0430
+grad iter 400: loss=1.0429
+grad iter 600: loss=1.0319
+grad iter 800: loss=1.0329
+grad iter 1000: loss=1.0305
+grad iter 1200: loss=1.0306
+grad iter 1400: loss=1.0298
+grad iter 1600: loss=1.0302
+grad iter 1800: loss=1.0295
+grad iter 2000: loss=1.0297
+grad iter 2200: loss=1.0292
+grad iter 2400: loss=1.0290
+grad iter 2600: loss=1.0290
+grad iter 2800: loss=1.0307
+{'loss': 1.044927954673767, 'target_var': 1.049382209777832, 'grad_norm': 0.18519145250320435, 'grad_finite': True, 'state_std_per_neuron': [2.1359690435929224e-05, 1.7023807004079572e-06, 3.568270678933061e-11, 1.1154991513828705e-10, 6.428360881799433e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_19_0.0001.png
+grad iter 0: loss=1.0334
+grad iter 200: loss=1.0333
+grad iter 400: loss=1.0332
+grad iter 600: loss=1.0331
+grad iter 800: loss=1.0331
+grad iter 1000: loss=1.0331
+grad iter 1200: loss=1.0330
+grad iter 1400: loss=1.0330
+grad iter 1600: loss=1.0330
+grad iter 1800: loss=1.0330
+grad iter 2000: loss=1.0330
+grad iter 2200: loss=1.0330
+grad iter 2400: loss=1.0330
+grad iter 2600: loss=1.0330
+grad iter 2800: loss=1.0330
+{'loss': 1.0333646535873413, 'target_var': 1.049382209777832, 'grad_norm': 0.2080966830253601, 'grad_finite': True, 'state_std_per_neuron': [0.005282863043248653, 1.5912729467437714e-10, 5.0454419288359365e-12, 6.026900506439503e-11, 0.003451962023973465], 'state_scale': 0.49999988079071045, 'flat': False}
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 1.2617451972118943e-08, 'grad_finite': True, 'state_std_per_neuron': [2.0621106211482498e-10, 8.954483377010547e-08, 4.754975302390108e-10, 5.634115136238238e-12, 5.459722951517421e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_1_1e-06.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 6.880556924215853e-08, 'grad_finite': True, 'state_std_per_neuron': [2.1251980730774278e-10, 8.940696716308594e-08, 8.216622694734443e-12, 3.670368262792545e-12, 1.515936334794965e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_2_1e-06.png
+grad iter 0: loss=1.0485
+grad iter 200: loss=1.0485
+grad iter 400: loss=1.0485
+grad iter 600: loss=1.0485
+grad iter 800: loss=1.0484
+grad iter 1000: loss=1.0484
+grad iter 1200: loss=1.0484
+grad iter 1400: loss=1.0484
+grad iter 1600: loss=1.0484
+grad iter 1800: loss=1.0483
+grad iter 2000: loss=1.0483
+grad iter 2200: loss=1.0483
+grad iter 2400: loss=1.0483
+grad iter 2600: loss=1.0483
+grad iter 2800: loss=1.0482
+{'loss': 1.0485098361968994, 'target_var': 1.049382209777832, 'grad_norm': 0.056989725679159164, 'grad_finite': True, 'state_std_per_neuron': [5.202890895894541e-11, 6.7980395618283396e-12, 0.03466356173157692, 2.0187206073440933e-11, 0.0344286784529686], 'state_scale': 0.49999988079071045, 'flat': False}
+saved scale_N5_3_1e-06.png
+grad iter 0: loss=1.0469
+grad iter 200: loss=1.0469
+grad iter 400: loss=1.0469
+grad iter 600: loss=1.0468
+grad iter 800: loss=1.0468
+grad iter 1000: loss=1.0467
+grad iter 1200: loss=1.0467
+grad iter 1400: loss=1.0467
+grad iter 1600: loss=1.0466
+grad iter 1800: loss=1.0466
+grad iter 2000: loss=1.0465
+grad iter 2200: loss=1.0465
+grad iter 2400: loss=1.0464
+grad iter 2600: loss=1.0464
+grad iter 2800: loss=1.0463
+{'loss': 1.0469474792480469, 'target_var': 1.049382209777832, 'grad_norm': 0.07878581434488297, 'grad_finite': True, 'state_std_per_neuron': [4.607344887552767e-12, 3.970054063273665e-09, 1.6358574217445465e-11, 0.0233030803501606, 0.02441432513296604], 'state_scale': 0.49999988079071045, 'flat': False}
+saved scale_N5_4_1e-06.png
+grad iter 0: loss=1.0491
+grad iter 200: loss=nan
+grad iter 400: loss=nan
+grad iter 600: loss=nan
+grad iter 800: loss=nan
+grad iter 1000: loss=nan
+grad iter 1200: loss=nan
+grad iter 1400: loss=nan
+grad iter 1600: loss=nan
+grad iter 1800: loss=nan
+grad iter 2000: loss=nan
+grad iter 2200: loss=nan
+grad iter 2400: loss=nan
+grad iter 2600: loss=nan
+grad iter 2800: loss=nan
+{'loss': 1.049073576927185, 'target_var': 1.049382209777832, 'grad_norm': 0.0006399337435141206, 'grad_finite': True, 'state_std_per_neuron': [0.027835963293910027, 0.02844151295721531, 4.866624030847033e-12, 1.7179865169358877e-11, 3.4152780430118934e-12], 'state_scale': 0.46167147159576416, 'flat': False}
+seed 5 DIVERGED, max_eig set to nan
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 2.9135748036424047e-07, 'grad_finite': True, 'state_std_per_neuron': [2.716627200971544e-10, 4.13526071024739e-12, 7.831568171745573e-10, 9.055852956407762e-08, 4.875476758425812e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_6_1e-06.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.0493590831756592, 'target_var': 1.049382209777832, 'grad_norm': 0.00046234382898546755, 'grad_finite': True, 'state_std_per_neuron': [6.282046882688519e-08, 9.975159400710254e-07, 1.4917954371806985e-10, 1.599270715857415e-11, 2.276845911808323e-08], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_7_1e-06.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 1.2602312438048102e-07, 'grad_finite': True, 'state_std_per_neuron': [3.4152780430118934e-12, 8.304234383471609e-11, 2.443457658429793e-09, 2.4328247749672016e-11, 9.707255088642341e-08], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_8_1e-06.png
+grad iter 0: loss=1.0488
+grad iter 200: loss=1.0488
+grad iter 400: loss=1.0487
+grad iter 600: loss=1.0487
+grad iter 800: loss=1.0487
+grad iter 1000: loss=1.0487
+grad iter 1200: loss=1.0487
+grad iter 1400: loss=1.0487
+grad iter 1600: loss=1.0487
+grad iter 1800: loss=1.0487
+grad iter 2000: loss=1.0487
+grad iter 2200: loss=1.0486
+grad iter 2400: loss=1.0486
+grad iter 2600: loss=1.0486
+grad iter 2800: loss=1.0486
+{'loss': 1.0487691164016724, 'target_var': 1.049382209777832, 'grad_norm': 0.026276934891939163, 'grad_finite': True, 'state_std_per_neuron': [4.690477624080813e-07, 4.178031531854032e-11, 4.247728471046264e-12, 1.436205841753857e-11, 5.3526855481322855e-06], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_9_1e-06.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.0493708848953247, 'target_var': 1.049382209777832, 'grad_norm': 0.00018092739628627896, 'grad_finite': True, 'state_std_per_neuron': [5.166876041601265e-12, 5.2761567559400646e-08, 1.034020265244795e-11, 7.002806228229019e-07, 4.477506213018678e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+grad iter 0: loss=1.0493
+grad iter 200: loss=1.0493
+grad iter 400: loss=1.0493
+grad iter 600: loss=1.0492
+grad iter 800: loss=1.0492
+grad iter 1000: loss=1.0492
+grad iter 1200: loss=1.0492
+grad iter 1400: loss=1.0492
+grad iter 1600: loss=1.0492
+grad iter 1800: loss=1.0492
+grad iter 2000: loss=1.0492
+grad iter 2200: loss=1.0492
+grad iter 2400: loss=1.0492
+grad iter 2600: loss=1.0492
+grad iter 2800: loss=1.0492
+{'loss': 1.0492558479309082, 'target_var': 1.049382209777832, 'grad_norm': 0.006223040632903576, 'grad_finite': True, 'state_std_per_neuron': [9.161961189718681e-10, 4.830313926618146e-09, 2.0581717308232328e-07, 2.547082336712414e-11, 2.3509915081376676e-06], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_11_1e-06.png
+grad iter 0: loss=1.0341
+grad iter 200: loss=1.0340
+grad iter 400: loss=1.0340
+grad iter 600: loss=1.0339
+grad iter 800: loss=1.0339
+grad iter 1000: loss=1.0338
+grad iter 1200: loss=1.0338
+grad iter 1400: loss=1.0337
+grad iter 1600: loss=1.0337
+grad iter 1800: loss=1.0336
+grad iter 2000: loss=1.0335
+grad iter 2200: loss=1.0335
+grad iter 2400: loss=1.0334
+grad iter 2600: loss=1.0334
+grad iter 2800: loss=1.0333
+{'loss': 1.0340982675552368, 'target_var': 1.049382209777832, 'grad_norm': 0.10594519972801208, 'grad_finite': True, 'state_std_per_neuron': [0.04457845538854599, 5.988120221900317e-09, 0.04810278117656708, 0.006180204916745424, 0.07325306534767151], 'state_scale': 0.39541536569595337, 'flat': False}
+saved scale_N5_12_1e-06.png
+grad iter 0: loss=1.0428
+grad iter 200: loss=1.0428
+grad iter 400: loss=1.0427
+grad iter 600: loss=1.0424
+grad iter 800: loss=1.0406
+grad iter 1000: loss=1.0384
+grad iter 1200: loss=1.0376
+grad iter 1400: loss=1.0375
+grad iter 1600: loss=1.0375
+grad iter 1800: loss=1.0375
+grad iter 2000: loss=1.0375
+grad iter 2200: loss=1.0365
+grad iter 2400: loss=1.0350
+grad iter 2600: loss=1.0340
+grad iter 2800: loss=1.0334
+{'loss': 1.0428153276443481, 'target_var': 1.049382209777832, 'grad_norm': 0.022166911512613297, 'grad_finite': True, 'state_std_per_neuron': [7.0361169147992175e-12, 5.639123834555448e-09, 0.015964852645993233, 0.01568552479147911, 0.0001489737187512219], 'state_scale': 0.3690131902694702, 'flat': False}
+saved scale_N5_13_1e-06.png
+grad iter 0: loss=1.0389
+grad iter 200: loss=1.0387
+grad iter 400: loss=1.0386
+grad iter 600: loss=1.0384
+grad iter 800: loss=1.0382
+grad iter 1000: loss=1.0381
+grad iter 1200: loss=1.0379
+grad iter 1400: loss=1.0377
+grad iter 1600: loss=1.0376
+grad iter 1800: loss=1.0374
+grad iter 2000: loss=1.0373
+grad iter 2200: loss=1.0371
+grad iter 2400: loss=1.0370
+grad iter 2600: loss=1.0368
+grad iter 2800: loss=1.0367
+{'loss': 1.0388901233673096, 'target_var': 1.049382209777832, 'grad_norm': 0.33112260699272156, 'grad_finite': True, 'state_std_per_neuron': [0.009226107969880104, 0.011498827487230301, 3.1338196482266767e-09, 1.1849660142004836e-10, 2.253906089544344e-11], 'state_scale': 0.49999988079071045, 'flat': False}
+saved scale_N5_14_1e-06.png
+grad iter 0: loss=1.0415
+grad iter 200: loss=1.0415
+grad iter 400: loss=1.0415
+grad iter 600: loss=1.0415
+grad iter 800: loss=1.0415
+grad iter 1000: loss=1.0415
+grad iter 1200: loss=1.0415
+grad iter 1400: loss=1.0415
+grad iter 1600: loss=1.0415
+grad iter 1800: loss=1.0415
+grad iter 2000: loss=1.0415
+grad iter 2200: loss=1.0415
+grad iter 2400: loss=1.0415
+grad iter 2600: loss=1.0415
+grad iter 2800: loss=1.0415
+{'loss': 1.0415486097335815, 'target_var': 1.049382209777832, 'grad_norm': 0.03622085973620415, 'grad_finite': True, 'state_std_per_neuron': [0.00021776136418338865, 0.0056123374961316586, 2.6186041779396874e-08, 4.55981363778335e-11, 0.007645137142390013], 'state_scale': 0.49999988079071045, 'flat': False}
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.0493751764297485, 'target_var': 1.049382209777832, 'grad_norm': 0.000515496009029448, 'grad_finite': True, 'state_std_per_neuron': [4.943171427740367e-10, 2.7155971693559877e-08, 9.941748813080409e-12, 5.561605576076545e-07, 6.387656625861382e-09], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_16_1e-06.png
+grad iter 0: loss=1.0489
+grad iter 200: loss=1.0489
+grad iter 400: loss=1.0489
+grad iter 600: loss=1.0489
+grad iter 800: loss=1.0489
+grad iter 1000: loss=1.0489
+grad iter 1200: loss=1.0489
+grad iter 1400: loss=1.0489
+grad iter 1600: loss=1.0489
+grad iter 1800: loss=1.0489
+grad iter 2000: loss=1.0489
+grad iter 2200: loss=1.0489
+grad iter 2400: loss=1.0489
+grad iter 2600: loss=1.0489
+grad iter 2800: loss=1.0489
+{'loss': 1.0488919019699097, 'target_var': 1.049382209777832, 'grad_norm': 0.0005823341198265553, 'grad_finite': True, 'state_std_per_neuron': [3.31701693889741e-10, 0.01426425576210022, 3.5991183991446185e-12, 5.8139819347768906e-11, 0.014112773351371288], 'state_scale': 0.32368505001068115, 'flat': False}
+saved scale_N5_17_1e-06.png
+grad iter 0: loss=1.0488
+grad iter 200: loss=1.0488
+grad iter 400: loss=1.0488
+grad iter 600: loss=1.0488
+grad iter 800: loss=1.0488
+grad iter 1000: loss=1.0488
+grad iter 1200: loss=1.0488
+grad iter 1400: loss=1.0488
+grad iter 1600: loss=1.0488
+grad iter 1800: loss=1.0488
+grad iter 2000: loss=1.0488
+grad iter 2200: loss=1.0488
+grad iter 2400: loss=1.0488
+grad iter 2600: loss=1.0488
+grad iter 2800: loss=1.0488
+{'loss': 1.0488461256027222, 'target_var': 1.049382209777832, 'grad_norm': 0.012182993814349174, 'grad_finite': True, 'state_std_per_neuron': [5.036692982685054e-07, 2.4710174878483926e-11, 1.2141181289504477e-11, 4.972026090399595e-06, 6.923784028750601e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_18_1e-06.png
+grad iter 0: loss=1.0449
+grad iter 200: loss=1.0448
+grad iter 400: loss=1.0447
+grad iter 600: loss=1.0446
+grad iter 800: loss=1.0445
+grad iter 1000: loss=1.0444
+grad iter 1200: loss=1.0444
+grad iter 1400: loss=1.0443
+grad iter 1600: loss=1.0442
+grad iter 1800: loss=1.0442
+grad iter 2000: loss=1.0441
+grad iter 2200: loss=1.0441
+grad iter 2400: loss=1.0440
+grad iter 2600: loss=1.0439
+grad iter 2800: loss=1.0439
+{'loss': 1.044927954673767, 'target_var': 1.049382209777832, 'grad_norm': 0.18519145250320435, 'grad_finite': True, 'state_std_per_neuron': [2.1359690435929224e-05, 1.7023807004079572e-06, 3.568270678933061e-11, 1.1154991513828705e-10, 6.428360881799433e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_19_1e-06.png
+grad iter 0: loss=1.0334
+grad iter 200: loss=1.0330
+grad iter 400: loss=1.0330
+grad iter 600: loss=1.0330
+grad iter 800: loss=1.0330
+grad iter 1000: loss=1.0330
+grad iter 1200: loss=1.0330
+grad iter 1400: loss=1.0330
+grad iter 1600: loss=1.0330
+grad iter 1800: loss=1.0330
+grad iter 2000: loss=1.0330
+grad iter 2200: loss=1.0330
+grad iter 2400: loss=1.0330
+grad iter 2600: loss=1.0330
+grad iter 2800: loss=1.0330
+{'loss': 1.0333646535873413, 'target_var': 1.049382209777832, 'grad_norm': 0.2080966830253601, 'grad_finite': True, 'state_std_per_neuron': [0.005282863043248653, 1.5912729467437714e-10, 5.0454419288359365e-12, 6.026900506439503e-11, 0.003451962023973465], 'state_scale': 0.49999988079071045, 'flat': False}
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 1.2617451972118943e-08, 'grad_finite': True, 'state_std_per_neuron': [2.0621106211482498e-10, 8.954483377010547e-08, 4.754975302390108e-10, 5.634115136238238e-12, 5.459722951517421e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_1_0.001.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 6.880556924215853e-08, 'grad_finite': True, 'state_std_per_neuron': [2.1251980730774278e-10, 8.940696716308594e-08, 8.216622694734443e-12, 3.670368262792545e-12, 1.515936334794965e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_2_0.001.png
+grad iter 0: loss=1.0485
+grad iter 200: loss=1.0475
+grad iter 400: loss=1.0475
+grad iter 600: loss=1.0475
+grad iter 800: loss=1.0475
+grad iter 1000: loss=1.0475
+grad iter 1200: loss=1.0475
+grad iter 1400: loss=1.0474
+grad iter 1600: loss=1.0474
+grad iter 1800: loss=1.0474
+grad iter 2000: loss=1.0474
+grad iter 2200: loss=1.0474
+grad iter 2400: loss=1.0474
+grad iter 2600: loss=1.0474
+grad iter 2800: loss=1.0474
+{'loss': 1.0485098361968994, 'target_var': 1.049382209777832, 'grad_norm': 0.056989725679159164, 'grad_finite': True, 'state_std_per_neuron': [5.202890895894541e-11, 6.7980395618283396e-12, 0.03466356173157692, 2.0187206073440933e-11, 0.0344286784529686], 'state_scale': 0.49999988079071045, 'flat': False}
+saved scale_N5_3_0.001.png
+grad iter 0: loss=1.0469
+grad iter 200: loss=1.0442
+grad iter 400: loss=1.0442
+grad iter 600: loss=1.0442
+grad iter 800: loss=1.0442
+grad iter 1000: loss=1.0442
+grad iter 1200: loss=1.0442
+grad iter 1400: loss=1.0442
+grad iter 1600: loss=1.0442
+grad iter 1800: loss=1.0442
+grad iter 2000: loss=1.0441
+grad iter 2200: loss=1.0442
+grad iter 2400: loss=1.0441
+grad iter 2600: loss=1.0441
+grad iter 2800: loss=1.0441
+{'loss': 1.0469474792480469, 'target_var': 1.049382209777832, 'grad_norm': 0.07878581434488297, 'grad_finite': True, 'state_std_per_neuron': [4.607344887552767e-12, 3.970054063273665e-09, 1.6358574217445465e-11, 0.0233030803501606, 0.02441432513296604], 'state_scale': 0.49999988079071045, 'flat': False}
+saved scale_N5_4_0.001.png
+grad iter 0: loss=1.0491
+grad iter 200: loss=1.0489
+grad iter 400: loss=1.0488
+grad iter 600: loss=1.0486
+grad iter 800: loss=1.0486
+grad iter 1000: loss=1.0485
+grad iter 1200: loss=1.0484
+grad iter 1400: loss=1.0484
+grad iter 1600: loss=1.0483
+grad iter 1800: loss=1.0483
+grad iter 2000: loss=1.0482
+grad iter 2200: loss=1.0482
+grad iter 2400: loss=1.0482
+grad iter 2600: loss=1.0482
+grad iter 2800: loss=1.0481
+{'loss': 1.049073576927185, 'target_var': 1.049382209777832, 'grad_norm': 0.0006399337435141206, 'grad_finite': True, 'state_std_per_neuron': [0.027835963293910027, 0.02844151295721531, 4.866624030847033e-12, 1.7179865169358877e-11, 3.4152780430118934e-12], 'state_scale': 0.46167147159576416, 'flat': False}
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0494
+grad iter 400: loss=1.0494
+grad iter 600: loss=1.0494
+grad iter 800: loss=1.0494
+grad iter 1000: loss=1.0494
+grad iter 1200: loss=1.0494
+grad iter 1400: loss=1.0494
+grad iter 1600: loss=1.0494
+grad iter 1800: loss=1.0494
+grad iter 2000: loss=1.0494
+grad iter 2200: loss=1.0494
+grad iter 2400: loss=1.0494
+grad iter 2600: loss=1.0494
+grad iter 2800: loss=1.0494
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 2.9135748036424047e-07, 'grad_finite': True, 'state_std_per_neuron': [2.716627200971544e-10, 4.13526071024739e-12, 7.831568171745573e-10, 9.055852956407762e-08, 4.875476758425812e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_6_0.001.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0244
+grad iter 400: loss=1.0243
+grad iter 600: loss=1.0243
+grad iter 800: loss=1.0242
+grad iter 1000: loss=1.0241
+grad iter 1200: loss=1.0241
+grad iter 1400: loss=1.0241
+grad iter 1600: loss=1.0241
+grad iter 1800: loss=1.0241
+grad iter 2000: loss=1.0241
+grad iter 2200: loss=1.0241
+grad iter 2400: loss=1.0241
+grad iter 2600: loss=1.0241
+grad iter 2800: loss=1.0241
+{'loss': 1.0493590831756592, 'target_var': 1.049382209777832, 'grad_norm': 0.00046234382898546755, 'grad_finite': True, 'state_std_per_neuron': [6.282046882688519e-08, 9.975159400710254e-07, 1.4917954371806985e-10, 1.599270715857415e-11, 2.276845911808323e-08], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_7_0.001.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0493
+grad iter 400: loss=1.0485
+grad iter 600: loss=1.0485
+grad iter 800: loss=1.0485
+grad iter 1000: loss=1.0485
+grad iter 1200: loss=1.0484
+grad iter 1400: loss=1.0233
+grad iter 1600: loss=1.0339
+grad iter 1800: loss=1.0376
+grad iter 2000: loss=1.0376
+grad iter 2200: loss=1.0376
+grad iter 2400: loss=1.0376
+grad iter 2600: loss=1.0376
+grad iter 2800: loss=1.0376
+{'loss': 1.049382209777832, 'target_var': 1.049382209777832, 'grad_norm': 1.2602312438048102e-07, 'grad_finite': True, 'state_std_per_neuron': [3.4152780430118934e-12, 8.304234383471609e-11, 2.443457658429793e-09, 2.4328247749672016e-11, 9.707255088642341e-08], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_8_0.001.png
+grad iter 0: loss=1.0488
+grad iter 200: loss=1.0425
+grad iter 400: loss=1.0330
+grad iter 600: loss=1.0330
+grad iter 800: loss=1.0330
+grad iter 1000: loss=1.0330
+grad iter 1200: loss=1.0330
+grad iter 1400: loss=1.0330
+grad iter 1600: loss=1.0330
+grad iter 1800: loss=1.0330
+grad iter 2000: loss=1.0330
+grad iter 2200: loss=1.0330
+grad iter 2400: loss=1.0330
+grad iter 2600: loss=1.0330
+grad iter 2800: loss=1.0330
+{'loss': 1.0487691164016724, 'target_var': 1.049382209777832, 'grad_norm': 0.026276934891939163, 'grad_finite': True, 'state_std_per_neuron': [4.690477624080813e-07, 4.178031531854032e-11, 4.247728471046264e-12, 1.436205841753857e-11, 5.3526855481322855e-06], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_9_0.001.png
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0430
+grad iter 400: loss=1.0377
+grad iter 600: loss=1.0376
+grad iter 800: loss=1.0376
+grad iter 1000: loss=1.0376
+grad iter 1200: loss=1.0376
+grad iter 1400: loss=1.0376
+grad iter 1600: loss=1.0376
+grad iter 1800: loss=1.0376
+grad iter 2000: loss=1.0332
+grad iter 2200: loss=1.0331
+grad iter 2400: loss=1.0331
+grad iter 2600: loss=1.0331
+grad iter 2800: loss=1.0331
+{'loss': 1.0493708848953247, 'target_var': 1.049382209777832, 'grad_norm': 0.00018092739628627896, 'grad_finite': True, 'state_std_per_neuron': [5.166876041601265e-12, 5.2761567559400646e-08, 1.034020265244795e-11, 7.002806228229019e-07, 4.477506213018678e-11], 'state_scale': 0.49999988079071045, 'flat': True}
+grad iter 0: loss=1.0493
+grad iter 200: loss=1.0332
+grad iter 400: loss=1.0332
+grad iter 600: loss=1.0332
+grad iter 800: loss=1.0332
+grad iter 1000: loss=1.0332
+grad iter 1200: loss=1.0332
+grad iter 1400: loss=1.0332
+grad iter 1600: loss=1.0332
+grad iter 1800: loss=1.0332
+grad iter 2000: loss=1.0331
+grad iter 2200: loss=1.0331
+grad iter 2400: loss=1.0331
+grad iter 2600: loss=1.0331
+grad iter 2800: loss=1.0331
+{'loss': 1.0492558479309082, 'target_var': 1.049382209777832, 'grad_norm': 0.006223040632903576, 'grad_finite': True, 'state_std_per_neuron': [9.161961189718681e-10, 4.830313926618146e-09, 2.0581717308232328e-07, 2.547082336712414e-11, 2.3509915081376676e-06], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_11_0.001.png
+grad iter 0: loss=1.0341
+grad iter 200: loss=1.0275
+grad iter 400: loss=1.0274
+grad iter 600: loss=1.0273
+grad iter 800: loss=1.0272
+grad iter 1000: loss=1.0271
+grad iter 1200: loss=1.0270
+grad iter 1400: loss=1.0269
+grad iter 1600: loss=1.0268
+grad iter 1800: loss=1.0267
+grad iter 2000: loss=1.0266
+grad iter 2200: loss=1.0265
+grad iter 2400: loss=1.0265
+grad iter 2600: loss=1.0264
+grad iter 2800: loss=1.0263
+{'loss': 1.0340982675552368, 'target_var': 1.049382209777832, 'grad_norm': 0.10594519972801208, 'grad_finite': True, 'state_std_per_neuron': [0.04457845538854599, 5.988120221900317e-09, 0.04810278117656708, 0.006180204916745424, 0.07325306534767151], 'state_scale': 0.39541536569595337, 'flat': False}
+saved scale_N5_12_0.001.png
+grad iter 0: loss=1.0428
+grad iter 200: loss=1.0345
+grad iter 400: loss=1.0343
+grad iter 600: loss=1.0342
+grad iter 800: loss=1.0346
+grad iter 1000: loss=1.0347
+grad iter 1200: loss=1.0341
+grad iter 1400: loss=1.0348
+grad iter 1600: loss=1.0339
+grad iter 1800: loss=1.0340
+grad iter 2000: loss=1.0338
+grad iter 2200: loss=1.0335
+grad iter 2400: loss=1.0333
+grad iter 2600: loss=1.0339
+grad iter 2800: loss=1.0332
+{'loss': 1.0428153276443481, 'target_var': 1.049382209777832, 'grad_norm': 0.022166911512613297, 'grad_finite': True, 'state_std_per_neuron': [7.0361169147992175e-12, 5.639123834555448e-09, 0.015964852645993233, 0.01568552479147911, 0.0001489737187512219], 'state_scale': 0.3690131902694702, 'flat': False}
+saved scale_N5_13_0.001.png
+grad iter 0: loss=1.0389
+grad iter 200: loss=1.0333
+grad iter 400: loss=1.0333
+grad iter 600: loss=1.0333
+grad iter 800: loss=1.0333
+grad iter 1000: loss=1.0333
+grad iter 1200: loss=1.0333
+grad iter 1400: loss=1.0333
+grad iter 1600: loss=1.0333
+grad iter 1800: loss=1.0333
+grad iter 2000: loss=1.0333
+grad iter 2200: loss=1.0333
+grad iter 2400: loss=1.0333
+grad iter 2600: loss=1.0333
+grad iter 2800: loss=1.0333
+{'loss': 1.0388901233673096, 'target_var': 1.049382209777832, 'grad_norm': 0.33112260699272156, 'grad_finite': True, 'state_std_per_neuron': [0.009226107969880104, 0.011498827487230301, 3.1338196482266767e-09, 1.1849660142004836e-10, 2.253906089544344e-11], 'state_scale': 0.49999988079071045, 'flat': False}
+saved scale_N5_14_0.001.png
+grad iter 0: loss=1.0415
+grad iter 200: loss=1.0413
+grad iter 400: loss=1.0413
+grad iter 600: loss=1.0413
+grad iter 800: loss=1.0413
+grad iter 1000: loss=1.0413
+grad iter 1200: loss=1.0413
+grad iter 1400: loss=1.0413
+grad iter 1600: loss=1.0413
+grad iter 1800: loss=1.0413
+grad iter 2000: loss=1.0413
+grad iter 2200: loss=1.0413
+grad iter 2400: loss=1.0413
+grad iter 2600: loss=1.0413
+grad iter 2800: loss=1.0413
+{'loss': 1.0415486097335815, 'target_var': 1.049382209777832, 'grad_norm': 0.03622085973620415, 'grad_finite': True, 'state_std_per_neuron': [0.00021776136418338865, 0.0056123374961316586, 2.6186041779396874e-08, 4.55981363778335e-11, 0.007645137142390013], 'state_scale': 0.49999988079071045, 'flat': False}
+grad iter 0: loss=1.0494
+grad iter 200: loss=1.0441
+grad iter 400: loss=1.0439
+grad iter 600: loss=1.0438
+grad iter 800: loss=1.0438
+grad iter 1000: loss=1.0435
+grad iter 1200: loss=1.0434
+grad iter 1400: loss=1.0432
+grad iter 1600: loss=1.0430
+grad iter 1800: loss=1.0429
+grad iter 2000: loss=1.0427
+grad iter 2200: loss=1.0426
+grad iter 2400: loss=1.0425
+grad iter 2600: loss=1.0424
+grad iter 2800: loss=1.0422
+{'loss': 1.0493751764297485, 'target_var': 1.049382209777832, 'grad_norm': 0.000515496009029448, 'grad_finite': True, 'state_std_per_neuron': [4.943171427740367e-10, 2.7155971693559877e-08, 9.941748813080409e-12, 5.561605576076545e-07, 6.387656625861382e-09], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_16_0.001.png
+grad iter 0: loss=1.0489
+grad iter 200: loss=1.0487
+grad iter 400: loss=1.0486
+grad iter 600: loss=1.0485
+grad iter 800: loss=1.0484
+grad iter 1000: loss=1.0484
+grad iter 1200: loss=1.0483
+grad iter 1400: loss=1.0483
+grad iter 1600: loss=1.0483
+grad iter 1800: loss=1.0482
+grad iter 2000: loss=1.0482
+grad iter 2200: loss=1.0482
+grad iter 2400: loss=1.0481
+grad iter 2600: loss=1.0481
+grad iter 2800: loss=1.0481
+{'loss': 1.0488919019699097, 'target_var': 1.049382209777832, 'grad_norm': 0.0005823341198265553, 'grad_finite': True, 'state_std_per_neuron': [3.31701693889741e-10, 0.01426425576210022, 3.5991183991446185e-12, 5.8139819347768906e-11, 0.014112773351371288], 'state_scale': 0.32368505001068115, 'flat': False}
+saved scale_N5_17_0.001.png
+grad iter 0: loss=1.0488
+grad iter 200: loss=1.0430
+grad iter 400: loss=1.0427
+grad iter 600: loss=1.0376
+grad iter 800: loss=1.0335
+grad iter 1000: loss=1.0335
+grad iter 1200: loss=1.0335
+grad iter 1400: loss=1.0335
+grad iter 1600: loss=1.0335
+grad iter 1800: loss=1.0335
+grad iter 2000: loss=1.0335
+grad iter 2200: loss=1.0335
+grad iter 2400: loss=1.0335
+grad iter 2600: loss=1.0335
+grad iter 2800: loss=1.0335
+{'loss': 1.0488461256027222, 'target_var': 1.049382209777832, 'grad_norm': 0.012182993814349174, 'grad_finite': True, 'state_std_per_neuron': [5.036692982685054e-07, 2.4710174878483926e-11, 1.2141181289504477e-11, 4.972026090399595e-06, 6.923784028750601e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_18_0.001.png
+grad iter 0: loss=1.0449
+grad iter 200: loss=1.0330
+grad iter 400: loss=1.0333
+grad iter 600: loss=1.0329
+grad iter 800: loss=1.0321
+grad iter 1000: loss=1.0325
+grad iter 1200: loss=1.0331
+grad iter 1400: loss=1.0326
+grad iter 1600: loss=1.0324
+grad iter 1800: loss=1.0322
+grad iter 2000: loss=1.0321
+grad iter 2200: loss=1.0320
+grad iter 2400: loss=1.0291
+grad iter 2600: loss=1.0331
+grad iter 2800: loss=1.0341
+{'loss': 1.044927954673767, 'target_var': 1.049382209777832, 'grad_norm': 0.18519145250320435, 'grad_finite': True, 'state_std_per_neuron': [2.1359690435929224e-05, 1.7023807004079572e-06, 3.568270678933061e-11, 1.1154991513828705e-10, 6.428360881799433e-12], 'state_scale': 0.49999988079071045, 'flat': True}
+saved scale_N5_19_0.001.png
+cycle emerged: 0/180
+stable FP:     0/180

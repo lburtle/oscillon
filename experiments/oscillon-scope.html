@@ -1,0 +1,1325 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>oscillon · gCTLN circuit scope</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0b0e12;
+        --panel: #141a22;
+        --inset: #0c1016;
+        --line: rgba(255, 255, 255, 0.07);
+        --line-2: rgba(255, 255, 255, 0.14);
+        --tx: #e8ebf0;
+        --tx-2: #8b95a3;
+        --tx-3: #525c6a;
+        --accent: #8b9cff;
+        --accent-dim: rgba(139, 156, 255, 0.14);
+        --good: #5fd0c5;
+        --radius: 14px;
+        --radius-s: 9px;
+        --disp: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+        --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--tx);
+        font-family: var(--disp);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body {
+        padding: clamp(16px, 3vw, 34px);
+      }
+
+      .wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+
+      .console {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        gap: 18px;
+        padding-bottom: 20px;
+        margin-bottom: 22px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .mark {
+        font-weight: 600;
+        font-size: 30px;
+        letter-spacing: -0.02em;
+      }
+
+      .mark .dot {
+        color: var(--accent);
+      }
+
+      .tag {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--tx-3);
+      }
+
+      .eyebrow-top {
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        color: var(--tx-3);
+        margin-bottom: 7px;
+      }
+
+      .metrics {
+        display: flex;
+        gap: 22px;
+        flex-wrap: wrap;
+      }
+
+      .metric {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        min-width: 70px;
+      }
+
+      .metric .m-label {
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: var(--tx-3);
+      }
+
+      .metric .m-val {
+        font-family: var(--mono);
+        font-size: 19px;
+        font-weight: 500;
+        color: var(--tx);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .metric .m-val.lit {
+        color: var(--good);
+      }
+
+      .status {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--tx-2);
+      }
+
+      .status .led {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--good);
+        box-shadow: 0 0 9px var(--good);
+      }
+
+      .status.paused .led {
+        background: #e0a64e;
+        box-shadow: 0 0 9px #e0a64e;
+      }
+
+      .controls {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 14px 20px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 14px 18px;
+        margin-bottom: 18px;
+      }
+
+      .motifs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+      }
+
+      .btn {
+        font-family: var(--mono);
+        font-size: 12.5px;
+        letter-spacing: 0.01em;
+        color: var(--tx-2);
+        background: transparent;
+        border: 1px solid var(--line-2);
+        border-radius: var(--radius-s);
+        padding: 8px 13px;
+        cursor: pointer;
+        transition:
+          color 0.14s,
+          border-color 0.14s,
+          background 0.14s;
+      }
+
+      .btn:hover {
+        color: var(--tx);
+        border-color: var(--accent);
+      }
+
+      .btn:active {
+        transform: translateY(1px);
+      }
+
+      .divider {
+        width: 1px;
+        height: 30px;
+        background: var(--line);
+      }
+
+      .ctl {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        flex: 1;
+        min-width: 148px;
+      }
+
+      .ctl-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+
+      .ctl-row label {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        color: var(--tx-2);
+      }
+
+      .ctl-val {
+        font-family: var(--mono);
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--tx);
+        font-variant-numeric: tabular-nums;
+      }
+
+      input[type="range"] {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 4px;
+        border-radius: 3px;
+        background: var(--line-2);
+        outline: none;
+        cursor: pointer;
+      }
+
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: var(--tx);
+        border: 2px solid var(--bg);
+        box-shadow: 0 0 0 1px var(--line-2);
+        transition: box-shadow 0.14s;
+      }
+
+      input[type="range"]:focus-visible::-webkit-slider-thumb {
+        box-shadow: 0 0 0 4px var(--accent-dim);
+      }
+
+      input[type="range"]::-moz-range-thumb {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--tx);
+        border: 2px solid var(--bg);
+        box-shadow: 0 0 0 1px var(--line-2);
+      }
+
+      #wcross::-webkit-slider-thumb {
+        background: var(--accent);
+      }
+
+      #wcross::-moz-range-thumb {
+        background: var(--accent);
+      }
+
+      .transport {
+        display: flex;
+        gap: 8px;
+        margin-left: auto;
+      }
+
+      .icon-btn {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--line-2);
+        border-radius: var(--radius-s);
+        background: transparent;
+        color: var(--tx-2);
+        cursor: pointer;
+        transition:
+          color 0.14s,
+          border-color 0.14s,
+          background 0.14s;
+      }
+
+      .icon-btn:hover {
+        color: var(--tx);
+        border-color: var(--accent);
+        background: var(--accent-dim);
+      }
+
+      .icon-btn svg {
+        width: 17px;
+        height: 17px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 5fr 7fr;
+        grid-template-areas: "graph scope" "matrix trace";
+        gap: 18px;
+      }
+
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 15px 16px 14px;
+      }
+
+      .p-graph {
+        grid-area: graph;
+      }
+
+      .p-scope {
+        grid-area: scope;
+      }
+
+      .p-matrix {
+        grid-area: matrix;
+      }
+
+      .p-trace {
+        grid-area: trace;
+      }
+
+      .head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 13px;
+      }
+
+      .eyebrow {
+        font-family: var(--mono);
+        font-size: 10.5px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--tx-2);
+      }
+
+      .head .meta {
+        font-family: var(--mono);
+        font-size: 10.5px;
+        letter-spacing: 0.08em;
+        color: var(--tx-3);
+      }
+
+      .screen {
+        background: var(--inset);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-s);
+        overflow: hidden;
+      }
+
+      .p-graph .screen {
+        padding: 6px;
+      }
+
+      #graph {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      #phase,
+      #trace {
+        width: 100%;
+        display: block;
+      }
+
+      #phase {
+        height: 316px;
+      }
+
+      #trace {
+        height: 150px;
+      }
+
+      .legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 11px;
+        align-items: center;
+      }
+
+      .legend .lbl {
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--tx-3);
+        margin-right: 2px;
+      }
+
+      .chip {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-family: var(--mono);
+        font-size: 11px;
+        padding: 3px 9px 3px 7px;
+        border-radius: 20px;
+        border: 1px solid var(--line);
+        color: var(--tx-3);
+        transition:
+          color 0.12s,
+          border-color 0.12s,
+          opacity 0.12s;
+        opacity: 0.5;
+      }
+
+      .chip .sw {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+      }
+
+      .chip.on {
+        opacity: 1;
+        color: var(--tx);
+        border-color: var(--line-2);
+      }
+
+      .matrix {
+        display: inline-grid;
+        max-width: 100%;
+        overflow: auto;
+      }
+
+      .mcell {
+        padding: 0;
+        border-radius: 4px;
+        border: 1px solid var(--line);
+        background: var(--inset);
+        cursor: pointer;
+        transition:
+          background 0.12s,
+          border-color 0.12s;
+      }
+
+      .mcell:hover {
+        border-color: var(--accent);
+      }
+
+      .mcell.on {
+        background: var(--accent);
+        border-color: var(--accent);
+      }
+
+      .mcell.diag {
+        background: transparent;
+        border-color: transparent;
+        cursor: default;
+      }
+
+      .mlabel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--mono);
+        color: var(--tx-3);
+      }
+
+      .hint {
+        font-family: var(--mono);
+        font-size: 10.5px;
+        line-height: 1.6;
+        color: var(--tx-3);
+        margin-top: 12px;
+        max-width: 240px;
+      }
+
+      @media (max-width: 880px) {
+        .grid {
+          grid-template-columns: 1fr;
+          grid-template-areas: "graph" "scope" "trace" "matrix";
+        }
+
+        .metrics {
+          gap: 16px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .status .led {
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="console">
+        <div>
+          <div class="eyebrow-top">
+            all-inhibitory · threshold-linear · combinatorial
+          </div>
+          <div style="display: flex; align-items: baseline; gap: 14px">
+            <div class="mark">oscillon<span class="dot">.</span></div>
+            <div class="tag">gCTLN circuit scope</div>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metric">
+            <span class="m-label">model time</span
+            ><span class="m-val" id="m-time">0.0</span>
+          </div>
+          <div class="metric">
+            <span class="m-label">regime</span
+            ><span class="m-val" id="m-regime">settling</span>
+          </div>
+          <div class="metric">
+            <span class="m-label">active groups</span
+            ><span class="m-val" id="m-groups">1</span>
+          </div>
+          <div class="metric">
+            <span class="m-label">crossings</span
+            ><span class="m-val" id="m-cross">0</span>
+          </div>
+          <div class="metric">
+            <span class="m-label">state</span>
+            <span class="status" id="status"
+              ><span class="led"></span
+              ><span id="status-txt">running</span></span
+            >
+          </div>
+        </div>
+      </header>
+
+      <section class="controls">
+        <div class="motifs">
+          <button class="btn" data-k="cycle">cycle</button>
+          <button class="btn" data-k="clique">clique</button>
+          <button class="btn" data-k="twocycles">two cycles</button>
+          <button class="btn" data-k="cycleclique">cycle + clique</button>
+          <button class="btn" data-k="twocliques">two cliques</button>
+          <button class="btn" data-k="clear">clear</button>
+        </div>
+        <div class="divider"></div>
+        <div class="ctl" style="min-width: 150px">
+          <div class="ctl-row">
+            <label>nodes&nbsp; n</label
+            ><span class="ctl-val" id="n-out">6</span>
+          </div>
+          <input type="range" id="nslide" min="3" max="30" step="1" value="6" />
+        </div>
+        <div class="ctl">
+          <div class="ctl-row">
+            <label>tonic drive&nbsp; θ</label
+            ><span class="ctl-val" id="theta-out">1.00</span>
+          </div>
+          <input
+            type="range"
+            id="theta"
+            min="0"
+            max="3"
+            step="0.05"
+            value="1"
+          />
+        </div>
+        <div class="ctl">
+          <div class="ctl-row">
+            <label>cross-coupling&nbsp; w</label
+            ><span class="ctl-val" id="wc-out">−1.50</span>
+          </div>
+          <input
+            type="range"
+            id="wcross"
+            min="-2"
+            max="0.5"
+            step="0.05"
+            value="-1.5"
+          />
+        </div>
+        <div class="ctl">
+          <div class="ctl-row">
+            <label>speed</label
+            ><span class="ctl-val" id="speed-out">1.00×</span>
+          </div>
+          <input
+            type="range"
+            id="speed"
+            min="0.25"
+            max="3"
+            step="0.25"
+            value="1"
+          />
+        </div>
+        <div class="transport">
+          <button class="icon-btn" id="play" aria-label="pause">
+            <svg id="play-ico" viewBox="0 0 24 24" fill="currentColor">
+              <rect x="6" y="5" width="4" height="14" rx="1" />
+              <rect x="14" y="5" width="4" height="14" rx="1" />
+            </svg>
+          </button>
+          <button class="icon-btn" id="reset" aria-label="reset state">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M3 12a9 9 0 1 0 3-6.7" />
+              <path d="M3 4v4h4" />
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <div class="grid">
+        <section class="panel p-graph">
+          <div class="head">
+            <span class="eyebrow">circuit</span
+            ><span class="meta" id="graph-meta">1 comp</span>
+          </div>
+          <div class="screen">
+            <svg
+              id="graph"
+              viewBox="0 0 360 360"
+              role="img"
+              aria-label="inhibitory circuit, nodes colored by component, activation shown live"
+            ></svg>
+          </div>
+          <div class="legend" id="legend"></div>
+        </section>
+
+        <section class="panel p-scope">
+          <div class="head">
+            <span class="eyebrow">flow across chambers</span
+            ><span class="meta">marks · hyperplane crossings</span>
+          </div>
+          <div class="screen"><canvas id="phase"></canvas></div>
+        </section>
+
+        <section class="panel p-trace">
+          <div class="head">
+            <span class="eyebrow">firing rates&nbsp; xᵢ(t)</span
+            ><span class="meta">forward Euler · dt 0.02</span>
+          </div>
+          <div class="screen"><canvas id="trace"></canvas></div>
+        </section>
+
+        <section class="panel p-matrix">
+          <div class="head">
+            <span class="eyebrow">adjacency</span
+            ><span class="meta">row → col</span>
+          </div>
+          <div class="matrix" id="matrix"></div>
+          <div class="hint">
+            Toggle a cell for a directed edge i→j (sets Wⱼᵢ = −1+ε). Nodes are
+            colored by connected component. Cross-coupling w overrides only
+            between components; at −1.50 it equals −1−δ.
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        "use strict";
+        const EPS = 0.25,
+          DELTA = 0.5,
+          DT = 0.02,
+          ANIM_MAX = 120,
+          EDGE_DRAW_MAX = 480,
+          NMAX = 30;
+        const NEU = [
+          "#f4a259",
+          "#5fd0c5",
+          "#c78bff",
+          "#ff7a9c",
+          "#7fb3ff",
+          "#9ed36a",
+          "#ffd166",
+        ];
+        const GRID = "rgba(255,255,255,0.055)",
+          SPOKE = "rgba(255,255,255,0.09)",
+          DIMW = "rgba(255,255,255,0.32)";
+        const SVGNS = "http://www.w3.org/2000/svg";
+        const $ = (id) => document.getElementById(id);
+        const key = (a, b) => a + ">" + b;
+        const fmt = (v) => v.toFixed(2).replace("-", "\u2212");
+
+        let n = 6,
+          edges = new Set(),
+          W = [],
+          x = [],
+          U = [],
+          comp = [],
+          compIndex = [],
+          ncomp = 1;
+        let theta = 1,
+          speed = 1,
+          wCross = -1.5,
+          paused = false;
+        let trace = [],
+          phase = [],
+          prevMask = -1,
+          crossings = 0,
+          tModel = 0;
+        let rNode = 9,
+          showLabels = true,
+          animateEdges = true;
+        const TMAX = 300,
+          PMAX = 680;
+        const colorOf = (i) => NEU[compIndex[i] % 7];
+
+        function precompute() {
+          U = [];
+          for (let i = 0; i < n; i++) {
+            const a = -Math.PI / 2 + (2 * Math.PI * i) / n;
+            U.push([Math.cos(a), Math.sin(a)]);
+          }
+        }
+
+        function components() {
+          const par = [...Array(n).keys()];
+          const find = (a) => {
+            while (par[a] !== a) {
+              par[a] = par[par[a]];
+              a = par[a];
+            }
+            return a;
+          };
+          edges.forEach((k) => {
+            const [a, b] = k.split(">").map(Number);
+            par[find(a)] = find(b);
+          });
+          comp = [];
+          compIndex = [];
+          const idx = {};
+          let order = 0;
+          for (let i = 0; i < n; i++) {
+            const r = find(i);
+            comp.push(r);
+            if (!(r in idx)) idx[r] = order++;
+            compIndex.push(idx[r]);
+          }
+          ncomp = order;
+        }
+        function buildW() {
+          components();
+          W = [];
+          for (let i = 0; i < n; i++) {
+            W.push([]);
+            for (let j = 0; j < n; j++) {
+              if (i === j) W[i][j] = 0;
+              else if (comp[i] === comp[j])
+                W[i][j] = edges.has(key(j, i)) ? -1 + EPS : -1 - DELTA;
+              else W[i][j] = wCross;
+            }
+          }
+          $("graph-meta").textContent =
+            ncomp +
+            " comp · " +
+            edges.size +
+            " edges" +
+            (edges.size > EDGE_DRAW_MAX ? " (hidden)" : "");
+        }
+
+        function qbuild(k) {
+          edges.clear();
+          const half = Math.floor(n / 2),
+            g1 = [],
+            g2 = [];
+          for (let i = 0; i < n; i++) (i < half ? g1 : g2).push(i);
+          const ring = (g) => {
+            if (g.length < 2) return;
+            for (let i = 0; i < g.length; i++)
+              edges.add(key(g[i], g[(i + 1) % g.length]));
+          };
+          const full = (g) => {
+            for (let i = 0; i < g.length; i++)
+              for (let j = 0; j < g.length; j++)
+                if (i !== j) edges.add(key(g[i], g[j]));
+          };
+          const link = (a, b) => {
+            if (a.length && b.length) {
+              edges.add(key(a[a.length - 1], b[0]));
+              edges.add(key(b[b.length - 1], a[0]));
+            }
+          };
+          if (k === "cycle") ring([...Array(n).keys()]);
+          else if (k === "clique") full([...Array(n).keys()]);
+          else if (k === "twocycles") {
+            ring(g1);
+            ring(g2);
+          } else if (k === "cycleclique") {
+            ring(g1);
+            full(g2);
+            link(g1, g2);
+          } else if (k === "twocliques") {
+            full(g1);
+            full(g2);
+            link(g1, g2);
+          }
+          rebuild();
+          resetState();
+        }
+
+        function buildMatrix() {
+          const m = $("matrix");
+          m.innerHTML = "";
+          const cell = Math.max(9, Math.min(23, Math.floor(300 / (n + 1))));
+          const gap = n > 16 ? 2 : 4,
+            fs = Math.max(8, Math.min(11, cell - 1));
+          m.style.gap = gap + "px";
+          m.style.gridTemplateColumns = `repeat(${n + 1},${cell}px)`;
+          const sz = (el) => {
+            el.style.width = cell + "px";
+            el.style.height = cell + "px";
+          };
+          const showHdr = (k) => n <= 16 || k === 0 || (k + 1) % 5 === 0;
+          m.appendChild(lbl("", null, sz, fs));
+          for (let c = 0; c < n; c++)
+            m.appendChild(
+              lbl(showHdr(c) ? c + 1 : "", NEU[compIndex[c] % 7], sz, fs),
+            );
+          for (let r = 0; r < n; r++) {
+            m.appendChild(
+              lbl(showHdr(r) ? r + 1 : "", NEU[compIndex[r] % 7], sz, fs),
+            );
+            for (let c = 0; c < n; c++) {
+              const b = document.createElement("button");
+              sz(b);
+              if (r === c) {
+                b.className = "mcell diag";
+                b.disabled = true;
+              } else {
+                b.className = "mcell" + (edges.has(key(r, c)) ? " on" : "");
+                b.setAttribute("aria-label", `edge ${r + 1} to ${c + 1}`);
+                b.addEventListener("click", () => {
+                  const kk = key(r, c);
+                  if (edges.has(kk)) {
+                    edges.delete(kk);
+                    b.classList.remove("on");
+                  } else {
+                    edges.add(kk);
+                    b.classList.add("on");
+                  }
+                  buildW();
+                  drawGraphEdges();
+                  recolor();
+                });
+              }
+              m.appendChild(b);
+            }
+          }
+        }
+        function lbl(t, col, sz, fs) {
+          const d = document.createElement("div");
+          d.className = "mlabel";
+          d.textContent = t;
+          sz(d);
+          d.style.fontSize = fs + "px";
+          if (col) d.style.color = col;
+          return d;
+        }
+
+        let compSw = [],
+          a_countEl = null;
+        function buildLegend() {
+          const L = $("legend");
+          L.innerHTML = "";
+          compSw = [];
+          const g = document.createElement("span");
+          g.className = "lbl";
+          g.textContent = "groups";
+          L.appendChild(g);
+          for (let c = 0; c < ncomp; c++) {
+            const s = document.createElement("span");
+            s.className = "chip";
+            s.innerHTML = `<span class="sw" style="background:${NEU[c % 7]}"></span>g${c + 1}`;
+            L.appendChild(s);
+            compSw.push(s);
+          }
+          const a = document.createElement("span");
+          a.className = "lbl";
+          a.textContent = "|A|";
+          a.style.marginLeft = "6px";
+          L.appendChild(a);
+          a_countEl = document.createElement("span");
+          a_countEl.className = "chip on";
+          a_countEl.textContent = "0/" + n;
+          L.appendChild(a_countEl);
+        }
+
+        let cores = [],
+          halos = [],
+          rings = [],
+          labels = [],
+          edgeEls = [];
+        function pos(i) {
+          const a = -Math.PI / 2 + (2 * Math.PI * i) / n;
+          return [180 + 150 * Math.cos(a), 180 + 150 * Math.sin(a)];
+        }
+        function buildGraph() {
+          const svg = $("graph");
+          while (svg.firstChild) svg.removeChild(svg.firstChild);
+          cores = [];
+          halos = [];
+          rings = [];
+          labels = [];
+          edgeEls = [];
+          const spacing = (2 * Math.PI * 150) / n;
+          rNode = Math.max(3, Math.min(11, spacing * 0.3));
+          showLabels = n <= 16 && rNode >= 7;
+          const defs = document.createElementNS(SVGNS, "defs");
+          defs.innerHTML =
+            '<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="rgba(255,255,255,0.32)"/></marker>';
+          svg.appendChild(defs);
+          drawGraphEdges();
+          for (let i = 0; i < n; i++) {
+            const [px, py] = pos(i),
+              col = colorOf(i);
+            const halo = document.createElementNS(SVGNS, "circle");
+            halo.setAttribute("cx", px);
+            halo.setAttribute("cy", py);
+            halo.setAttribute("r", rNode * 1.4);
+            halo.setAttribute("fill", col);
+            halo.setAttribute("opacity", "0.05");
+            svg.appendChild(halo);
+            halos.push(halo);
+            const ring = document.createElementNS(SVGNS, "circle");
+            ring.setAttribute("cx", px);
+            ring.setAttribute("cy", py);
+            ring.setAttribute("r", rNode * 1.5);
+            ring.setAttribute("fill", "none");
+            ring.setAttribute("stroke", col);
+            ring.setAttribute("stroke-width", "1.5");
+            ring.setAttribute("opacity", "0");
+            svg.appendChild(ring);
+            rings.push(ring);
+            const c = document.createElementNS(SVGNS, "circle");
+            c.setAttribute("cx", px);
+            c.setAttribute("cy", py);
+            c.setAttribute("r", rNode * 0.85);
+            c.setAttribute("fill", col);
+            svg.appendChild(c);
+            cores.push(c);
+            if (showLabels) {
+              const t = document.createElementNS(SVGNS, "text");
+              t.setAttribute("x", px);
+              t.setAttribute("y", py + rNode * 0.4);
+              t.setAttribute("text-anchor", "middle");
+              t.setAttribute("font-size", (rNode * 1.05).toFixed(1));
+              t.setAttribute("font-family", "'IBM Plex Mono',monospace");
+              t.setAttribute("font-weight", "600");
+              t.setAttribute("fill", "#0b0e12");
+              t.textContent = i + 1;
+              svg.appendChild(t);
+              labels.push(t);
+            }
+          }
+        }
+        function drawGraphEdges() {
+          const svg = $("graph");
+          edgeEls.forEach((e) => e.el.remove());
+          edgeEls = [];
+          const defs = svg.querySelector("defs");
+          animateEdges = edges.size <= ANIM_MAX;
+          if (edges.size > EDGE_DRAW_MAX) return;
+          edges.forEach((e) => {
+            const [a, b] = e.split(">").map(Number);
+            const [x1, y1] = pos(a),
+              [x2, y2] = pos(b);
+            const dx = x2 - x1,
+              dy = y2 - y1,
+              L = Math.hypot(dx, dy) || 1,
+              ux = dx / L,
+              uy = dy / L;
+            const off = animateEdges ? 3 : 0,
+              ox = -uy * off,
+              oy = ux * off,
+              r = rNode + 2;
+            const ln = document.createElementNS(SVGNS, "line");
+            ln.setAttribute("x1", x1 + ux * r + ox);
+            ln.setAttribute("y1", y1 + uy * r + oy);
+            ln.setAttribute("x2", x2 - ux * r + ox);
+            ln.setAttribute("y2", y2 - uy * r + oy);
+            ln.setAttribute("stroke", "rgba(255,255,255,0.3)");
+            ln.setAttribute("stroke-width", animateEdges ? "1.2" : "0.6");
+            ln.setAttribute("stroke-opacity", animateEdges ? "0.3" : "0.14");
+            if (animateEdges) ln.setAttribute("marker-end", "url(#arr)");
+            defs.after(ln);
+            edgeEls.push({ el: ln, src: a });
+          });
+        }
+        function recolor() {
+          for (let i = 0; i < n; i++) {
+            const col = colorOf(i);
+            cores[i].setAttribute("fill", col);
+            halos[i].setAttribute("fill", col);
+            rings[i].setAttribute("stroke", col);
+          }
+          buildLegend();
+        }
+
+        function resetState() {
+          x = [];
+          for (let i = 0; i < n; i++) x.push(i === 0 ? 0.12 : 0.002 * (i + 1));
+          trace = [];
+          phase = [];
+          prevMask = -1;
+          crossings = 0;
+          tModel = 0;
+        }
+        function step(dt) {
+          const dx = new Array(n);
+          for (let i = 0; i < n; i++) {
+            let s = theta;
+            for (let j = 0; j < n; j++) s += W[i][j] * x[j];
+            dx[i] = -x[i] + Math.max(0, s);
+          }
+          for (let i = 0; i < n; i++)
+            x[i] = Math.min(Math.max(0, x[i] + dt * dx[i]), 1000);
+        }
+        function activeMask() {
+          let m = 0;
+          for (let i = 0; i < n; i++) {
+            let s = theta;
+            for (let j = 0; j < n; j++) s += W[i][j] * x[j];
+            if (s > 0) m |= 1 << i;
+          }
+          return m;
+        }
+        function dominant() {
+          let bi = -1,
+            bv = 1e-2;
+          for (let i = 0; i < n; i++)
+            if (x[i] > bv) {
+              bv = x[i];
+              bi = i;
+            }
+          return bi;
+        }
+        function rebuild() {
+          buildW();
+          buildGraph();
+          buildMatrix();
+          buildLegend();
+        }
+
+        const tc = $("trace"),
+          tx = tc.getContext("2d");
+        const pc = $("phase"),
+          px2 = pc.getContext("2d");
+        function sizeCanvas() {
+          const d = window.devicePixelRatio || 1;
+          [tc, pc].forEach((c) => {
+            const r = c.getBoundingClientRect();
+            c.width = r.width * d;
+            c.height = r.height * d;
+          });
+        }
+
+        function drawTrace() {
+          const w = tc.width,
+            h = tc.height,
+            d = window.devicePixelRatio || 1;
+          tx.clearRect(0, 0, w, h);
+          tx.strokeStyle = GRID;
+          tx.lineWidth = 1;
+          for (let g = 1; g < 4; g++) {
+            const y = (h * g) / 4;
+            tx.beginPath();
+            tx.moveTo(0, y);
+            tx.lineTo(w, y);
+            tx.stroke();
+          }
+          if (trace.length < 2) return;
+          let mx = 0.5;
+          for (const f of trace) for (const v of f) if (v > mx) mx = v;
+          const pad = 8 * d,
+            hh = h - 2 * pad,
+            lw = (n > 16 ? 1.1 : 1.8) * d,
+            glow = n > 16 ? 0 : 6 * d;
+          tx.lineJoin = "round";
+          tx.lineCap = "round";
+          for (let i = 0; i < n; i++) {
+            tx.beginPath();
+            tx.strokeStyle = colorOf(i);
+            tx.lineWidth = lw;
+            tx.shadowColor = colorOf(i);
+            tx.shadowBlur = glow;
+            for (let k = 0; k < trace.length; k++) {
+              const X = (k / (TMAX - 1)) * w,
+                Y = pad + hh - (trace[k][i] / mx) * hh;
+              k ? tx.lineTo(X, Y) : tx.moveTo(X, Y);
+            }
+            tx.stroke();
+          }
+          tx.shadowBlur = 0;
+        }
+        function drawPhase() {
+          const w = pc.width,
+            h = pc.height,
+            d = window.devicePixelRatio || 1;
+          px2.clearRect(0, 0, w, h);
+          const cx = w / 2,
+            cy = h / 2,
+            R = 0.4 * Math.min(w, h),
+            lab = n <= 16;
+          px2.strokeStyle = GRID;
+          px2.lineWidth = 1;
+          for (let g = 1; g <= 3; g++) {
+            px2.beginPath();
+            px2.arc(cx, cy, (R * g) / 3, 0, 2 * Math.PI);
+            px2.stroke();
+          }
+          for (let i = 0; i < n; i++) {
+            px2.beginPath();
+            px2.strokeStyle = SPOKE;
+            px2.lineWidth = 1;
+            px2.moveTo(cx, cy);
+            px2.lineTo(cx + U[i][0] * R * 1.06, cy - U[i][1] * R * 1.06);
+            px2.stroke();
+            if (lab) {
+              px2.fillStyle = colorOf(i);
+              px2.font = `600 ${11 * d}px 'IBM Plex Mono',monospace`;
+              px2.textAlign = "center";
+              px2.textBaseline = "middle";
+              px2.fillText(
+                i + 1,
+                cx + U[i][0] * R * 1.2,
+                cy - U[i][1] * R * 1.2,
+              );
+            }
+          }
+          if (phase.length < 2) return;
+          let mr = 0.5;
+          for (const p of phase) {
+            const rr = Math.hypot(p.x, p.y);
+            if (rr > mr) mr = rr;
+          }
+          const s = R / mr;
+          px2.globalCompositeOperation = "lighter";
+          px2.lineJoin = "round";
+          px2.lineCap = "round";
+          for (let k = 1; k < phase.length; k++) {
+            const a = phase[k - 1],
+              b = phase[k],
+              al = 0.04 + 0.5 * (k / phase.length);
+            px2.globalAlpha = al;
+            px2.lineWidth = 1.7 * d;
+            px2.strokeStyle = b.dom >= 0 ? colorOf(b.dom) : "#888";
+            px2.beginPath();
+            px2.moveTo(cx + a.x * s, cy - a.y * s);
+            px2.lineTo(cx + b.x * s, cy - b.y * s);
+            px2.stroke();
+          }
+          px2.globalCompositeOperation = "source-over";
+          px2.globalAlpha = 1;
+          for (let k = 0; k < phase.length; k++) {
+            if (!phase[k].cross) continue;
+            px2.globalAlpha = 0.2 + 0.7 * (k / phase.length);
+            px2.strokeStyle = DIMW;
+            px2.lineWidth = 1.3 * d;
+            const X = cx + phase[k].x * s,
+              Y = cy - phase[k].y * s,
+              r = 3.4 * d;
+            px2.save();
+            px2.translate(X, Y);
+            px2.rotate(Math.PI / 4);
+            px2.strokeRect(-r, -r, 2 * r, 2 * r);
+            px2.restore();
+          }
+          px2.globalAlpha = 1;
+          const last = phase[phase.length - 1],
+            HX = cx + last.x * s,
+            HY = cy - last.y * s,
+            col = last.dom >= 0 ? colorOf(last.dom) : "#fff";
+          px2.shadowColor = col;
+          px2.shadowBlur = 14 * d;
+          px2.fillStyle = col;
+          px2.beginPath();
+          px2.arc(HX, HY, 3.2 * d, 0, 2 * Math.PI);
+          px2.fill();
+          px2.shadowBlur = 0;
+          px2.fillStyle = "#fff";
+          px2.beginPath();
+          px2.arc(HX, HY, 1.5 * d, 0, 2 * Math.PI);
+          px2.fill();
+        }
+        function regime() {
+          if (trace.length < 60) return ["settling", false];
+          const win = trace.slice(-100);
+          let amp = 0;
+          for (let i = 0; i < n; i++) {
+            let lo = 1e9,
+              hi = -1e9;
+            for (const f of win) {
+              if (f[i] < lo) lo = f[i];
+              if (f[i] > hi) hi = f[i];
+            }
+            amp = Math.max(amp, hi - lo);
+          }
+          if (amp < 0.012) return ["fixed point", false];
+          return ["oscillating", true];
+        }
+        function render() {
+          if (animateEdges)
+            for (const e of edgeEls)
+              e.el.setAttribute(
+                "stroke-opacity",
+                (0.12 + 0.55 * Math.tanh(x[e.src] / 0.8)).toFixed(3),
+              );
+          const liveG = new Set();
+          let a_count = 0;
+          for (let i = 0; i < n; i++) {
+            const a = Math.tanh(x[i] / 1.2);
+            cores[i].setAttribute("r", (rNode * (0.8 + 0.55 * a)).toFixed(2));
+            cores[i].setAttribute("fill-opacity", (0.55 + 0.45 * a).toFixed(2));
+            halos[i].setAttribute("r", (rNode * (1.4 + 2.0 * a)).toFixed(2));
+            halos[i].setAttribute("opacity", (0.05 + 0.2 * a).toFixed(3));
+            const on = x[i] > 1e-2;
+            rings[i].setAttribute("opacity", on ? 0.8 : 0);
+            if (on) {
+              liveG.add(compIndex[i]);
+              a_count++;
+            }
+          }
+          for (let c = 0; c < compSw.length; c++)
+            compSw[c].classList.toggle("on", liveG.has(c));
+          if (a_countEl) a_countEl.textContent = a_count + "/" + n;
+          drawTrace();
+          drawPhase();
+          $("m-time").textContent = tModel.toFixed(1);
+          $("m-cross").textContent = crossings;
+          $("m-groups").textContent = liveG.size;
+          const [rg, lit] = regime();
+          const rEl = $("m-regime");
+          rEl.textContent = rg;
+          rEl.classList.toggle("lit", lit);
+        }
+
+        let lastT = performance.now();
+        function loop(now) {
+          const el = Math.min(now - lastT, 50);
+          lastT = now;
+          if (!paused) {
+            const sub = Math.max(1, Math.round((el / 16) * 8 * speed));
+            for (let s = 0; s < sub; s++) step(DT);
+            tModel += sub * DT;
+            trace.push(x.slice());
+            if (trace.length > TMAX) trace.shift();
+            const mask = activeMask(),
+              cross = mask !== prevMask && prevMask !== -1;
+            if (cross) crossings++;
+            prevMask = mask;
+            let pxv = 0,
+              pyv = 0;
+            for (let i = 0; i < n; i++) {
+              pxv += x[i] * U[i][0];
+              pyv += x[i] * U[i][1];
+            }
+            phase.push({ x: pxv, y: pyv, dom: dominant(), cross });
+            if (phase.length > PMAX) phase.shift();
+            render();
+          }
+          requestAnimationFrame(loop);
+        }
+
+        function setN(v) {
+          n = Math.max(3, Math.min(NMAX, v));
+          $("n-out").textContent = n;
+          edges.forEach((k) => {
+            const [a, b] = k.split(">").map(Number);
+            if (a >= n || b >= n) edges.delete(k);
+          });
+          precompute();
+          rebuild();
+          resetState();
+        }
+        $("nslide").addEventListener("input", (e) => setN(+e.target.value));
+        $("theta").addEventListener("input", (e) => {
+          theta = +e.target.value;
+          $("theta-out").textContent = theta.toFixed(2);
+        });
+        $("speed").addEventListener("input", (e) => {
+          speed = +e.target.value;
+          $("speed-out").textContent = speed.toFixed(2) + "×";
+        });
+        $("wcross").addEventListener("input", (e) => {
+          wCross = +e.target.value;
+          $("wc-out").textContent = fmt(wCross);
+          buildW();
+        });
+        $("reset").addEventListener("click", resetState);
+        $("play").addEventListener("click", function () {
+          paused = !paused;
+          $("play-ico").innerHTML = paused
+            ? '<path d="M7 5l12 7-12 7z"/>'
+            : '<rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/>';
+          this.setAttribute("aria-label", paused ? "play" : "pause");
+          const st = $("status");
+          st.classList.toggle("paused", paused);
+          $("status-txt").textContent = paused ? "paused" : "running";
+        });
+        document
+          .querySelectorAll(".motifs .btn")
+          .forEach((b) =>
+            b.addEventListener("click", () => qbuild(b.dataset.k)),
+          );
+
+        precompute();
+        sizeCanvas();
+        window.addEventListener("resize", sizeCanvas);
+        qbuild("twocycles");
+        requestAnimationFrame(loop);
+      })();
+    </script>
+  </body>
+</html>

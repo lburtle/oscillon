@@ -8,7 +8,7 @@ name = "oscillon"
 authors = [
   { name = "Landon Burtle", email = "landonburtle10@gmail.com" },
 ]
-description = "A Python machine learning implementation for gCTLN models."
+description = "A Python machine learning implementation for CTLN models."
 readme = "README.md"
 license = "BSD-3-Clause"
 license-files = ["LICENSE"]
@@ -38,6 +38,9 @@ dependencies = [
     "matplotlib",
     "torch",
 ]
+
+[project.scripts]
+oscillon = "oscillon.cli:main"
 
 [project.optional-dependencies]
 cuda12 = ["jax[cuda12]"]             # bundled CUDA 12 — simple, heavier download
@@ -189,6 +192,7 @@ ignore = [
 "tests/**" = ["T20"]
 "noxfile.py" = ["T20"]
 "examples/**" = ["T20"]
+"experiments/**" = ["T20"]
 
 
 [tool.pylint]
