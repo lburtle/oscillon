@@ -1,9 +1,15 @@
 # Oscillon
+<<<<<<< HEAD
 
 <p align="center">
   <img width="50%" alt="Image" src="https://github.com/user-attachments/assets/769beeef-268a-46e7-bfed-89a6ee60d541" />
 </p>
 
+=======
+<p align="center">
+  <img width=50% alt="Image" src="https://github.com/user-attachments/assets/769beeef-268a-46e7-bfed-89a6ee60d541" />
+</p>
+>>>>>>> main
 [![Actions Status][actions-badge]][actions-link]
 [![Documentation Status][rtd-badge]][rtd-link]
 
