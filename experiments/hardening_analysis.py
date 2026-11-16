@@ -6,6 +6,9 @@ Usage:  python hardening_analysis.py path/to/runs.jsonl
 
 import json
 import sys
+import os
+
+from jsonloader import load_runs
 from collections import Counter
 
 import numpy as np
@@ -13,7 +16,7 @@ import numpy as np
 path = sys.argv[1]
 
 last_n = int(sys.argv[2]) if len(sys.argv) > 2 else None
-rows = [json.loads(line) for line in open(path) if line.strip()]
+rows = load_runs(path)
 if last_n:
     rows = rows[-last_n:]
 
@@ -86,7 +89,9 @@ if len(d):
 
 # --- gate distribution, if the raw u values were saved alongside ---
 try:
-    u = np.load(path.replace(".jsonl", "_u.npz"))["u"]
+    u_path = os.path.dirname(path) + "/uniform_pop512_u.npz"
+    print("u_path:", u_path)
+    u = np.load(u_path, allow_pickle=True)["u"]
     print()
     print(f"gate values: n={len(u)}")
     print(f"  in [0.0,0.1): {np.mean(u < 0.1):.3f}")
@@ -95,3 +100,13 @@ try:
     print(f"  within 0.05 of 0.5: {np.mean(np.abs(u - 0.5) < 0.05):.3f}")
 except (FileNotFoundError, KeyError):
     pass
+
+# --- sigma_z = 2 subset for Section 4.1 ---
+from collections import Counter
+rs = [r for r in rows if r["z_std"] == 2.0 and r["emerged"]]
+m = np.array([r["soft_mse"] for r in rs])
+print()
+print(f"sigma_z=2, emerged: n={len(rs)}  median soft_mse={np.median(m):.4g}  "
+      f"IQR={np.percentile(m, [25, 75]).round(4).tolist()}  "
+      f"normalized={np.median(m)/1.05:.4f}")
+print("period / 2pi (rounded):", Counter(round(r["period"] / (2*np.pi)) for r in rs if r["period"]))

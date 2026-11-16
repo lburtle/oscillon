@@ -192,6 +192,20 @@ with open(res_dir / "seeded_mse_runs.jsonl", "a") as f:
 # --- learned topology ---
 A_learned = extract_block_adjacency(spec, result.params)
 print("kept seed cycle:", np.array_equal(A_learned, A_seed))
+
+from topo_ablation_sweep import contains_directed_cycle, discovered_cycle_graph
+
+A = np.asarray(A_learned, bool).copy()
+np.fill_diagonal(A, False)
+print(
+    "edges:", int(A.sum()),
+    "| Hamiltonian cycle:", contains_directed_cycle(A, 5),
+    "| exactly a 5-cycle (rotation):", discovered_cycle_graph(A, 5),
+    "| equals seed:", np.array_equal(A, A_seed),
+    "| equals reversed seed:", np.array_equal(A, A_seed.T),
+)
+
+
 #G = block_gate_matrix(spec, result.params)
 #plot_network_graph(
 #    G,

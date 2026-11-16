@@ -1,353 +1,166 @@
-HYPERPARAMETERS
-==================================================
-N=5 || dt=0.1 || n_steps=2000 || burn_in=200, theta_init=0.5
-WARN: warm start not oscillating; using fallback period 6.283185307179586
-N=5  matched target period = 6.283 time units (62.8 steps)
-N=5  period=63 steps  ->  n_steps=702
-final reward: -1.0150294303894043
-readout MSE 0.9200  vs constant-mean 1.0504
-A from actual W:
- [[0 0 0 0 0]
- [1 0 0 0 0]
- [0 1 0 0 0]
- [0 0 0 0 0]
- [0 0 0 1 0]]
-matches seed: False
-gates on masked edges: [0.9756487  0.94344062 0.44942859 0.69487166]
-gates off-mask: 0.9346744418144226
-W on masked edges: [-0.91461074 -0.9339356  -1.2303429  -1.083077  ]
-saved topo_abl_scale_N5.png
-A_fixed:
- [[0 0 0 0 0]
- [1 0 0 0 0]
- [0 1 0 0 0]
- [0 0 1 0 0]
- [0 0 0 1 0]]
-new edges formed: 0
-acyclic: True
-rows: [0 0 0 0 1 1 1 1 2 2 2 2 3 3 3 3 4 4 4 4]
-cols: [1 2 3 4 0 2 3 4 0 1 3 4 0 1 2 4 0 1 2 3]
-A_fixed[rows, cols]: [False False False False  True False False False False  True False False
- False False  True False False False False  True]
-A_fixed[cols, rows]: [ True False False False False  True False False False False  True False
- False False False  True False False False False]
-kept seed cycle: False
-RUNNING HARDENED CTLN CHECK...
-seed  0: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed  0: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed  0: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed  1: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed  1: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed  1: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed  2: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.556
-RUNNING HARDENED CTLN CHECK...
-seed  2: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.556
-RUNNING HARDENED CTLN CHECK...
-seed  2: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.556
-RUNNING HARDENED CTLN CHECK...
-seed  3: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed  3: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed  3: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed  4: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed  4: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed  4: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed  5: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed  5: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed  5: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed  6: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed  6: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed  6: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed  7: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.551
-RUNNING HARDENED CTLN CHECK...
-seed  7: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.551
-RUNNING HARDENED CTLN CHECK...
-seed  7: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.551
-RUNNING HARDENED CTLN CHECK...
-seed  8: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed  8: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed  8: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed  9: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed  9: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed  9: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 10: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.562
-RUNNING HARDENED CTLN CHECK...
-seed 10: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.562
-RUNNING HARDENED CTLN CHECK...
-seed 10: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.562
-RUNNING HARDENED CTLN CHECK...
-seed 11: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 11: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 11: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 12: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 12: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 12: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 13: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 13: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 13: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 14: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.553
-RUNNING HARDENED CTLN CHECK...
-seed 14: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.553
-RUNNING HARDENED CTLN CHECK...
-seed 14: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.553
-RUNNING HARDENED CTLN CHECK...
-seed 15: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 15: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 15: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 16: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.556
-RUNNING HARDENED CTLN CHECK...
-seed 16: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.556
-RUNNING HARDENED CTLN CHECK...
-seed 16: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.556
-RUNNING HARDENED CTLN CHECK...
-seed 17: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 17: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 17: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 18: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.554
-RUNNING HARDENED CTLN CHECK...
-seed 18: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.554
-RUNNING HARDENED CTLN CHECK...
-seed 18: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.554
-RUNNING HARDENED CTLN CHECK...
-seed 19: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 19: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 19: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 20: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed 20: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed 20: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed 21: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed 21: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed 21: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed 22: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 22: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 22: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 23: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.555
-RUNNING HARDENED CTLN CHECK...
-seed 23: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.555
-RUNNING HARDENED CTLN CHECK...
-seed 23: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.555
-RUNNING HARDENED CTLN CHECK...
-seed 24: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 24: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 24: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 25: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.556
-RUNNING HARDENED CTLN CHECK...
-seed 25: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.556
-RUNNING HARDENED CTLN CHECK...
-seed 25: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.556
-RUNNING HARDENED CTLN CHECK...
-seed 26: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.560
-RUNNING HARDENED CTLN CHECK...
-seed 26: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.560
-RUNNING HARDENED CTLN CHECK...
-seed 26: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.560
-RUNNING HARDENED CTLN CHECK...
-seed 27: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 27: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 27: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 28: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed 28: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed 28: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed 29: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 29: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 29: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 30: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 30: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 30: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 31: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 31: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 31: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 32: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed 32: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed 32: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed 33: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 33: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 33: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 34: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.556
-RUNNING HARDENED CTLN CHECK...
-seed 34: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.556
-RUNNING HARDENED CTLN CHECK...
-seed 34: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.556
-RUNNING HARDENED CTLN CHECK...
-seed 35: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 35: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 35: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 36: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.556
-RUNNING HARDENED CTLN CHECK...
-seed 36: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.556
-RUNNING HARDENED CTLN CHECK...
-seed 36: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.556
-RUNNING HARDENED CTLN CHECK...
-seed 37: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.556
-RUNNING HARDENED CTLN CHECK...
-seed 37: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.556
-RUNNING HARDENED CTLN CHECK...
-seed 37: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.556
-RUNNING HARDENED CTLN CHECK...
-seed 38: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 38: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 38: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 39: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.556
-RUNNING HARDENED CTLN CHECK...
-seed 39: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.556
-RUNNING HARDENED CTLN CHECK...
-seed 39: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.556
-RUNNING HARDENED CTLN CHECK...
-seed 40: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 40: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 40: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 41: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 41: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 41: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.557
-RUNNING HARDENED CTLN CHECK...
-seed 42: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed 42: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed 42: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed 43: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed 43: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed 43: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed 44: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed 44: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed 44: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed 45: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.555
-RUNNING HARDENED CTLN CHECK...
-seed 45: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.555
-RUNNING HARDENED CTLN CHECK...
-seed 45: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.555
-RUNNING HARDENED CTLN CHECK...
-seed 46: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.553
-RUNNING HARDENED CTLN CHECK...
-seed 46: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.553
-RUNNING HARDENED CTLN CHECK...
-seed 46: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.553
-RUNNING HARDENED CTLN CHECK...
-seed 47: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed 47: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed 47: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.558
-RUNNING HARDENED CTLN CHECK...
-seed 48: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.561
-RUNNING HARDENED CTLN CHECK...
-seed 48: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.561
-RUNNING HARDENED CTLN CHECK...
-seed 48: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.561
-RUNNING HARDENED CTLN CHECK...
-seed 49: z_std=1.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.555
-RUNNING HARDENED CTLN CHECK...
-seed 49: z_std=2.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.555
-RUNNING HARDENED CTLN CHECK...
-seed 49: z_std=3.00 cycle=False topo=False fp_unstable=True  hamiltonian=False amp=0.000 period=None eig=+1.555
-PLOTTING EDGE COMMITMENT HISTOGRAM...
-HISTOGRAM SAVED AS: /sfs/weka/scratch/xfd3tf/oscillon/examples/images/commitment_hist.png
-
-============================================================
-DISCOVERY SWEEP  (N=5, 50 seeds, z_std=3.0)
-  oscillation emerged:      0/150  (0%)
-  recovered cycle topology: 0/150  (0%)
-  both (full discovery):    0/150  (0%)
-  hamiltonian cycle:        0/150  (0%)
-============================================================
-
-================================================================================
- z_std |   n |  emerged |  topology |   both |  hamilton | fp_unstab |  mean_eig
---------------------------------------------------------------------------------
-   1.0 |  50 |   0/50     0%|   0/50     0%|     0% |   0/50     0%|  50/50   100%|    +1.557
-   2.0 |  50 |   0/50     0%|   0/50     0%|     0% |   0/50     0%|  50/50   100%|    +1.557
-   3.0 |  50 |   0/50     0%|   0/50     0%|     0% |   0/50     0%|  50/50   100%|    +1.557
-================================================================================
-spread across z_std -> emerged: 0pp (small spread supports invariance to init scale)
+INIT=asym  MASK=cycle  N=5  n_steps=702  burn_in=200  ridge=1e-06  out=/sfs/weka/scratch/xfd3tf/oscillon/experiments/results_topo_abl_cycle_v2
+seed  0 z=1.0: emerged=True soft_mse=0.4168 norm=0.397 new_edges=0 acyclic=False
+seed  0 z=2.0: emerged=False soft_mse=0.4167 norm=0.397 new_edges=0 acyclic=False
+seed  0 z=3.0: emerged=True soft_mse=0.4166 norm=0.397 new_edges=0 acyclic=False
+seed  1 z=1.0: emerged=False soft_mse=0.4163 norm=0.396 new_edges=0 acyclic=False
+seed  1 z=2.0: emerged=False soft_mse=0.4158 norm=0.396 new_edges=0 acyclic=False
+seed  1 z=3.0: emerged=False soft_mse=0.4164 norm=0.396 new_edges=0 acyclic=False
+seed  2 z=1.0: emerged=False soft_mse=0.4159 norm=0.396 new_edges=0 acyclic=False
+seed  2 z=2.0: emerged=False soft_mse=0.4161 norm=0.396 new_edges=0 acyclic=False
+seed  2 z=3.0: emerged=False soft_mse=0.8504 norm=0.810 new_edges=0 acyclic=True
+seed  3 z=1.0: emerged=True soft_mse=0.4165 norm=0.396 new_edges=0 acyclic=False
+seed  3 z=2.0: emerged=False soft_mse=0.8508 norm=0.810 new_edges=0 acyclic=True
+seed  3 z=3.0: emerged=False soft_mse=0.8512 norm=0.810 new_edges=0 acyclic=True
+seed  4 z=1.0: emerged=True soft_mse=0.4159 norm=0.396 new_edges=0 acyclic=False
+seed  4 z=2.0: emerged=True soft_mse=0.4159 norm=0.396 new_edges=0 acyclic=False
+seed  4 z=3.0: emerged=True soft_mse=0.4159 norm=0.396 new_edges=0 acyclic=False
+seed  5 z=1.0: emerged=False soft_mse=0.4159 norm=0.396 new_edges=0 acyclic=False
+seed  5 z=2.0: emerged=False soft_mse=0.4158 norm=0.396 new_edges=0 acyclic=False
+seed  5 z=3.0: emerged=True soft_mse=0.4161 norm=0.396 new_edges=0 acyclic=False
+seed  6 z=1.0: emerged=False soft_mse=0.4163 norm=0.396 new_edges=0 acyclic=False
+seed  6 z=2.0: emerged=False soft_mse=0.4163 norm=0.396 new_edges=0 acyclic=False
+seed  6 z=3.0: emerged=False soft_mse=0.4163 norm=0.396 new_edges=0 acyclic=False
+seed  7 z=1.0: emerged=False soft_mse=0.4154 norm=0.395 new_edges=0 acyclic=False
+seed  7 z=2.0: emerged=True soft_mse=0.4162 norm=0.396 new_edges=0 acyclic=False
+seed  7 z=3.0: emerged=True soft_mse=0.4162 norm=0.396 new_edges=0 acyclic=False
+seed  8 z=1.0: emerged=True soft_mse=0.4168 norm=0.397 new_edges=0 acyclic=False
+seed  8 z=2.0: emerged=False soft_mse=0.4171 norm=0.397 new_edges=0 acyclic=False
+seed  8 z=3.0: emerged=True soft_mse=0.4173 norm=0.397 new_edges=0 acyclic=False
+seed  9 z=1.0: emerged=False soft_mse=0.4150 norm=0.395 new_edges=0 acyclic=False
+seed  9 z=2.0: emerged=False soft_mse=0.4149 norm=0.395 new_edges=0 acyclic=False
+seed  9 z=3.0: emerged=False soft_mse=0.4150 norm=0.395 new_edges=0 acyclic=False
+seed 10 z=1.0: emerged=False soft_mse=0.4156 norm=0.396 new_edges=0 acyclic=False
+seed 10 z=2.0: emerged=False soft_mse=0.4145 norm=0.395 new_edges=0 acyclic=False
+seed 10 z=3.0: emerged=False soft_mse=0.4155 norm=0.396 new_edges=0 acyclic=False
+seed 11 z=1.0: emerged=False soft_mse=0.4164 norm=0.396 new_edges=0 acyclic=False
+seed 11 z=2.0: emerged=True soft_mse=0.4159 norm=0.396 new_edges=0 acyclic=False
+seed 11 z=3.0: emerged=True soft_mse=0.4164 norm=0.396 new_edges=0 acyclic=False
+seed 12 z=1.0: emerged=True soft_mse=0.4160 norm=0.396 new_edges=0 acyclic=False
+seed 12 z=2.0: emerged=True soft_mse=0.4160 norm=0.396 new_edges=0 acyclic=False
+seed 12 z=3.0: emerged=True soft_mse=0.4160 norm=0.396 new_edges=0 acyclic=False
+seed 13 z=1.0: emerged=False soft_mse=0.4174 norm=0.397 new_edges=0 acyclic=False
+seed 13 z=2.0: emerged=False soft_mse=0.4146 norm=0.395 new_edges=0 acyclic=False
+seed 13 z=3.0: emerged=False soft_mse=0.9553 norm=0.909 new_edges=0 acyclic=True
+seed 14 z=1.0: emerged=True soft_mse=0.4147 norm=0.395 new_edges=0 acyclic=False
+seed 14 z=2.0: emerged=True soft_mse=0.4148 norm=0.395 new_edges=0 acyclic=False
+seed 14 z=3.0: emerged=True soft_mse=0.4148 norm=0.395 new_edges=0 acyclic=False
+seed 15 z=1.0: emerged=False soft_mse=0.4156 norm=0.396 new_edges=0 acyclic=False
+seed 15 z=2.0: emerged=True soft_mse=0.4181 norm=0.398 new_edges=0 acyclic=False
+seed 15 z=3.0: emerged=False soft_mse=0.9385 norm=0.894 new_edges=0 acyclic=True
+seed 16 z=1.0: emerged=False soft_mse=0.4156 norm=0.396 new_edges=0 acyclic=False
+seed 16 z=2.0: emerged=False soft_mse=0.4154 norm=0.395 new_edges=0 acyclic=False
+seed 16 z=3.0: emerged=False soft_mse=0.4154 norm=0.396 new_edges=0 acyclic=False
+seed 17 z=1.0: emerged=True soft_mse=0.4160 norm=0.396 new_edges=0 acyclic=False
+seed 17 z=2.0: emerged=True soft_mse=0.4160 norm=0.396 new_edges=0 acyclic=False
+seed 17 z=3.0: emerged=False soft_mse=0.8504 norm=0.810 new_edges=0 acyclic=True
+seed 18 z=1.0: emerged=False soft_mse=0.4174 norm=0.397 new_edges=0 acyclic=False
+seed 18 z=2.0: emerged=False soft_mse=0.4183 norm=0.398 new_edges=0 acyclic=False
+seed 18 z=3.0: emerged=False soft_mse=0.9408 norm=0.896 new_edges=0 acyclic=True
+seed 19 z=1.0: emerged=True soft_mse=0.4164 norm=0.396 new_edges=0 acyclic=False
+seed 19 z=2.0: emerged=True soft_mse=0.4166 norm=0.397 new_edges=0 acyclic=False
+seed 19 z=3.0: emerged=False soft_mse=0.4170 norm=0.397 new_edges=0 acyclic=False
+seed 20 z=1.0: emerged=False soft_mse=0.4166 norm=0.397 new_edges=0 acyclic=False
+seed 20 z=2.0: emerged=True soft_mse=0.4154 norm=0.395 new_edges=0 acyclic=False
+seed 20 z=3.0: emerged=False soft_mse=0.4161 norm=0.396 new_edges=0 acyclic=False
+seed 21 z=1.0: emerged=True soft_mse=0.4170 norm=0.397 new_edges=0 acyclic=False
+seed 21 z=2.0: emerged=False soft_mse=0.4175 norm=0.397 new_edges=0 acyclic=False
+seed 21 z=3.0: emerged=False soft_mse=0.9477 norm=0.902 new_edges=0 acyclic=True
+seed 22 z=1.0: emerged=False soft_mse=0.4173 norm=0.397 new_edges=0 acyclic=False
+seed 22 z=2.0: emerged=True soft_mse=0.4176 norm=0.398 new_edges=0 acyclic=False
+seed 22 z=3.0: emerged=True soft_mse=0.4175 norm=0.398 new_edges=0 acyclic=False
+seed 23 z=1.0: emerged=True soft_mse=0.4165 norm=0.397 new_edges=0 acyclic=False
+seed 23 z=2.0: emerged=True soft_mse=0.4165 norm=0.397 new_edges=0 acyclic=False
+seed 23 z=3.0: emerged=True soft_mse=0.4157 norm=0.396 new_edges=0 acyclic=False
+seed 24 z=1.0: emerged=True soft_mse=0.4164 norm=0.396 new_edges=0 acyclic=False
+seed 24 z=2.0: emerged=False soft_mse=0.8504 norm=0.810 new_edges=0 acyclic=True
+seed 24 z=3.0: emerged=False soft_mse=0.9458 norm=0.900 new_edges=0 acyclic=True
+seed 25 z=1.0: emerged=True soft_mse=0.4169 norm=0.397 new_edges=0 acyclic=False
+seed 25 z=2.0: emerged=True soft_mse=0.4155 norm=0.396 new_edges=0 acyclic=False
+seed 25 z=3.0: emerged=True soft_mse=0.4169 norm=0.397 new_edges=0 acyclic=False
+seed 26 z=1.0: emerged=True soft_mse=0.4188 norm=0.399 new_edges=0 acyclic=False
+seed 26 z=2.0: emerged=False soft_mse=0.4169 norm=0.397 new_edges=0 acyclic=False
+seed 26 z=3.0: emerged=False soft_mse=0.4169 norm=0.397 new_edges=0 acyclic=False
+seed 27 z=1.0: emerged=False soft_mse=0.4171 norm=0.397 new_edges=0 acyclic=False
+seed 27 z=2.0: emerged=False soft_mse=0.4161 norm=0.396 new_edges=0 acyclic=False
+seed 27 z=3.0: emerged=False soft_mse=0.4173 norm=0.397 new_edges=0 acyclic=False
+seed 28 z=1.0: emerged=False soft_mse=0.4173 norm=0.397 new_edges=0 acyclic=False
+seed 28 z=2.0: emerged=True soft_mse=0.4168 norm=0.397 new_edges=0 acyclic=False
+seed 28 z=3.0: emerged=True soft_mse=0.4166 norm=0.397 new_edges=0 acyclic=False
+seed 29 z=1.0: emerged=True soft_mse=0.4160 norm=0.396 new_edges=0 acyclic=False
+seed 29 z=2.0: emerged=True soft_mse=0.4160 norm=0.396 new_edges=0 acyclic=False
+seed 29 z=3.0: emerged=True soft_mse=0.4160 norm=0.396 new_edges=0 acyclic=False
+seed 30 z=1.0: emerged=True soft_mse=0.4155 norm=0.396 new_edges=0 acyclic=False
+seed 30 z=2.0: emerged=True soft_mse=0.4155 norm=0.396 new_edges=0 acyclic=False
+seed 30 z=3.0: emerged=True soft_mse=0.4155 norm=0.396 new_edges=0 acyclic=False
+seed 31 z=1.0: emerged=True soft_mse=0.4149 norm=0.395 new_edges=0 acyclic=False
+seed 31 z=2.0: emerged=True soft_mse=0.4161 norm=0.396 new_edges=0 acyclic=False
+seed 31 z=3.0: emerged=True soft_mse=0.4162 norm=0.396 new_edges=0 acyclic=False
+seed 32 z=1.0: emerged=True soft_mse=0.4169 norm=0.397 new_edges=0 acyclic=False
+seed 32 z=2.0: emerged=True soft_mse=0.4169 norm=0.397 new_edges=0 acyclic=False
+seed 32 z=3.0: emerged=True soft_mse=0.4165 norm=0.397 new_edges=0 acyclic=False
+seed 33 z=1.0: emerged=False soft_mse=0.4157 norm=0.396 new_edges=0 acyclic=False
+seed 33 z=2.0: emerged=False soft_mse=0.4151 norm=0.395 new_edges=0 acyclic=False
+seed 33 z=3.0: emerged=False soft_mse=0.4154 norm=0.395 new_edges=0 acyclic=False
+seed 34 z=1.0: emerged=False soft_mse=0.4155 norm=0.396 new_edges=0 acyclic=False
+seed 34 z=2.0: emerged=True soft_mse=0.4150 norm=0.395 new_edges=0 acyclic=False
+seed 34 z=3.0: emerged=False soft_mse=0.4163 norm=0.396 new_edges=0 acyclic=False
+seed 35 z=1.0: emerged=False soft_mse=0.4163 norm=0.396 new_edges=0 acyclic=False
+seed 35 z=2.0: emerged=False soft_mse=0.4166 norm=0.397 new_edges=0 acyclic=False
+seed 35 z=3.0: emerged=False soft_mse=0.4165 norm=0.397 new_edges=0 acyclic=False
+seed 36 z=1.0: emerged=False soft_mse=0.4169 norm=0.397 new_edges=0 acyclic=False
+seed 36 z=2.0: emerged=False soft_mse=0.4169 norm=0.397 new_edges=0 acyclic=False
+seed 36 z=3.0: emerged=False soft_mse=0.4168 norm=0.397 new_edges=0 acyclic=False
+seed 37 z=1.0: emerged=True soft_mse=0.4156 norm=0.396 new_edges=0 acyclic=False
+seed 37 z=2.0: emerged=False soft_mse=0.4158 norm=0.396 new_edges=0 acyclic=False
+seed 37 z=3.0: emerged=False soft_mse=0.8504 norm=0.810 new_edges=0 acyclic=True
+seed 38 z=1.0: emerged=False soft_mse=0.4167 norm=0.397 new_edges=0 acyclic=False
+seed 38 z=2.0: emerged=True soft_mse=0.4167 norm=0.397 new_edges=0 acyclic=False
+seed 38 z=3.0: emerged=False soft_mse=0.8510 norm=0.810 new_edges=0 acyclic=True
+seed 39 z=1.0: emerged=True soft_mse=0.4159 norm=0.396 new_edges=0 acyclic=False
+seed 39 z=2.0: emerged=True soft_mse=0.4161 norm=0.396 new_edges=0 acyclic=False
+seed 39 z=3.0: emerged=False soft_mse=0.4157 norm=0.396 new_edges=0 acyclic=False
+seed 40 z=1.0: emerged=False soft_mse=0.4157 norm=0.396 new_edges=0 acyclic=False
+seed 40 z=2.0: emerged=False soft_mse=0.4158 norm=0.396 new_edges=0 acyclic=False
+seed 40 z=3.0: emerged=True soft_mse=0.4163 norm=0.396 new_edges=0 acyclic=False
+seed 41 z=1.0: emerged=True soft_mse=0.4150 norm=0.395 new_edges=0 acyclic=False
+seed 41 z=2.0: emerged=True soft_mse=0.4150 norm=0.395 new_edges=0 acyclic=False
+seed 41 z=3.0: emerged=True soft_mse=0.4155 norm=0.396 new_edges=0 acyclic=False
+seed 42 z=1.0: emerged=True soft_mse=0.4162 norm=0.396 new_edges=0 acyclic=False
+seed 42 z=2.0: emerged=True soft_mse=0.4162 norm=0.396 new_edges=0 acyclic=False
+seed 42 z=3.0: emerged=False soft_mse=0.4167 norm=0.397 new_edges=0 acyclic=False
+seed 43 z=1.0: emerged=False soft_mse=0.4151 norm=0.395 new_edges=0 acyclic=False
+seed 43 z=2.0: emerged=False soft_mse=0.4151 norm=0.395 new_edges=0 acyclic=False
+seed 43 z=3.0: emerged=False soft_mse=0.4150 norm=0.395 new_edges=0 acyclic=False
+seed 44 z=1.0: emerged=False soft_mse=0.4158 norm=0.396 new_edges=0 acyclic=False
+seed 44 z=2.0: emerged=False soft_mse=0.4158 norm=0.396 new_edges=0 acyclic=False
+seed 44 z=3.0: emerged=False soft_mse=0.4174 norm=0.397 new_edges=0 acyclic=False
+seed 45 z=1.0: emerged=True soft_mse=0.4166 norm=0.397 new_edges=0 acyclic=False
+seed 45 z=2.0: emerged=True soft_mse=0.4166 norm=0.397 new_edges=0 acyclic=False
+seed 45 z=3.0: emerged=False soft_mse=0.4168 norm=0.397 new_edges=0 acyclic=False
+seed 46 z=1.0: emerged=False soft_mse=0.4164 norm=0.396 new_edges=0 acyclic=False
+seed 46 z=2.0: emerged=False soft_mse=0.4164 norm=0.396 new_edges=0 acyclic=False
+seed 46 z=3.0: emerged=True soft_mse=0.4169 norm=0.397 new_edges=0 acyclic=False
+seed 47 z=1.0: emerged=False soft_mse=0.4171 norm=0.397 new_edges=0 acyclic=False
+seed 47 z=2.0: emerged=False soft_mse=0.4183 norm=0.398 new_edges=0 acyclic=False
+seed 47 z=3.0: emerged=True soft_mse=0.4171 norm=0.397 new_edges=0 acyclic=False
+seed 48 z=1.0: emerged=True soft_mse=0.4144 norm=0.395 new_edges=0 acyclic=False
+seed 48 z=2.0: emerged=True soft_mse=0.4152 norm=0.395 new_edges=0 acyclic=False
+seed 48 z=3.0: emerged=False soft_mse=0.9487 norm=0.903 new_edges=0 acyclic=True
+seed 49 z=1.0: emerged=True soft_mse=0.4154 norm=0.395 new_edges=0 acyclic=False
+seed 49 z=2.0: emerged=True soft_mse=0.4154 norm=0.395 new_edges=0 acyclic=False
+seed 49 z=3.0: emerged=True soft_mse=0.4154 norm=0.395 new_edges=0 acyclic=False
+======================================================================
+150 records in /sfs/weka/scratch/xfd3tf/oscillon/experiments/results_topo_abl_cycle_v2  (init = ['asym'], mask = ['cycle'])
+mask edges kept in full:   137/150
+oscillation emerged:       70/150
+new edges formed (want 0): 0/150 runs with any
+acyclic (want all):        13/150
+hamiltonian (from W):      137/150
+interior fixed point unstable: 150/150
+soft_mse  median 0.4163  IQR [0.4157, 0.4169]   min 0.4144  max 0.9553
+normalized median 0.3963   (constant-mean const_mse median 1.0504)
+  z_std=1.0: n=50  emerged=24  median soft_mse=0.4162
+  z_std=2.0: n=50  emerged=25  median soft_mse=0.4161
+  z_std=3.0: n=50  emerged=21  median soft_mse=0.4165
+distinct soft_mse values (rounded to 1e-8): 149 of 150
+======================================================================
